@@ -11,11 +11,7 @@ i18n
   .init({
     backend: {
       contentKey: contentStorageConfig.contentKey,
-      loadPath: (lng: string) => {
-        return `https://cdn.contentstorage.app/${contentStorageConfig.contentKey}/content/${lng.toUpperCase()}.json`;
-      },
     },
-
     lng: 'en',
     fallbackLng: 'en',
     supportedLngs: contentStorageConfig.languageCodes.map((code: string) =>
