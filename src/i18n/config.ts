@@ -5,9 +5,9 @@ import ContentStorageBackend from '@contentstorage/i18next-plugin';
 import contentStorageConfig from '../../contentstorage.config';
 
 // Import local translation files as fallback
-import enTranslations from './locales/en.json';
-import esTranslations from './locales/es.json';
-import frTranslations from './locales/fr.json';
+import enTranslations from '../content/json/EN.json';
+import esTranslations from '../content/json/ES.json';
+import frTranslations from '../content/json/FR.json';
 
 // Initialize i18next with ContentStorage backend and local fallback
 i18n
