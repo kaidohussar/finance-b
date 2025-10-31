@@ -1,31 +1,34 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './StatsCards.css';
 
 const StatsCards: React.FC = () => {
+  const { t } = useTranslation();
+
   const stats = [
     {
-      title: 'Total Revenue',
+      titleKey: 'stats.totalRevenue',
       value: '$45,234',
       change: '+12.5%',
       trend: 'up',
       icon: '💰'
     },
     {
-      title: 'Active Users',
+      titleKey: 'stats.activeUsers',
       value: '2,845',
       change: '+8.2%',
       trend: 'up',
       icon: '👥'
     },
     {
-      title: 'Conversion Rate',
+      titleKey: 'stats.conversionRate',
       value: '3.24%',
       change: '-2.1%',
       trend: 'down',
       icon: '📊'
     },
     {
-      title: 'Monthly Growth',
+      titleKey: 'stats.monthlyGrowth',
       value: '24.8%',
       change: '+5.7%',
       trend: 'up',
@@ -44,7 +47,7 @@ const StatsCards: React.FC = () => {
             </span>
           </div>
           <div className="stat-value">{stat.value}</div>
-          <div className="stat-title">{stat.title}</div>
+          <div className="stat-title">{t(stat.titleKey)}</div>
         </div>
       ))}
     </div>

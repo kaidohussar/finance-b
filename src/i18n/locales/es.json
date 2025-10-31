@@ -1,0 +1,40 @@
+{
+  "header": {
+    "title": "Tablero",
+    "search": "Buscar...",
+    "notifications": "Notificaciones",
+    "profile": "Perfil"
+  },
+  "sidebar": {
+    "dashboard": "Tablero",
+    "analytics": "Análisis",
+    "customers": "Clientes",
+    "billing": "Facturación",
+    "settings": "Configuración",
+    "integrations": "Integraciones",
+    "reports": "Informes",
+    "upgrade": {
+      "title": "Actualizar a Pro",
+      "subtitle": "Obtén más funciones"
+    }
+  },
+  "stats": {
+    "totalRevenue": "Ingresos Totales",
+    "activeUsers": "Usuarios Activos",
+    "conversionRate": "Tasa de Conversión",
+    "monthlyGrowth": "Crecimiento Mensual"
+  },
+  "chart": {
+    "title": "Tendencia de Ingresos",
+    "period": "Últimos 7 meses"
+  },
+  "activity": {
+    "title": "Actividad Reciente",
+    "viewAll": "Ver Todo"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error al cargar datos",
+    "retry": "Reintentar"
+  }
+}

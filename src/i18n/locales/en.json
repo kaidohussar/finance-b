@@ -1,0 +1,40 @@
+{
+  "header": {
+    "title": "Dashboard",
+    "search": "Search...",
+    "notifications": "Notifications",
+    "profile": "Profile"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "analytics": "Analytics",
+    "customers": "Customers",
+    "billing": "Billing",
+    "settings": "Settings",
+    "integrations": "Integrations",
+    "reports": "Reports",
+    "upgrade": {
+      "title": "Upgrade to Pro",
+      "subtitle": "Get more features"
+    }
+  },
+  "stats": {
+    "totalRevenue": "Total Revenue",
+    "activeUsers": "Active Users",
+    "conversionRate": "Conversion Rate",
+    "monthlyGrowth": "Monthly Growth"
+  },
+  "chart": {
+    "title": "Revenue Trend",
+    "period": "Last 7 months"
+  },
+  "activity": {
+    "title": "Recent Activity",
+    "viewAll": "View All"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error loading data",
+    "retry": "Retry"
+  }
+}

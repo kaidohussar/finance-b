@@ -1,0 +1,40 @@
+{
+  "header": {
+    "title": "Tableau de Bord",
+    "search": "Rechercher...",
+    "notifications": "Notifications",
+    "profile": "Profil"
+  },
+  "sidebar": {
+    "dashboard": "Tableau de Bord",
+    "analytics": "Analytique",
+    "customers": "Clients",
+    "billing": "Facturation",
+    "settings": "Paramètres",
+    "integrations": "Intégrations",
+    "reports": "Rapports",
+    "upgrade": {
+      "title": "Passer à Pro",
+      "subtitle": "Obtenez plus de fonctionnalités"
+    }
+  },
+  "stats": {
+    "totalRevenue": "Revenus Totaux",
+    "activeUsers": "Utilisateurs Actifs",
+    "conversionRate": "Taux de Conversion",
+    "monthlyGrowth": "Croissance Mensuelle"
+  },
+  "chart": {
+    "title": "Tendance des Revenus",
+    "period": "7 derniers mois"
+  },
+  "activity": {
+    "title": "Activité Récente",
+    "viewAll": "Voir Tout"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur de chargement des données",
+    "retry": "Réessayer"
+  }
+}

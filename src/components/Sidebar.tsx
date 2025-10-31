@@ -1,15 +1,18 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Sidebar.css';
 
 const Sidebar: React.FC = () => {
+  const { t } = useTranslation();
+
   const menuItems = [
-    { icon: '📊', label: 'Dashboard', active: true },
-    { icon: '📈', label: 'Analytics', active: false },
-    { icon: '👥', label: 'Customers', active: false },
-    { icon: '💳', label: 'Billing', active: false },
-    { icon: '⚙️', label: 'Settings', active: false },
-    { icon: '🔌', label: 'Integrations', active: false },
-    { icon: '📋', label: 'Reports', active: false },
+    { icon: '📊', labelKey: 'sidebar.dashboard', active: true },
+    { icon: '📈', labelKey: 'sidebar.analytics', active: false },
+    { icon: '👥', labelKey: 'sidebar.customers', active: false },
+    { icon: '💳', labelKey: 'sidebar.billing', active: false },
+    { icon: '⚙️', labelKey: 'sidebar.settings', active: false },
+    { icon: '🔌', labelKey: 'sidebar.integrations', active: false },
+    { icon: '📋', labelKey: 'sidebar.reports', active: false },
   ];
 
   return (
@@ -19,7 +22,7 @@ const Sidebar: React.FC = () => {
           {menuItems.map((item, index) => (
             <li key={index} className={`menu-item ${item.active ? 'active' : ''}`}>
               <span className="menu-icon">{item.icon}</span>
-              <span className="menu-label">{item.label}</span>
+              <span className="menu-label">{t(item.labelKey)}</span>
             </li>
           ))}
         </ul>
@@ -28,8 +31,8 @@ const Sidebar: React.FC = () => {
         <div className="upgrade-card">
           <div className="upgrade-icon">⚡</div>
           <div className="upgrade-text">
-            <div className="upgrade-title">Upgrade to Pro</div>
-            <div className="upgrade-subtitle">Get more features</div>
+            <div className="upgrade-title">{t('sidebar.upgrade.title')}</div>
+            <div className="upgrade-subtitle">{t('sidebar.upgrade.subtitle')}</div>
           </div>
         </div>
       </div>

@@ -1,7 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Chart.css';
 
 const Chart: React.FC = () => {
+  const { t } = useTranslation();
+
   const data = [
     { month: 'Jan', value: 65 },
     { month: 'Feb', value: 78 },
@@ -17,9 +20,9 @@ const Chart: React.FC = () => {
   return (
     <div className="chart-container">
       <div className="chart-header">
-        <h3>Revenue Trend</h3>
+        <h3>{t('chart.title')}</h3>
         <div className="chart-period">
-          <span className="period-label">Last 7 months</span>
+          <span className="period-label">{t('chart.period')}</span>
         </div>
       </div>
       
