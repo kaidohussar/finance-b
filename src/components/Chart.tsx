@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import './Chart.css';
 
 const Chart: React.FC = () => {
@@ -25,13 +25,25 @@ const Chart: React.FC = () => {
           <span className="period-label">{t('chart.period')}</span>
         </div>
       </div>
-      
+      <div className="chart-description">
+        <Trans
+          i18nKey="chart.description"
+          values={{
+            startDate: 'Jan 2024',
+            endDate: 'Jul 2024'
+          }}
+          components={{
+            strong: <strong className="date-highlight" />
+          }}
+        />
+      </div>
+
       <div className="chart">
         <div className="chart-bars">
           {data.map((item, index) => (
             <div key={index} className="bar-container">
-              <div 
-                className="bar" 
+              <div
+                className="bar"
                 style={{ height: `${(item.value / maxValue) * 200}px` }}
               >
                 <div className="bar-value">{item.value}%</div>

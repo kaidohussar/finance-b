@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
 import './Header.css';
 
@@ -12,6 +12,19 @@ const Header: React.FC = () => {
         <div className="logo">
           <div className="logo-icon"></div>
           <span className="logo-text">FinanceB</span>
+        </div>
+        <div className="welcome-message">
+          <Trans
+            i18nKey="header.welcomeMessage"
+            values={{
+              userName: 'John Doe',
+              count: 3
+            }}
+            components={{
+              strong: <strong className="user-name-highlight" />,
+              link: <a href="#notifications" className="notification-link" />
+            }}
+          />
         </div>
       </div>
       <div className="header-right">

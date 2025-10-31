@@ -3,7 +3,8 @@
     "title": "Tableau de Bord",
     "search": "Rechercher...",
     "notifications": "Notifications",
-    "profile": "Profil"
+    "profile": "Profil",
+    "welcomeMessage": "Bienvenue, <strong>{{userName}}</strong>! Vous avez <link>{{count}} nouvelles notifications</link>."
   },
   "sidebar": {
     "dashboard": "Tableau de Bord",
@@ -15,26 +16,36 @@
     "reports": "Rapports",
     "upgrade": {
       "title": "Passer à Pro",
-      "subtitle": "Obtenez plus de fonctionnalités"
+      "subtitle": "Obtenez plus de fonctionnalités",
+      "description": "Débloquez <strong>un accès illimité</strong> à toutes les fonctionnalités premium. <link>En savoir plus</link>"
     }
   },
   "stats": {
     "totalRevenue": "Revenus Totaux",
     "activeUsers": "Utilisateurs Actifs",
     "conversionRate": "Taux de Conversion",
-    "monthlyGrowth": "Croissance Mensuelle"
+    "monthlyGrowth": "Croissance Mensuelle",
+    "revenueDescription": "Vos revenus ont augmenté de <strong>{{percentage}}%</strong> par rapport au mois dernier",
+    "usersDescription": "<em>{{count}}</em> nouveaux utilisateurs ont rejoint cette semaine"
   },
   "chart": {
     "title": "Tendance des Revenus",
-    "period": "7 derniers mois"
+    "period": "7 derniers mois",
+    "description": "Affichage des données du <strong>{{startDate}}</strong> au <strong>{{endDate}}</strong>"
   },
   "activity": {
     "title": "Activité Récente",
-    "viewAll": "Voir Tout"
+    "viewAll": "Voir Tout",
+    "newUser": "<strong>{{userName}}</strong> s'est inscrit",
+    "paymentReceived": "Paiement de <strong>{{amount}}</strong> reçu de <link>{{company}}</link>",
+    "serverAlert": "Le temps de réponse du serveur a augmenté. <link>Voir les détails</link>",
+    "userUpgrade": "<strong>{{userName}}</strong> est passé au <em>plan Pro</em>",
+    "subscriptionRenewed": "Abonnement renouvelé pour <strong>{{company}}</strong>"
   },
   "common": {
     "loading": "Chargement...",
     "error": "Erreur de chargement des données",
-    "retry": "Réessayer"
+    "retry": "Réessayer",
+    "errorWithSupport": "Une erreur s'est produite. Veuillez <link>contacter le support</link> si le problème persiste."
   }
 }

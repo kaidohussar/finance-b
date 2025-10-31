@@ -3,7 +3,8 @@
     "title": "Tablero",
     "search": "Buscar...",
     "notifications": "Notificaciones",
-    "profile": "Perfil"
+    "profile": "Perfil",
+    "welcomeMessage": "¡Bienvenido de nuevo, <strong>{{userName}}</strong>! Tienes <link>{{count}} notificaciones nuevas</link>."
   },
   "sidebar": {
     "dashboard": "Tablero",
@@ -15,26 +16,36 @@
     "reports": "Informes",
     "upgrade": {
       "title": "Actualizar a Pro",
-      "subtitle": "Obtén más funciones"
+      "subtitle": "Obtén más funciones",
+      "description": "Desbloquea <strong>acceso ilimitado</strong> a todas las funciones premium. <link>Más información</link>"
     }
   },
   "stats": {
     "totalRevenue": "Ingresos Totales",
     "activeUsers": "Usuarios Activos",
     "conversionRate": "Tasa de Conversión",
-    "monthlyGrowth": "Crecimiento Mensual"
+    "monthlyGrowth": "Crecimiento Mensual",
+    "revenueDescription": "Tus ingresos aumentaron un <strong>{{percentage}}%</strong> en comparación con el mes pasado",
+    "usersDescription": "<em>{{count}}</em> nuevos usuarios se unieron esta semana"
   },
   "chart": {
     "title": "Tendencia de Ingresos",
-    "period": "Últimos 7 meses"
+    "period": "Últimos 7 meses",
+    "description": "Mostrando datos desde <strong>{{startDate}}</strong> hasta <strong>{{endDate}}</strong>"
   },
   "activity": {
     "title": "Actividad Reciente",
-    "viewAll": "Ver Todo"
+    "viewAll": "Ver Todo",
+    "newUser": "<strong>{{userName}}</strong> se registró",
+    "paymentReceived": "Pago de <strong>{{amount}}</strong> recibido de <link>{{company}}</link>",
+    "serverAlert": "El tiempo de respuesta del servidor aumentó. <link>Ver detalles</link>",
+    "userUpgrade": "<strong>{{userName}}</strong> actualizó a <em>plan Pro</em>",
+    "subscriptionRenewed": "Suscripción renovada para <strong>{{company}}</strong>"
   },
   "common": {
     "loading": "Cargando...",
     "error": "Error al cargar datos",
-    "retry": "Reintentar"
+    "retry": "Reintentar",
+    "errorWithSupport": "Algo salió mal. Por favor <link>contacta con soporte</link> si el problema persiste."
   }
 }

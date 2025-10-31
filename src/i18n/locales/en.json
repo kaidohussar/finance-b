@@ -3,7 +3,8 @@
     "title": "Dashboard",
     "search": "Search...",
     "notifications": "Notifications",
-    "profile": "Profile"
+    "profile": "Profile",
+    "welcomeMessage": "Welcome back, <strong>{{userName}}</strong>! You have <link>{{count}} new notifications</link>."
   },
   "sidebar": {
     "dashboard": "Dashboard",
@@ -15,26 +16,36 @@
     "reports": "Reports",
     "upgrade": {
       "title": "Upgrade to Pro",
-      "subtitle": "Get more features"
+      "subtitle": "Get more features",
+      "description": "Unlock <strong>unlimited access</strong> to all premium features. <link>Learn more</link>"
     }
   },
   "stats": {
     "totalRevenue": "Total Revenue",
     "activeUsers": "Active Users",
     "conversionRate": "Conversion Rate",
-    "monthlyGrowth": "Monthly Growth"
+    "monthlyGrowth": "Monthly Growth",
+    "revenueDescription": "Your revenue increased by <strong>{{percentage}}%</strong> compared to last month",
+    "usersDescription": "<em>{{count}}</em> new users joined this week"
   },
   "chart": {
     "title": "Revenue Trend",
-    "period": "Last 7 months"
+    "period": "Last 7 months",
+    "description": "Showing data from <strong>{{startDate}}</strong> to <strong>{{endDate}}</strong>"
   },
   "activity": {
     "title": "Recent Activity",
-    "viewAll": "View All"
+    "viewAll": "View All",
+    "newUser": "<strong>{{userName}}</strong> registered",
+    "paymentReceived": "Payment of <strong>{{amount}}</strong> received from <link>{{company}}</link>",
+    "serverAlert": "Server response time increased. <link>View details</link>",
+    "userUpgrade": "<strong>{{userName}}</strong> upgraded to <em>Pro plan</em>",
+    "subscriptionRenewed": "Subscription renewed for <strong>{{company}}</strong>"
   },
   "common": {
     "loading": "Loading...",
     "error": "Error loading data",
-    "retry": "Retry"
+    "retry": "Retry",
+    "errorWithSupport": "Something went wrong. Please <link>contact support</link> if the problem persists."
   }
 }

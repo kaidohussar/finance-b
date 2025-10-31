@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import './Sidebar.css';
 
 const Sidebar: React.FC = () => {
@@ -33,6 +33,15 @@ const Sidebar: React.FC = () => {
           <div className="upgrade-text">
             <div className="upgrade-title">{t('sidebar.upgrade.title')}</div>
             <div className="upgrade-subtitle">{t('sidebar.upgrade.subtitle')}</div>
+            <div className="upgrade-description">
+              <Trans
+                i18nKey="sidebar.upgrade.description"
+                components={{
+                  strong: <strong />,
+                  link: <a href="#learn-more" className="upgrade-link" />
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
