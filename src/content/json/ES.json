@@ -1,0 +1,51 @@
+{
+  "activity": {
+    "title": "Actividad Reciente",
+    "viewAll": "Ver Todo",
+    "newUser": "<strong>{{userName}}</strong> se registró",
+    "paymentReceived": "Pago de <strong>{{amount}}</strong> recibido de <link>{{company}}</link>",
+    "serverAlert": "El tiempo de respuesta del servidor aumentó. <link>Ver detalles</link>",
+    "subscriptionRenewed": "Suscripción renovada para <strong>{{company}}</strong>",
+    "userUpgrade": "<strong>{{userName}}</strong> actualizó a <em>plan Pro</em>"
+  },
+  "chart": {
+    "period": "Últimos 7 meses",
+    "title": "Tendencia de Ingresos",
+    "description": "Mostrando datos desde <strong>{{startDate}}</strong> hasta <strong>{{endDate}}</strong>"
+  },
+  "common": {
+    "error": "Error al cargar datos",
+    "loading": "Cargando...",
+    "retry": "Reintentar",
+    "errorWithSupport": "Algo salió mal. Por favor <link>contacta con soporte</link> si el problema persiste."
+  },
+  "header": {
+    "notifications": "Notificaciones",
+    "profile": "Perfil",
+    "search": "Buscar...",
+    "title": "Tablero",
+    "welcomeMessage": "¡Bienvenido de nuevo, <strong>{{userName}}</strong>! Tienes <link>{{count}} notificaciones nuevas</link>."
+  },
+  "sidebar": {
+    "analytics": "Análisis",
+    "billing": "Facturación",
+    "customers": "Clientes",
+    "dashboard": "Tablero",
+    "integrations": "Integraciones",
+    "reports": "Informes",
+    "settings": "Configuración",
+    "upgrade": {
+      "subtitle": "Obtén más funciones",
+      "title": "Actualizar a Pro",
+      "description": "Desbloquea <strong>acceso ilimitado</strong> a todas las funciones premium. <link>Más información</link>"
+    }
+  },
+  "stats": {
+    "activeUsers": "Usuarios Activos",
+    "conversionRate": "Tasa de Conversión",
+    "monthlyGrowth": "Crecimiento Mensual",
+    "totalRevenue": "Ingresos Totales",
+    "revenueDescription": "Tus ingresos aumentaron un <strong>{{percentage}}%</strong> en comparación con el mes pasado",
+    "usersDescription": "<em>{{count}}</em> nuevos usuarios se unieron esta semana"
+  }
+}

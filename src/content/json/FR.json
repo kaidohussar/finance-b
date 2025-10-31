@@ -1,0 +1,51 @@
+{
+  "activity": {
+    "title": "Activité Récente",
+    "viewAll": "Voir Tout",
+    "newUser": "<strong>{{userName}}</strong> s'est inscrit",
+    "paymentReceived": "Paiement de <strong>{{amount}}</strong> reçu de <link>{{company}}</link>",
+    "serverAlert": "Le temps de réponse du serveur a augmenté. <link>Voir les détails</link>",
+    "subscriptionRenewed": "Abonnement renouvelé pour <strong>{{company}}</strong>",
+    "userUpgrade": "<strong>{{userName}}</strong> est passé au <em>plan Pro</em>"
+  },
+  "chart": {
+    "period": "7 derniers mois",
+    "title": "Tendance des Revenus",
+    "description": "Affichage des données du <strong>{{startDate}}</strong> au <strong>{{endDate}}</strong>"
+  },
+  "common": {
+    "error": "Erreur de chargement des données",
+    "loading": "Chargement...",
+    "retry": "Réessayer",
+    "errorWithSupport": "Une erreur s'est produite. Veuillez <link>contacter le support</link> si le problème persiste."
+  },
+  "header": {
+    "notifications": "Notifications",
+    "profile": "Profil",
+    "search": "Rechercher...",
+    "title": "Tableau de Bord",
+    "welcomeMessage": "Bienvenue, <strong>{{userName}}</strong>! Vous avez <link>{{count}} nouvelles notifications</link>."
+  },
+  "sidebar": {
+    "analytics": "Analytique",
+    "billing": "Facturation",
+    "customers": "Clients",
+    "dashboard": "Tableau de Bord",
+    "integrations": "Intégrations",
+    "reports": "Rapports",
+    "settings": "Paramètres",
+    "upgrade": {
+      "subtitle": "Obtenez plus de fonctionnalités",
+      "title": "Passer à Pro",
+      "description": "Débloquez <strong>un accès illimité</strong> à toutes les fonctionnalités premium. <link>En savoir plus</link>"
+    }
+  },
+  "stats": {
+    "activeUsers": "Utilisateurs Actifs",
+    "conversionRate": "Taux de Conversion",
+    "monthlyGrowth": "Croissance Mensuelle",
+    "totalRevenue": "Revenus Totaux",
+    "revenueDescription": "Vos revenus ont augmenté de <strong>{{percentage}}%</strong> par rapport au mois dernier",
+    "usersDescription": "<em>{{count}}</em> nouveaux utilisateurs ont rejoint cette semaine"
+  }
+}

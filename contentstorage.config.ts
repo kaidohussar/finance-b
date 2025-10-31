@@ -1,7 +1,8 @@
-/** @type {import('@contentstorage/core').ContentStorageConfig} */
-const config = {
+import { defineConfig } from '@contentstorage/core';
+
+export default defineConfig({
   // Content key from ContentStorage
-  contentKey: '108541025900791613826/febe906c-7a8b-4b58-b792-77556c093dba',
+  contentKey: 'test-app-2024',
 
   // Supported languages
   languageCodes: ['EN', 'FR', 'ES'],
@@ -14,6 +15,4 @@ const config = {
     // Path for generated TypeScript types
     typesPath: 'src/types/translations.d.ts',
   },
-};
-
-export default config;
+});

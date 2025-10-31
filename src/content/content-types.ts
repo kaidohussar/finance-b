@@ -1,0 +1,37 @@
+export interface ContentRoot {
+  'activity.title': string;
+  'activity.viewAll': string;
+  'activity.newUser': string;
+  'activity.paymentReceived': string;
+  'activity.serverAlert': string;
+  'activity.subscriptionRenewed': string;
+  'activity.userUpgrade': string;
+  'chart.period': string;
+  'chart.title': string;
+  'chart.description': string;
+  'common.error': string;
+  'common.loading': string;
+  'common.retry': string;
+  'common.errorWithSupport': string;
+  'header.notifications': string;
+  'header.profile': string;
+  'header.search': string;
+  'header.title': string;
+  'header.welcomeMessage': string;
+  'sidebar.analytics': string;
+  'sidebar.billing': string;
+  'sidebar.customers': string;
+  'sidebar.dashboard': string;
+  'sidebar.integrations': string;
+  'sidebar.reports': string;
+  'sidebar.settings': string;
+  'sidebar.upgrade.subtitle': string;
+  'sidebar.upgrade.title': string;
+  'sidebar.upgrade.description': string;
+  'stats.activeUsers': string;
+  'stats.conversionRate': string;
+  'stats.monthlyGrowth': string;
+  'stats.totalRevenue': string;
+  'stats.revenueDescription': string;
+  'stats.usersDescription': string;
+}
