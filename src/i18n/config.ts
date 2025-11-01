@@ -21,7 +21,6 @@ i18n
     // ContentStorage backend configuration
     backend: {
       contentKey: contentStorageConfig.contentKey,
-      postProcess: ['contentStorageTracker'], // Enable the post-processor
     },
     // Local translation files as fallback resources
     resources: {
@@ -35,6 +34,7 @@ i18n
         translation: frTranslations,
       },
     },
+    postProcess: ['contentStorageTracker'], // REQUIRED for inline resources
     // Use local bundles as fallback if CDN fails
     partialBundledLanguages: true,
     lng: 'en',
