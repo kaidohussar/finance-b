@@ -21,6 +21,7 @@ i18n
     // ContentStorage backend configuration
     backend: {
       contentKey: contentStorageConfig.contentKey,
+      postProcess: ['contentStorageTracker'], // Enable the post-processor
     },
     // Local translation files as fallback resources
     resources: {
