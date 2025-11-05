@@ -11,7 +11,12 @@ import frTranslations from '../content/json/FR.json';
 
 // Initialize i18next with ContentStorage backend and local fallback
 i18n
-  .use(new ContentstorageLiveEditorPostProcessor({ debug: true }))
+  .use(
+    new ContentstorageLiveEditorPostProcessor({
+      debug: true,
+      forceLiveMode: true,
+    })
+  )
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({

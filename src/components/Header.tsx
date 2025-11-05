@@ -18,11 +18,13 @@ const Header: React.FC = () => {
             i18nKey="header.welcomeMessage"
             values={{
               userName: 'John Doe',
-              count: 3
+              count: 3,
             }}
             components={{
               strong: <strong className="user-name-highlight" />,
-              link: <a href="#notifications" className="notification-link" />
+              CustomLink: (
+                <a href="#notifications" className="notification-link" />
+              ),
             }}
           />
         </div>

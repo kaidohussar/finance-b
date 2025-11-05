@@ -22,7 +22,7 @@ const TransExample: React.FC = () => {
             i18nKey="stats.revenueDescription"
             values={{ percentage: 12.5 }}
             components={{
-              strong: <strong />
+              strong: <strong />,
             }}
           />
         </p>
@@ -36,7 +36,7 @@ const TransExample: React.FC = () => {
             i18nKey="sidebar.upgrade.description"
             components={{
               strong: <strong />,
-              link: <a href="/learn-more" className="custom-link" />
+              link: <a href="/learn-more" className="custom-link" />,
             }}
           />
         </p>
@@ -50,11 +50,16 @@ const TransExample: React.FC = () => {
             i18nKey="header.welcomeMessage"
             values={{
               userName: 'Alice Johnson',
-              count: 5
+              count: 5,
             }}
             components={{
               strong: <strong style={{ color: '#10B981' }} />,
-              link: <a href="/notifications" style={{ textDecoration: 'underline' }} />
+              CustomLink: (
+                <a
+                  href="/notifications"
+                  style={{ textDecoration: 'underline' }}
+                />
+              ),
             }}
           />
         </p>
@@ -68,7 +73,7 @@ const TransExample: React.FC = () => {
             i18nKey="activity.paymentReceived"
             values={{
               amount: '$2,450',
-              company: 'Acme Corp'
+              company: 'Acme Corp',
             }}
             components={{
               strong: <strong className="highlight-text" />,
@@ -81,10 +86,10 @@ const TransExample: React.FC = () => {
                     border: 'none',
                     color: '#3B82F6',
                     textDecoration: 'underline',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
                   }}
                 />
-              )
+              ),
             }}
           />
         </p>
@@ -99,7 +104,7 @@ const TransExample: React.FC = () => {
             values={{ userName: 'Mike Chen' }}
             components={{
               strong: <strong />,
-              em: <em style={{ color: '#F59E0B' }} />
+              em: <em style={{ color: '#F59E0B' }} />,
             }}
           />
         </p>
@@ -113,10 +118,10 @@ const TransExample: React.FC = () => {
             i18nKey="chart.description"
             values={{
               startDate: new Date('2024-01-01').toLocaleDateString(),
-              endDate: new Date('2024-07-31').toLocaleDateString()
+              endDate: new Date('2024-07-31').toLocaleDateString(),
             }}
             components={{
-              strong: <strong className="date-text" />
+              strong: <strong className="date-text" />,
             }}
           />
         </p>
@@ -136,10 +141,10 @@ const TransExample: React.FC = () => {
                     color: '#EF4444',
                     fontWeight: 'bold',
                     textDecoration: 'none',
-                    borderBottom: '2px solid #EF4444'
+                    borderBottom: '2px solid #EF4444',
                   }}
                 />
-              )
+              ),
             }}
           />
         </div>
@@ -155,7 +160,7 @@ const TransExample: React.FC = () => {
                 i18nKey="stats.usersDescription"
                 values={{ count }}
                 components={{
-                  em: <em style={{ fontWeight: 'bold', color: '#10B981' }} />
+                  em: <em style={{ fontWeight: 'bold', color: '#10B981' }} />,
                 }}
               />
             ) : (
@@ -170,14 +175,14 @@ const TransExample: React.FC = () => {
         <h3>9. Trans with Dynamic Array Data</h3>
         {[
           { userName: 'John', action: 'activity.newUser' },
-          { userName: 'Sarah', action: 'activity.newUser' }
+          { userName: 'Sarah', action: 'activity.newUser' },
         ].map((activity, idx) => (
           <p key={idx}>
             <Trans
               i18nKey={activity.action}
               values={{ userName: activity.userName }}
               components={{
-                strong: <strong className={`user-${idx}`} />
+                strong: <strong className={`user-${idx}`} />,
               }}
             />
           </p>
@@ -189,12 +194,12 @@ const TransExample: React.FC = () => {
         <h3>10. Best Practices</h3>
         <ul style={{ textAlign: 'left', maxWidth: '600px', margin: '0 auto' }}>
           <li>
-            <strong>Use Trans for JSX:</strong> When you need to embed HTML tags,
-            React components, or links in your translations
+            <strong>Use Trans for JSX:</strong> When you need to embed HTML
+            tags, React components, or links in your translations
           </li>
           <li>
-            <strong>Use t() for simple strings:</strong> When you just need plain
-            text without any formatting
+            <strong>Use t() for simple strings:</strong> When you just need
+            plain text without any formatting
           </li>
           <li>
             <strong>Pass values separately:</strong> Use the values prop for
@@ -205,8 +210,8 @@ const TransExample: React.FC = () => {
             (like {'<strong>'}, {'<link>'}) to actual React components
           </li>
           <li>
-            <strong>Keep translations clean:</strong> Use semantic HTML tags
-            in your translation files
+            <strong>Keep translations clean:</strong> Use semantic HTML tags in
+            your translation files
           </li>
         </ul>
       </section>

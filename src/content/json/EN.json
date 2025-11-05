@@ -24,7 +24,7 @@
     "profile": "Profile",
     "search": "Search...",
     "title": "Dashboard",
-    "welcomeMessage": "Welcome back, <strong>{{userName}}</strong>! You have <link>{{count}} new notifications</link>."
+    "welcomeMessage": "Welcome back, <strong>{{userName}}</strong>! You have <CustomLink>{{count}} new notifications</CustomLink>."
   },
   "sidebar": {
     "analytics": "Analytics",
