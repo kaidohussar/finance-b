@@ -14,7 +14,6 @@ i18n
   .use(
     new ContentstorageLiveEditorPostProcessor({
       debug: true,
-      forceLiveMode: true,
     })
   )
   .use(LanguageDetector)
