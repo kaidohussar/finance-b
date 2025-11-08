@@ -1,18 +1,19 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
 
 const Sidebar: React.FC = () => {
   const { t } = useTranslation();
 
   const menuItems = [
-    { icon: '📊', labelKey: 'sidebar.dashboard', active: true },
-    { icon: '📈', labelKey: 'sidebar.analytics', active: false },
-    { icon: '👥', labelKey: 'sidebar.customers', active: false },
-    { icon: '💳', labelKey: 'sidebar.billing', active: false },
-    { icon: '⚙️', labelKey: 'sidebar.settings', active: false },
-    { icon: '🔌', labelKey: 'sidebar.integrations', active: false },
-    { icon: '📋', labelKey: 'sidebar.reports', active: false },
+    { icon: '📊', labelKey: 'sidebar.dashboard', path: '/' },
+    { icon: '📈', labelKey: 'sidebar.analytics', path: '/analytics' },
+    { icon: '👥', labelKey: 'sidebar.customers', path: '/customers' },
+    { icon: '💳', labelKey: 'sidebar.billing', path: '/billing' },
+    { icon: '⚙️', labelKey: 'sidebar.settings', path: '/settings' },
+    { icon: '🔌', labelKey: 'sidebar.integrations', path: '/integrations' },
+    { icon: '📋', labelKey: 'sidebar.reports', path: '/reports' },
   ];
 
   return (
@@ -20,9 +21,14 @@ const Sidebar: React.FC = () => {
       <nav className="sidebar-nav">
         <ul className="menu-list">
           {menuItems.map((item, index) => (
-            <li key={index} className={`menu-item ${item.active ? 'active' : ''}`}>
-              <span className="menu-icon">{item.icon}</span>
-              <span className="menu-label">{t(item.labelKey)}</span>
+            <li key={index}>
+              <NavLink
+                to={item.path}
+                className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}
+              >
+                <span className="menu-icon">{item.icon}</span>
+                <span className="menu-label">{t(item.labelKey)}</span>
+              </NavLink>
             </li>
           ))}
         </ul>
