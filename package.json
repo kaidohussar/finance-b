@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "content:pull": "contentstorage pull",
+    "content:pull": "contentstorage pull --pending-changes",
     "content:types": "contentstorage generate-types",
     "content:sync": "npm run content:pull && npm run content:types",
     "content:screenshot": "contentstorage screenshot --url http://localhost:5174",

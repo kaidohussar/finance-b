@@ -1,7 +1,7 @@
 {
   "activity": {
-    "title": "Activité Récente",
-    "viewAll": "Voir Tout",
+    "title": "Activité récente",
+    "viewAll": "Voir tout",
     "newUser": "<strong>{{userName}}</strong> s'est inscrit",
     "paymentReceived": "Paiement de <strong>{{amount}}</strong> reçu de <link>{{company}}</link>",
     "serverAlert": "Le temps de réponse du serveur a augmenté. <link>Voir les détails</link>",
@@ -23,8 +23,8 @@
     "notifications": "Notifications",
     "profile": "Profil",
     "search": "Rechercher...",
-    "title": "Tableau de Bord",
-    "welcomeMessage": "Bienvenue, <strong>{{userName}}</strong>! Vous avez <link>{{count}} nouvelles notifications</link>."
+    "title": "Tableau de bord",
+    "welcomeMessage": "Bienvenue de nouveau, <strong>{{userName}}</strong> ! Vous avez <CustomLink>{{count}} nouvelles notifications</CustomLink>."
   },
   "sidebar": {
     "analytics": "Analytique",
@@ -37,7 +37,8 @@
     "upgrade": {
       "subtitle": "Obtenez plus de fonctionnalités",
       "title": "Passer à Pro",
-      "description": "Débloquez <strong>un accès illimité</strong> à toutes les fonctionnalités premium. <link>En savoir plus</link>"
+      "description": "Débloquez <strong>un accès illimité</strong> à toutes les fonctionnalités premium. <link>En savoir plus</link>",
+      "asdasda": ""
     }
   },
   "stats": {
@@ -47,5 +48,77 @@
     "totalRevenue": "Revenus Totaux",
     "revenueDescription": "Vos revenus ont augmenté de <strong>{{percentage}}%</strong> par rapport au mois dernier",
     "usersDescription": "<em>{{count}}</em> nouveaux utilisateurs ont rejoint cette semaine"
+  },
+  "files": {
+    "upload": "frnecho",
+    "uploadFailed": "frenchio2",
+    "title": "frenchchch"
+  },
+  "billing": {
+    "invoices": "Factures",
+    "changePlan": "Changer de plan",
+    "currentPlan": "Plan actuel",
+    "invoiceReady": "La facture de <strong>{{month}}</strong> est prête. <link>Télécharger le PDF</link>",
+    "nextBilling": "Prochaine date de facturation : <strong>{{date}}</strong>",
+    "paymentMethod": "Méthode de paiement : <em>{{cardType}}</em> se terminant par <strong>{{lastFour}}</strong>",
+    "planDetails": "Vous avez le forfait <strong>{{planName}}</strong>",
+    "savingsMessage": "Économisez <strong>{{percentage}}%</strong> avec la facturation annuelle",
+    "title": "Facturation et Forfaits",
+    "trialEnds": "Votre essai se termine dans <strong>{{days}} jours</strong>. <link>Mettre à niveau maintenant</link>"
+  },
+  "inbox": {
+    "attachments": "<strong>{{count}}</strong> pièces jointes",
+    "compose": "Nouveau message",
+    "emptyState": "Aucun message pour l'instant. <link>Démarrer une conversation</link>",
+    "mentionedYou": "<strong>{{userName}}</strong> vous a mentionné dans <link>{{channel}}</link>",
+    "newMessage": "Nouveau message de <strong>{{senderName}}</strong>",
+    "replyTo": "Répondre à <em>{{subject}}</em>",
+    "starred": "Étoilé",
+    "threadCount": "<em>{{count}}</em> réponses dans ce fil"
+  },
+  "account": {
+    "connectedApps": "<strong>{{count}}</strong> applications connectées à votre compte",
+    "email": "E-mail : <strong>{{email}}</strong>",
+    "lastLogin": "Dernière connexion <em>{{date}}</em> depuis <strong>{{location}}</strong>",
+    "passwordChanged": "Mot de passe modifié pour la dernière fois le <em>{{date}}</em>. <link>Mettre à jour le mot de passe</link>",
+    "preferences": "Préférences",
+    "profile": "Profil",
+    "security": "Sécurité",
+    "storageUsed": "Utilisation de <strong>{{used}}</strong> sur <strong>{{total}}</strong> d'espace de stockage",
+    "title": "Paramètres du compte",
+    "twoFactor": "L'authentification à deux facteurs est <strong>{{status}}</strong>"
+  },
+  "tasks": {
+    "addTask": "Ajouter une tâche",
+    "assigned": "Attribué à <strong>{{userName}}</strong>",
+    "completed": "Terminé",
+    "dueToday": "<strong>{{count}}</strong> tâches à échéance aujourd'hui",
+    "inProgress": "En cours",
+    "overdueTasks": "Vous avez <em>{{count}}</em> tâches en retard. <link>Vérifier maintenant</link>",
+    "priority": "Priorité : <strong>{{level}}</strong>",
+    "subtasks": "<strong>{{completed}}</strong> sur <strong>{{total}}</strong> sous-tâches effectuées",
+    "taskCompleted": "<strong>{{userName}}</strong> a terminé <em>{{taskName}}</em>",
+    "title": "Tâches"
+  },
+  "calendar": {
+    "attendees": "<strong>{{confirmed}}</strong> confirmés, <em>{{pending}}</em> en attente",
+    "conflict": "Cet événement chevauche <link>{{conflictingEvent}}</link>",
+    "eventCreated": "<strong>{{eventName}}</strong> prévu pour le <em>{{date}}</em>",
+    "title": "Calendrier",
+    "today": "Aujourd'hui",
+    "upcoming": "Événements à venir"
+  },
+  "onboarding": {
+    "step": "Étape <strong>{{current}}</strong> sur <strong>{{total}}</strong>",
+    "tutorial": "Besoin d'aide pour démarrer ? <link>Regarder notre tutoriel</link>",
+    "welcome": "Bienvenue sur <strong>{{appName}}</strong> !"
+  },
+  "projects": {
+    "archive": "Archivé",
+    "collaborators": "Partagé avec <strong>{{count}}</strong> membres de l'équipe",
+    "create": "Nouveau projet"
+  },
+  "integrations": {
+    "title": ""
   }
 }

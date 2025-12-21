@@ -23,21 +23,22 @@
     "notifications": "Notificaciones",
     "profile": "Perfil",
     "search": "Buscar...",
-    "title": "Tablero",
-    "welcomeMessage": "¡Bienvenido de nuevo, <strong>{{userName}}</strong>! Tienes <link>{{count}} notificaciones nuevas</link>."
+    "title": "Panel de control",
+    "welcomeMessage": "¡Bienvenido de nuevo, <strong>{{userName}}</strong>! Tiene <CustomLink>{{count}} notificaciones nuevas</CustomLink>."
   },
   "sidebar": {
     "analytics": "Análisis",
-    "billing": "Facturación",
+    "billing": "Facturación!",
     "customers": "Clientes",
     "dashboard": "Tablero",
     "integrations": "Integraciones",
     "reports": "Informes",
-    "settings": "Configuración",
+    "settings": "Configuración!",
     "upgrade": {
       "subtitle": "Obtén más funciones",
       "title": "Actualizar a Pro",
-      "description": "Desbloquea <strong>acceso ilimitado</strong> a todas las funciones premium. <link>Más información</link>"
+      "description": "Desbloquea <strong>acceso ilimitado</strong> a todas las funciones premium. <link>Más información</link>",
+      "asdasda": ""
     }
   },
   "stats": {
@@ -47,5 +48,79 @@
     "totalRevenue": "Ingresos Totales",
     "revenueDescription": "Tus ingresos aumentaron un <strong>{{percentage}}%</strong> en comparación con el mes pasado",
     "usersDescription": "<em>{{count}}</em> nuevos usuarios se unieron esta semana"
+  },
+  "files": {
+    "upload": "spanis22",
+    "uploadFailed": "spanish",
+    "uploadSuccess": "dfgdfgdg",
+    "title": "sdfsdfsdf",
+    "shared": "espnajol"
+  },
+  "account": {
+    "passwordChanged": "Contraseña modificada por última vez el <em>{{date}}</em>. <link>Actualizar contraseña</link>",
+    "connectedApps": "<strong>{{count}}</strong> aplicaciones conectadas a tu cuenta",
+    "email": "Correo electrónico: <strong>{{email}}</strong>",
+    "lastLogin": "Último inicio de sesión <em>{{date}}</em> desde <strong>{{location}}</strong>",
+    "preferences": "Preferencias",
+    "profile": "Perfil",
+    "security": "Seguridad",
+    "storageUsed": "Utilizando <strong>{{used}}</strong> de <strong>{{total}}</strong> de almacenamiento",
+    "title": "Configuración de la cuenta",
+    "twoFactor": "La autenticación de dos factores está <strong>{{status}}</strong>"
+  },
+  "billing": {
+    "invoices": "Facturas",
+    "nextBilling": "Próxima fecha de facturación: <strong>{{date}}</strong>",
+    "changePlan": "Cambiar plan",
+    "currentPlan": "Plan actual",
+    "invoiceReady": "La factura de <strong>{{month}}</strong> está lista. <link>Descargar PDF</link>",
+    "paymentMethod": "Método de pago: <em>{{cardType}}</em> terminado en <strong>{{lastFour}}</strong>",
+    "planDetails": "Estás en el plan <strong>{{planName}}</strong>",
+    "savingsMessage": "Ahorra <strong>{{percentage}}%</strong> con la facturación anual",
+    "title": "Facturación y Planes",
+    "trialEnds": "Tu prueba termina en <strong>{{days}} días</strong>. <link>Actualizar ahora</link>"
+  },
+  "inbox": {
+    "attachments": "<strong>{{count}}</strong> adjuntos",
+    "compose": "Nuevo mensaje",
+    "emptyState": "Aún no hay mensajes. <link>Inicia una conversación</link>",
+    "mentionedYou": "<strong>{{userName}}</strong> te mencionó en <link>{{channel}}</link>",
+    "newMessage": "Nuevo mensaje de <strong>{{senderName}}</strong>",
+    "replyTo": "Respondiendo a <em>{{subject}}</em>",
+    "starred": "Destacado",
+    "threadCount": "<em>{{count}}</em> respuestas en este hilo"
+  },
+  "tasks": {
+    "addTask": "Agregar tarea",
+    "assigned": "Asignado a <strong>{{userName}}</strong>",
+    "completed": "Completado",
+    "dueToday": "<strong>{{count}}</strong> tareas vencen hoy",
+    "inProgress": "En curso",
+    "overdueTasks": "Tienes <em>{{count}}</em> tareas atrasadas. <link>Revisar ahora</link>",
+    "priority": "Prioridad: <strong>{{level}}</strong>",
+    "subtasks": "<strong>{{completed}}</strong> de <strong>{{total}}</strong> subtareas completadas",
+    "taskCompleted": "<strong>{{userName}}</strong> completó <em>{{taskName}}</em>",
+    "title": "Tareas"
+  },
+  "calendar": {
+    "attendees": "<strong>{{confirmed}}</strong> confirmados, <em>{{pending}}</em> pendientes",
+    "conflict": "Este evento se superpone con <link>{{conflictingEvent}}</link>",
+    "eventCreated": "<strong>{{eventName}}</strong> programado para el <em>{{date}}</em>",
+    "title": "Calendario",
+    "today": "Hoy",
+    "upcoming": "Próximos eventos"
+  },
+  "onboarding": {
+    "step": "Paso <strong>{{current}}</strong> de <strong>{{total}}</strong>",
+    "tutorial": "¿Necesitas ayuda para empezar? <link>Ver nuestro tutorial</link>",
+    "welcome": "¡Bienvenido a <strong>{{appName}}</strong>!"
+  },
+  "projects": {
+    "create": "Nuevo proyecto",
+    "deadline": "Vence el <strong>{{date}}</strong>",
+    "overdue": "Este proyecto está <em>retrasado {{days}} días</em>. <link>Actualizar fecha límite</link>"
+  },
+  "integrations": {
+    "title": ""
   }
 }

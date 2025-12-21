@@ -10,7 +10,7 @@
   },
   "chart": {
     "period": "Last 7 months",
-    "title": "Revenue Trend",
+    "title": "Revenue Statistics",
     "description": "Showing data from <strong>{{startDate}}</strong> to <strong>{{endDate}}</strong>"
   },
   "common": {
@@ -37,7 +37,8 @@
     "upgrade": {
       "subtitle": "Get more features",
       "title": "Upgrade to Pro",
-      "description": "Unlock <strong>unlimited access</strong> to all premium features. <link>Learn more</link>"
+      "description": "Unlock <strong>unlimited access</strong> to all premium features. <link>Learn more</link>",
+      "asdasda": "fgfdgdfgdg"
     }
   },
   "stats": {
@@ -47,5 +48,123 @@
     "totalRevenue": "Total Revenue",
     "revenueDescription": "Your revenue increased by <strong>{{percentage}}%</strong> compared to last month",
     "usersDescription": "<em>{{count}}</em> new users joined this week"
+  },
+  "account": {
+    "connectedApps": "<strong>{{count}}</strong> apps connected to your account",
+    "email": "Email: <strong>{{email}}</strong>",
+    "lastLogin": "Last login <em>{{date}}</em> from <strong>{{location}}</strong>",
+    "passwordChanged": "Password last changed <em>{{date}}</em>. <link>Update password</link>",
+    "preferences": "Preferences",
+    "profile": "Profile",
+    "security": "Security",
+    "storageUsed": "Using <strong>{{used}}</strong> of <strong>{{total}}</strong> storage",
+    "title": "Account Settings",
+    "twoFactor": "Two-factor authentication is <strong>{{status}}</strong>"
+  },
+  "billing": {
+    "changePlan": "Change Plan",
+    "currentPlan": "Current Plan",
+    "invoiceReady": "Invoice for <strong>{{month}}</strong> is ready. <link>Download PDF</link>",
+    "invoices": "Invoices",
+    "nextBilling": "Next billing date: <strong>{{date}}</strong>",
+    "paymentMethod": "Payment method: <em>{{cardType}}</em> ending in <strong>{{lastFour}}</strong>",
+    "planDetails": "You're on the <strong>{{planName}}</strong> plan",
+    "savingsMessage": "Save <strong>{{percentage}}%</strong> with annual billing",
+    "title": "Billing & Plans",
+    "trialEnds": "Your trial ends in <strong>{{days}} days</strong>. <link>Upgrade now</link>"
+  },
+  "calendar": {
+    "attendees": "<strong>{{confirmed}}</strong> confirmed, <em>{{pending}}</em> pending",
+    "conflict": "This event overlaps with <link>{{conflictingEvent}}</link>",
+    "eventCreated": "<strong>{{eventName}}</strong> scheduled for <em>{{date}}</em>",
+    "noEvents": "No events scheduled for <strong>{{date}}</strong>",
+    "recurring": "Repeats <em>{{frequency}}</em> until <strong>{{endDate}}</strong>",
+    "reminder": "Reminder: <strong>{{eventName}}</strong> starts in <em>{{time}}</em>",
+    "title": "Calendar",
+    "today": "Today",
+    "upcoming": "Upcoming Events"
+  },
+  "files": {
+    "downloadCount": "Downloaded <strong>{{count}}</strong> times",
+    "expiringLink": "This link expires in <em>{{time}}</em>. <link>Extend access</link>",
+    "fileSize": "Size: <strong>{{size}}</strong>",
+    "recent": "Recent Files",
+    "shared": "Shared with Me",
+    "sharedBy": "Shared by <strong>{{userName}}</strong> on <em>{{date}}</em>",
+    "title": "Files",
+    "upload": "Upload File",
+    "uploadFailed": "Failed to upload <em>{{fileName}}</em>. <link>Try again</link>",
+    "uploadSuccess": "<strong>{{fileName}}</strong> uploaded successfully"
+  },
+  "inbox": {
+    "attachments": "<strong>{{count}}</strong> attachments",
+    "compose": "New Message",
+    "emptyState": "No messages yet. <link>Start a conversation</link>",
+    "mentionedYou": "<strong>{{userName}}</strong> mentioned you in <link>{{channel}}</link>",
+    "newMessage": "New message from <strong>{{senderName}}</strong>",
+    "replyTo": "Replying to <em>{{subject}}</em>",
+    "starred": "Starred",
+    "threadCount": "<em>{{count}}</em> replies in this thread",
+    "title": "Messages",
+    "unread": "Unread"
+  },
+  "notifications": {
+    "digest": "Daily Digest",
+    "email": "Email Notifications",
+    "frequency": "Receiving <em>{{type}}</em> notifications <strong>{{frequency}}</strong>",
+    "markRead": "Mark all as read",
+    "muted": "Notifications muted until <strong>{{time}}</strong>",
+    "newNotifications": "You have <strong>{{count}}</strong> new notifications",
+    "push": "Push Notifications",
+    "title": "Notification Preferences",
+    "unsubscribe": "Don't want these emails? <link>Manage preferences</link>"
+  },
+  "onboarding": {
+    "celebration": "🎉 Great job, <strong>{{userName}}</strong>! Your workspace is ready.",
+    "complete": "Complete Setup",
+    "inviteTeam": "Invite your team members to <em>{{workspaceName}}</em>",
+    "progressMessage": "You're <strong>{{percentage}}%</strong> done with the setup",
+    "setupProfile": "Let's set up your profile, <strong>{{userName}}</strong>",
+    "skip": "Skip for now",
+    "step": "Step <strong>{{current}}</strong> of <strong>{{total}}</strong>",
+    "tutorial": "Need help getting started? <link>Watch our tutorial</link>",
+    "welcome": "Welcome to <strong>{{appName}}</strong>!"
+  },
+  "projects": {
+    "archive": "Archived",
+    "collaborators": "Shared with <strong>{{count}}</strong> team members",
+    "create": "New Project",
+    "deadline": "Due <strong>{{date}}</strong>",
+    "overdue": "This project is <em>{{days}} days</em> overdue. <link>Update deadline</link>",
+    "progress": "<strong>{{completed}}</strong> of <strong>{{total}}</strong> tasks completed",
+    "projectCreated": "<strong>{{projectName}}</strong> created by <link>{{userName}}</link>",
+    "statusUpdate": "Status changed to <em>{{status}}</em> by <strong>{{userName}}</strong>",
+    "title": "Projects"
+  },
+  "tasks": {
+    "addTask": "Add Task",
+    "assigned": "Assigned to <strong>{{userName}}</strong>",
+    "completed": "Completed",
+    "dueToday": "<strong>{{count}}</strong> tasks due today",
+    "inProgress": "In Progress",
+    "overdueTasks": "You have <em>{{count}}</em> overdue tasks. <link>Review now</link>",
+    "priority": "Priority: <strong>{{level}}</strong>",
+    "subtasks": "<strong>{{completed}}</strong> of <strong>{{total}}</strong> subtasks done",
+    "taskCompleted": "<strong>{{userName}}</strong> completed <em>{{taskName}}</em>",
+    "title": "Tasks"
+  },
+  "team": {
+    "invite": "Invite Member",
+    "inviteExpired": "Invite for <strong>{{email}}</strong> has expired. <link>Resend invitation</link>",
+    "inviteSent": "Invitation sent to <strong>{{email}}</strong>",
+    "memberJoined": "<strong>{{userName}}</strong> joined the team",
+    "memberRemoved": "<strong>{{userName}}</strong> was removed by <em>{{adminName}}</em>",
+    "pending": "Pending Invites",
+    "roleChanged": "<strong>{{userName}}</strong> is now a <em>{{role}}</em>",
+    "teamSize": "Your team has <strong>{{count}}</strong> members across <em>{{departments}} departments</em>",
+    "title": "Team Management"
+  },
+  "integrations": {
+    "title": "All Integrations"
   }
 }
