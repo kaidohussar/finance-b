@@ -1,8 +1,8 @@
 import React from 'react';
 import './Pages.css';
+import { Trans } from 'react-i18next';
 
 const Analytics: React.FC = () => {
-
   const metrics = [
     { label: 'Page Views', value: '245,678', change: '+12.5%', trend: 'up' },
     { label: 'Unique Visitors', value: '89,432', change: '+8.3%', trend: 'up' },
@@ -21,8 +21,12 @@ const Analytics: React.FC = () => {
   return (
     <main className="page-content">
       <div className="page-header">
-        <h1>Analytics</h1>
-        <p className="page-subtitle">Track your website performance and user behavior</p>
+        <h1>
+          <Trans i18nKey="analytics.title" />
+        </h1>
+        <p className="page-subtitle">
+          Track your website performance and user behavior
+        </p>
       </div>
 
       <div className="metrics-grid">

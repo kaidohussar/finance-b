@@ -122,5 +122,8 @@
   },
   "integrations": {
     "title": ""
+  },
+  "analytics": {
+    "title": ""
   }
 }

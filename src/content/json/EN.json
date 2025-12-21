@@ -166,5 +166,8 @@
   },
   "integrations": {
     "title": "All Integrations"
+  },
+  "analytics": {
+    "title": "Analytics"
   }
 }
