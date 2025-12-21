@@ -165,7 +165,8 @@
     "title": "Team Management"
   },
   "integrations": {
-    "title": "All Integrations"
+    "title": "All Integrations",
+    "featuresTitle": "All integrations"
   },
   "analytics": {
     "title": "Analytics"

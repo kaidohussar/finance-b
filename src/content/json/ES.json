@@ -121,7 +121,8 @@
     "overdue": "Este proyecto está <em>retrasado {{days}} días</em>. <link>Actualizar fecha límite</link>"
   },
   "integrations": {
-    "title": ""
+    "title": "",
+    "featuresTitle": ""
   },
   "analytics": {
     "title": ""

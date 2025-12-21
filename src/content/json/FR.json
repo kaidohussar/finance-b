@@ -24,7 +24,7 @@
     "profile": "Profil",
     "search": "Rechercher...",
     "title": "Tableau de bord",
-    "welcomeMessage": "Bienvenue de nouveau, <strong>{{userName}}</strong> ! Vous avez <CustomLink>{{count}} nouvelles notifications</CustomLink>."
+    "welcomeMessage": ""
   },
   "sidebar": {
     "analytics": "Analytique",
@@ -119,7 +119,8 @@
     "create": "Nouveau projet"
   },
   "integrations": {
-    "title": ""
+    "title": "",
+    "featuresTitle": ""
   },
   "analytics": {
     "title": ""

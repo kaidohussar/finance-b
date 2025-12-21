@@ -75,7 +75,9 @@ const Integrations: React.FC = () => {
       </div>
 
       <div className="content-section">
-        <h2>All Integrations</h2>
+        <h2>
+          <Trans i18nKey="integrations.featuresTitle" />
+        </h2>
         <div className="integrations-grid">
           {integrations.map((integration, index) => (
             <div key={index} className="integration-card">
