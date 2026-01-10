@@ -1,48 +1,49 @@
 import React from 'react';
 import './Pages.css';
 import { Trans } from 'react-i18next';
+import { MessageSquare, BarChart3, CreditCard, Mail, Zap, Github } from 'lucide-react';
 
 const Integrations: React.FC = () => {
   const integrations = [
     {
       name: 'Slack',
       description: 'Send notifications to your Slack workspace',
-      icon: '💬',
+      icon: <MessageSquare size={24} />,
       connected: true,
       category: 'Communication',
     },
     {
       name: 'Google Analytics',
       description: 'Track website analytics and visitor behavior',
-      icon: '📊',
+      icon: <BarChart3 size={24} />,
       connected: true,
       category: 'Analytics',
     },
     {
       name: 'Stripe',
       description: 'Process payments and manage subscriptions',
-      icon: '💳',
+      icon: <CreditCard size={24} />,
       connected: false,
       category: 'Payments',
     },
     {
       name: 'Mailchimp',
       description: 'Email marketing and automation platform',
-      icon: '✉️',
+      icon: <Mail size={24} />,
       connected: false,
       category: 'Marketing',
     },
     {
       name: 'Zapier',
       description: 'Connect with 1000+ apps and automate workflows',
-      icon: '⚡',
+      icon: <Zap size={24} />,
       connected: false,
       category: 'Automation',
     },
     {
       name: 'GitHub',
       description: 'Integrate with your code repositories',
-      icon: '🐙',
+      icon: <Github size={24} />,
       connected: true,
       category: 'Development',
     },

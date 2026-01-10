@@ -31,6 +31,11 @@
   padding: 8px;
   background: var(--light-green);
   border-radius: 8px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
 }
 
 .stat-change {
@@ -58,7 +63,12 @@
 }
 
 .stat-title {
+  font-size: 16px;
+  color: var(--gray-600);
+  font-weight: 600;
+}
+
+.stat-description {
   font-size: 14px;
   color: var(--gray-600);
-  font-weight: 500;
 }

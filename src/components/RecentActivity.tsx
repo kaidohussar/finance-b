@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { User, CreditCard, AlertTriangle, Activity } from 'lucide-react';
 import './RecentActivity.css';
 
 const RecentActivity: React.FC = () => {
@@ -46,10 +47,10 @@ const RecentActivity: React.FC = () => {
 
   const getActivityIcon = (type: string) => {
     switch (type) {
-      case 'user': return '👤';
-      case 'payment': return '💳';
-      case 'alert': return '⚠️';
-      default: return '📊';
+      case 'user': return <User size={16} />;
+      case 'payment': return <CreditCard size={16} />;
+      case 'alert': return <AlertTriangle size={16} />;
+      default: return <Activity size={16} />;
     }
   };
 

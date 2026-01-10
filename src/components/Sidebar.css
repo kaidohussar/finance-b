@@ -45,6 +45,7 @@
   font-size: 18px;
   width: 20px;
   text-align: center;
+  display: flex;
 }
 
 .menu-label {
@@ -89,4 +90,8 @@
 .upgrade-subtitle {
   font-size: 12px;
   opacity: 0.9;
+}
+
+.upgrade-link a {
+  text-decoration: underline;
 }

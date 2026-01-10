@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { DollarSign, Users, BarChart3, TrendingUp } from 'lucide-react';
 import './StatsCards.css';
 
 const StatsCards: React.FC = () => {
@@ -12,7 +13,7 @@ const StatsCards: React.FC = () => {
       change: '+12.5%',
       changeValue: 12.5,
       trend: 'up',
-      icon: '💰',
+      icon: <DollarSign size={20} />,
       descriptionKey: 'stats.revenueDescription'
     },
     {
@@ -21,7 +22,7 @@ const StatsCards: React.FC = () => {
       change: '+8.2%',
       changeValue: 234,
       trend: 'up',
-      icon: '👥',
+      icon: <Users size={20} />,
       descriptionKey: 'stats.usersDescription'
     },
     {
@@ -30,7 +31,7 @@ const StatsCards: React.FC = () => {
       change: '-2.1%',
       changeValue: 2.1,
       trend: 'down',
-      icon: '📊'
+      icon: <BarChart3 size={20} />
     },
     {
       titleKey: 'stats.monthlyGrowth',
@@ -38,7 +39,7 @@ const StatsCards: React.FC = () => {
       change: '+5.7%',
       changeValue: 5.7,
       trend: 'up',
-      icon: '📈'
+      icon: <TrendingUp size={20} />
     }
   ];
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { Rocket, Lock, WifiOff, Pencil } from 'lucide-react';
 import type { ContentRoot } from '../content/content-types';
 
 /**
@@ -210,19 +211,19 @@ t('invalid.key'); // ❌ TypeScript error`}
         <h2>9. Key Benefits</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ background: '#fef3c7', padding: '1rem', borderRadius: '8px' }}>
-            <h3>🚀 CDN Delivery</h3>
+            <h3><Rocket size={18} style={{ marginRight: '8px', verticalAlign: 'middle' }} />CDN Delivery</h3>
             <p>Fast global delivery, reduced bundle size</p>
           </div>
           <div style={{ background: '#dbeafe', padding: '1rem', borderRadius: '8px' }}>
-            <h3>🔒 Type Safety</h3>
+            <h3><Lock size={18} style={{ marginRight: '8px', verticalAlign: 'middle' }} />Type Safety</h3>
             <p>TypeScript autocomplete & error checking</p>
           </div>
           <div style={{ background: '#d1fae5', padding: '1rem', borderRadius: '8px' }}>
-            <h3>📴 Offline Ready</h3>
+            <h3><WifiOff size={18} style={{ marginRight: '8px', verticalAlign: 'middle' }} />Offline Ready</h3>
             <p>Local fallback always available</p>
           </div>
           <div style={{ background: '#fce7f3', padding: '1rem', borderRadius: '8px' }}>
-            <h3>✏️ Easy Updates</h3>
+            <h3><Pencil size={18} style={{ marginRight: '8px', verticalAlign: 'middle' }} />Easy Updates</h3>
             <p>Update content without redeploying</p>
           </div>
         </div>

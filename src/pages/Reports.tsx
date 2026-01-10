@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Pages.css';
+import { DollarSign, Users, Package, Wallet } from 'lucide-react';
 
 const Reports: React.FC = () => {
   const [selectedPeriod, setSelectedPeriod] = useState('monthly');
@@ -8,28 +9,28 @@ const Reports: React.FC = () => {
     {
       name: 'Sales Report',
       description: 'Comprehensive overview of sales performance',
-      icon: '💰',
+      icon: <DollarSign size={24} />,
       lastGenerated: '2024-03-10',
       format: 'PDF',
     },
     {
       name: 'Customer Report',
       description: 'Customer demographics and behavior analysis',
-      icon: '👥',
+      icon: <Users size={24} />,
       lastGenerated: '2024-03-08',
       format: 'Excel',
     },
     {
       name: 'Inventory Report',
       description: 'Stock levels and product performance',
-      icon: '📦',
+      icon: <Package size={24} />,
       lastGenerated: '2024-03-09',
       format: 'PDF',
     },
     {
       name: 'Financial Report',
       description: 'Revenue, expenses, and profit analysis',
-      icon: '💵',
+      icon: <Wallet size={24} />,
       lastGenerated: '2024-03-07',
       format: 'Excel',
     },

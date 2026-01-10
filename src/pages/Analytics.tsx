@@ -1,6 +1,7 @@
 import React from 'react';
 import './Pages.css';
 import { Trans } from 'react-i18next';
+import { PieChart } from 'lucide-react';
 
 const Analytics: React.FC = () => {
   const metrics = [
@@ -69,7 +70,7 @@ const Analytics: React.FC = () => {
         <h2>Traffic Sources</h2>
         <div className="chart-placeholder">
           <div className="placeholder-content">
-            <span className="placeholder-icon">📊</span>
+            <span className="placeholder-icon"><PieChart size={48} /></span>
             <p>Traffic sources chart visualization would go here</p>
           </div>
         </div>

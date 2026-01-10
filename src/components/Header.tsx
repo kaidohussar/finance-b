@@ -11,7 +11,7 @@ const Header: React.FC = () => {
       <div className="header-left">
         <div className="logo">
           <div className="logo-icon"></div>
-          <span className="logo-text">FinanceB</span>
+          <span className="logo-text">Your Finance App</span>
         </div>
         <div className="welcome-message">
           <Trans
@@ -38,7 +38,7 @@ const Header: React.FC = () => {
           <div className="notifications">
             <span className="notification-count">3</span>
           </div>
-          <div className="user-avatar">
+          <div className="user-avatar-main">
             <span>JD</span>
           </div>
         </div>
