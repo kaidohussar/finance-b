@@ -4,11 +4,27 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/src/main.tsx"></script>
     <title>FinanceB</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Contentstorage Live Editor Loader -->
+    <script>
+      (function () {
+        var isInIframe = window.parent && window.parent !== window;
+        var isInPipMode = window.opener && window.opener !== window;
+        var hasParam = new URLSearchParams(window.location.search)
+                .get('contentstorage_live_editor') === 'true';
 
+        if ((isInIframe || isInPipMode) && hasParam) {
+          var script = document.createElement('script');
+          script.src = 'https://cdn.contentstorage.app/browser-script.js';
+          script.async = true;
+          document.head.appendChild(script);
+        }
+      })();
+    </script>
   </body>
 </html>

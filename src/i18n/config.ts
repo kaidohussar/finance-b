@@ -1,7 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import { ContentstorageLiveEditorPostProcessor } from '@contentstorage/i18next-plugin';
 import contentStorageConfig from '../../contentstorage.config';
 
 // Import local translation files as fallback
@@ -11,18 +10,9 @@ import frTranslations from '../content/json/FR.json';
 
 // Initialize i18next with ContentStorage backend and local fallback
 i18n
-  .use(
-    new ContentstorageLiveEditorPostProcessor({
-      debug: true,
-    })
-  )
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    // ContentStorage backend configuration
-    backend: {
-      contentKey: contentStorageConfig.contentKey,
-    },
     // Local translation files as fallback resources
     resources: {
       en: {
@@ -35,7 +25,6 @@ i18n
         translation: frTranslations,
       },
     },
-    postProcess: ['contentstorage'], // REQUIRED for inline resources
     // Use local bundles as fallback if CDN fails
     partialBundledLanguages: true,
     lng: 'en',
