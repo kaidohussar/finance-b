@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Pages.css';
 
 const Settings: React.FC = () => {
+  const { t } = useTranslation();
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [pushNotifications, setPushNotifications] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
@@ -9,34 +11,34 @@ const Settings: React.FC = () => {
   return (
     <main className="page-content">
       <div className="page-header">
-        <h1>Settings</h1>
-        <p className="page-subtitle">Manage your account preferences and settings</p>
+        <h1>{t('pages.settings.title')}</h1>
+        <p className="page-subtitle">{t('pages.settings.subtitle')}</p>
       </div>
 
       <div className="content-section">
-        <h2>Profile Information</h2>
+        <h2>{t('pages.settings.profile.title')}</h2>
         <div className="form-group">
-          <label>Full Name</label>
+          <label>{t('pages.settings.profile.fullName')}</label>
           <input type="text" className="form-input" defaultValue="John Doe" />
         </div>
         <div className="form-group">
-          <label>Email</label>
+          <label>{t('pages.settings.profile.email')}</label>
           <input type="email" className="form-input" defaultValue="john@example.com" />
         </div>
         <div className="form-group">
-          <label>Company</label>
+          <label>{t('pages.settings.profile.company')}</label>
           <input type="text" className="form-input" defaultValue="Acme Inc." />
         </div>
-        <button className="btn btn-primary">Save Changes</button>
+        <button className="btn btn-primary">{t('pages.settings.profile.saveChanges')}</button>
       </div>
 
       <div className="content-section">
-        <h2>Notifications</h2>
+        <h2>{t('pages.settings.notifications.title')}</h2>
         <div className="settings-group">
           <div className="setting-item">
             <div className="setting-info">
-              <div className="setting-label">Email Notifications</div>
-              <div className="setting-description">Receive email updates about your account</div>
+              <div className="setting-label">{t('pages.settings.notifications.email.label')}</div>
+              <div className="setting-description">{t('pages.settings.notifications.email.description')}</div>
             </div>
             <label className="toggle-switch">
               <input
@@ -49,8 +51,8 @@ const Settings: React.FC = () => {
           </div>
           <div className="setting-item">
             <div className="setting-info">
-              <div className="setting-label">Push Notifications</div>
-              <div className="setting-description">Get push notifications on your device</div>
+              <div className="setting-label">{t('pages.settings.notifications.push.label')}</div>
+              <div className="setting-description">{t('pages.settings.notifications.push.description')}</div>
             </div>
             <label className="toggle-switch">
               <input
@@ -65,12 +67,12 @@ const Settings: React.FC = () => {
       </div>
 
       <div className="content-section">
-        <h2>Appearance</h2>
+        <h2>{t('pages.settings.appearance.title')}</h2>
         <div className="settings-group">
           <div className="setting-item">
             <div className="setting-info">
-              <div className="setting-label">Dark Mode</div>
-              <div className="setting-description">Enable dark theme for the interface</div>
+              <div className="setting-label">{t('pages.settings.appearance.darkMode.label')}</div>
+              <div className="setting-description">{t('pages.settings.appearance.darkMode.description')}</div>
             </div>
             <label className="toggle-switch">
               <input
@@ -85,21 +87,21 @@ const Settings: React.FC = () => {
       </div>
 
       <div className="content-section danger-zone">
-        <h2>Danger Zone</h2>
+        <h2>{t('pages.settings.dangerZone.title')}</h2>
         <div className="danger-actions">
           <div className="danger-item">
             <div>
-              <div className="danger-label">Reset Account</div>
-              <div className="danger-description">Clear all data and reset to defaults</div>
+              <div className="danger-label">{t('pages.settings.dangerZone.resetAccount.label')}</div>
+              <div className="danger-description">{t('pages.settings.dangerZone.resetAccount.description')}</div>
             </div>
-            <button className="btn btn-danger">Reset</button>
+            <button className="btn btn-danger">{t('pages.settings.dangerZone.resetAccount.button')}</button>
           </div>
           <div className="danger-item">
             <div>
-              <div className="danger-label">Delete Account</div>
-              <div className="danger-description">Permanently delete your account and all data</div>
+              <div className="danger-label">{t('pages.settings.dangerZone.deleteAccount.label')}</div>
+              <div className="danger-description">{t('pages.settings.dangerZone.deleteAccount.description')}</div>
             </div>
-            <button className="btn btn-danger">Delete</button>
+            <button className="btn btn-danger">{t('pages.settings.dangerZone.deleteAccount.button')}</button>
           </div>
         </div>
       </div>

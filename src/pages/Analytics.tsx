@@ -1,14 +1,16 @@
 import React from 'react';
 import './Pages.css';
-import { Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { PieChart } from 'lucide-react';
 
 const Analytics: React.FC = () => {
+  const { t } = useTranslation();
+
   const metrics = [
-    { label: 'Page Views', value: '245,678', change: '+12.5%', trend: 'up' },
-    { label: 'Unique Visitors', value: '89,432', change: '+8.3%', trend: 'up' },
-    { label: 'Bounce Rate', value: '34.2%', change: '-3.1%', trend: 'down' },
-    { label: 'Avg. Session', value: '4m 32s', change: '+15.2%', trend: 'up' },
+    { labelKey: 'analytics.metrics.pageViews', value: '245,678', change: '+12.5%', trend: 'up' },
+    { labelKey: 'analytics.metrics.uniqueVisitors', value: '89,432', change: '+8.3%', trend: 'up' },
+    { labelKey: 'analytics.metrics.bounceRate', value: '34.2%', change: '-3.1%', trend: 'down' },
+    { labelKey: 'analytics.metrics.avgSession', value: '4m 32s', change: '+15.2%', trend: 'up' },
   ];
 
   const topPages = [
@@ -22,18 +24,14 @@ const Analytics: React.FC = () => {
   return (
     <main className="page-content">
       <div className="page-header">
-        <h1>
-          <Trans i18nKey="analytics.title" />
-        </h1>
-        <p className="page-subtitle">
-          Track your website performance and user behavior
-        </p>
+        <h1>{t('analytics.title')}</h1>
+        <p className="page-subtitle">{t('analytics.subtitle')}</p>
       </div>
 
       <div className="metrics-grid">
         {metrics.map((metric, index) => (
           <div key={index} className="metric-card">
-            <div className="metric-label">{metric.label}</div>
+            <div className="metric-label">{t(metric.labelKey)}</div>
             <div className="metric-value">{metric.value}</div>
             <div className={`metric-change ${metric.trend}`}>
               {metric.trend === 'up' ? '↗' : '↘'} {metric.change}
@@ -43,14 +41,14 @@ const Analytics: React.FC = () => {
       </div>
 
       <div className="content-section">
-        <h2>Top Pages</h2>
+        <h2>{t('analytics.topPages')}</h2>
         <div className="table-container">
           <table className="data-table">
             <thead>
               <tr>
-                <th>Page</th>
-                <th>Views</th>
-                <th>Unique Visitors</th>
+                <th>{t('analytics.table.page')}</th>
+                <th>{t('analytics.table.views')}</th>
+                <th>{t('analytics.table.uniqueVisitors')}</th>
               </tr>
             </thead>
             <tbody>
@@ -67,11 +65,11 @@ const Analytics: React.FC = () => {
       </div>
 
       <div className="content-section">
-        <h2>Traffic Sources</h2>
+        <h2>{t('analytics.trafficSources')}</h2>
         <div className="chart-placeholder">
           <div className="placeholder-content">
             <span className="placeholder-icon"><PieChart size={48} /></span>
-            <p>Traffic sources chart visualization would go here</p>
+            <p>{t('analytics.chartPlaceholder')}</p>
           </div>
         </div>
       </div>

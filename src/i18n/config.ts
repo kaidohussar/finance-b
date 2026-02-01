@@ -7,6 +7,7 @@ import contentStorageConfig from '../../contentstorage.config';
 import enTranslations from '../content/json/EN.json';
 import esTranslations from '../content/json/ES.json';
 import frTranslations from '../content/json/FR.json';
+import etTranslations from '../content/json/ET.json';
 
 // Initialize i18next with ContentStorage backend and local fallback
 i18n
@@ -23,6 +24,9 @@ i18n
       },
       fr: {
         translation: frTranslations,
+      },
+      et: {
+        translation: etTranslations,
       },
     },
     // Use local bundles as fallback if CDN fails

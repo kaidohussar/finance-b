@@ -1,7 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Pages.css';
 
 const Billing: React.FC = () => {
+  const { t } = useTranslation();
 
   const invoices = [
     { id: 'INV-2024-001', date: '2024-01-15', amount: '$299.00', status: 'Paid' },
@@ -17,51 +19,51 @@ const Billing: React.FC = () => {
   return (
     <main className="page-content">
       <div className="page-header">
-        <h1>Billing</h1>
-        <p className="page-subtitle">Manage your subscription and payment methods</p>
+        <h1>{t('pages.billing.title')}</h1>
+        <p className="page-subtitle">{t('pages.billing.subtitle')}</p>
       </div>
 
       <div className="content-section">
-        <h2>Current Plan</h2>
+        <h2>{t('pages.billing.currentPlan')}</h2>
         <div className="plan-card">
           <div className="plan-info">
-            <h3>Pro Plan</h3>
-            <div className="plan-price">$299<span>/month</span></div>
-            <p>Next billing date: March 15, 2024</p>
+            <h3>{t('pages.billing.proPlan')}</h3>
+            <div className="plan-price">$299<span>{t('pages.billing.perMonth')}</span></div>
+            <p>{t('pages.billing.nextBillingDate', { date: 'March 15, 2024' })}</p>
           </div>
-          <button className="btn btn-primary">Upgrade Plan</button>
+          <button className="btn btn-primary">{t('pages.billing.upgradePlan')}</button>
         </div>
       </div>
 
       <div className="content-section">
-        <h2>Payment Methods</h2>
+        <h2>{t('pages.billing.paymentMethods')}</h2>
         <div className="payment-methods">
           {paymentMethods.map((method, index) => (
             <div key={index} className="payment-card">
               <div className="payment-info">
                 <span className="payment-type">{method.type}</span>
                 <span className="payment-number">•••• {method.last4}</span>
-                <span className="payment-expiry">Exp: {method.expiry}</span>
-                {method.default && <span className="badge-default">Default</span>}
+                <span className="payment-expiry">{t('pages.billing.expires', { date: method.expiry })}</span>
+                {method.default && <span className="badge-default">{t('pages.billing.default')}</span>}
               </div>
-              <button className="btn-link">Edit</button>
+              <button className="btn-link">{t('pages.billing.edit')}</button>
             </div>
           ))}
         </div>
-        <button className="btn btn-secondary">Add Payment Method</button>
+        <button className="btn btn-secondary">{t('pages.billing.addPaymentMethod')}</button>
       </div>
 
       <div className="content-section">
-        <h2>Invoice History</h2>
+        <h2>{t('pages.billing.invoiceHistory')}</h2>
         <div className="table-container">
           <table className="data-table">
             <thead>
               <tr>
-                <th>Invoice ID</th>
-                <th>Date</th>
-                <th>Amount</th>
-                <th>Status</th>
-                <th>Action</th>
+                <th>{t('pages.billing.table.invoiceId')}</th>
+                <th>{t('pages.billing.table.date')}</th>
+                <th>{t('pages.billing.table.amount')}</th>
+                <th>{t('pages.billing.table.status')}</th>
+                <th>{t('pages.billing.table.action')}</th>
               </tr>
             </thead>
             <tbody>
@@ -72,11 +74,11 @@ const Billing: React.FC = () => {
                   <td>{invoice.amount}</td>
                   <td>
                     <span className={`status-badge ${invoice.status.toLowerCase()}`}>
-                      {invoice.status}
+                      {t(`pages.billing.status.${invoice.status.toLowerCase()}`)}
                     </span>
                   </td>
                   <td>
-                    <button className="btn-link">Download</button>
+                    <button className="btn-link">{t('pages.billing.download')}</button>
                   </td>
                 </tr>
               ))}

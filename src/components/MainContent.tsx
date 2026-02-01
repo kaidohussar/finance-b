@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import StatsCards from './StatsCards';
 import Chart from './Chart';
 import RecentActivity from './RecentActivity';
@@ -14,6 +15,7 @@ interface User {
 }
 
 const MainContent: React.FC = () => {
+  const { t } = useTranslation();
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -34,15 +36,15 @@ const MainContent: React.FC = () => {
   }, []);
 
   if (isLoading) {
-    return <FullScreenLoader message="Loading..." />;
+    return <FullScreenLoader />;
   }
 
   return (
     <main className="main-content">
       <div className="content-header">
-        <h1>Dashboard</h1>
+        <h1>{t('pages.dashboard.title')}</h1>
         <div className="content-subtitle">
-          Welcome back{user ? `, ${user.firstName}` : ''}! Here's what's happening with your business today.
+          {t('pages.dashboard.welcomeBack', { userName: user?.firstName || '' })}
         </div>
       </div>
 

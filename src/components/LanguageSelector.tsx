@@ -36,6 +36,7 @@ const languageOptions: LanguageOption[] = [
   { code: 'en', name: 'English', flag: <UKFlag /> },
   { code: 'es', name: 'Español', flag: '🇪🇸' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: 'et', name: 'Eesti', flag: '🇪🇪' },
 ];
 
 const LanguageSelector: React.FC = () => {

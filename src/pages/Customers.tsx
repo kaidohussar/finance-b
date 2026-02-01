@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Pages.css';
 
 const Customers: React.FC = () => {
+  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
 
   const customers = [
@@ -22,17 +24,17 @@ const Customers: React.FC = () => {
   return (
     <main className="page-content">
       <div className="page-header">
-        <h1>Customers</h1>
-        <p className="page-subtitle">Manage your customer base and relationships</p>
+        <h1>{t('pages.customers.title')}</h1>
+        <p className="page-subtitle">{t('pages.customers.subtitle')}</p>
       </div>
 
       <div className="content-section">
         <div className="section-header">
-          <h2>Customer List</h2>
+          <h2>{t('pages.customers.customerList')}</h2>
           <div className="search-box">
             <input
               type="text"
-              placeholder="Search customers..."
+              placeholder={t('pages.customers.searchPlaceholder')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="search-input"
@@ -44,11 +46,11 @@ const Customers: React.FC = () => {
           <table className="data-table">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Status</th>
-                <th>Orders</th>
-                <th>Total Spent</th>
+                <th>{t('pages.customers.table.name')}</th>
+                <th>{t('pages.customers.table.email')}</th>
+                <th>{t('pages.customers.table.status')}</th>
+                <th>{t('pages.customers.table.orders')}</th>
+                <th>{t('pages.customers.table.totalSpent')}</th>
               </tr>
             </thead>
             <tbody>
@@ -58,7 +60,7 @@ const Customers: React.FC = () => {
                   <td>{customer.email}</td>
                   <td>
                     <span className={`status-badge ${customer.status.toLowerCase()}`}>
-                      {customer.status}
+                      {t(`pages.customers.status.${customer.status.toLowerCase()}`)}
                     </span>
                   </td>
                   <td>{customer.orders}</td>
@@ -72,15 +74,15 @@ const Customers: React.FC = () => {
 
       <div className="stats-row">
         <div className="stat-box">
-          <div className="stat-label">Total Customers</div>
+          <div className="stat-label">{t('pages.customers.stats.totalCustomers')}</div>
           <div className="stat-value">{customers.length}</div>
         </div>
         <div className="stat-box">
-          <div className="stat-label">Active</div>
+          <div className="stat-label">{t('pages.customers.stats.active')}</div>
           <div className="stat-value">{customers.filter(c => c.status === 'Active').length}</div>
         </div>
         <div className="stat-box">
-          <div className="stat-label">Avg Orders</div>
+          <div className="stat-label">{t('pages.customers.stats.avgOrders')}</div>
           <div className="stat-value">
             {Math.round(customers.reduce((acc, c) => acc + c.orders, 0) / customers.length)}
           </div>

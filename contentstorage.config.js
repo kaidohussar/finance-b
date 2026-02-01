@@ -3,7 +3,7 @@ const config = {
   contentKey: '108541025900791613826/febe906c-7a8b-4b58-b792-77556c093dba',
 
   // Supported languages
-  languageCodes: ['EN', 'FR', 'ES'],
+  languageCodes: ['EN', 'FR', 'ES', 'ET'],
 
   // Output configuration
   output: {
