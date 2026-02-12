@@ -227,7 +227,9 @@
     "table": {
       "page": "Page",
       "views": "Views",
-      "uniqueVisitors": "Unique Visitors"
+      "uniqueVisitors": "Unique Visitors",
+      "test": "Test",
+      "test2": "Test2"
     }
   },
   "pages": {
@@ -310,6 +312,58 @@
         "darkMode": {
           "label": "Dark Mode",
           "description": "Enable dark theme for the interface"
+        }
+      },
+      "language": {
+        "title": "Language & Region",
+        "locale": "Select your preferred language for the interface",
+        "timezone": "Set your timezone to display dates and times correctly"
+      },
+      "privacy": {
+        "title": "Privacy & Security",
+        "twoFactor": {
+          "label": "Two-Factor Authentication",
+          "description": "Add an extra layer of security to your account"
+        },
+        "sessionTimeout": {
+          "label": "Session Timeout",
+          "description": "Automatically log out after a period of inactivity"
+        },
+        "activityLog": {
+          "label": "Activity Log",
+          "description": "Track and review all actions performed on your account"
+        }
+      },
+      "dataStorage": {
+        "title": "Data & Storage",
+        "autoBackup": {
+          "label": "Automatic Backups",
+          "description": "Regularly back up your data to prevent loss"
+        },
+        "dataExport": {
+          "label": "Export Data",
+          "description": "Download a copy of all your data in CSV format",
+          "button": "Export"
+        },
+        "clearCache": {
+          "label": "Clear Cache",
+          "description": "Remove temporary files to free up storage space",
+          "button": "Clear"
+        }
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "highContrast": {
+          "label": "High Contrast Mode",
+          "description": "Increase contrast for better visibility"
+        },
+        "fontSize": {
+          "label": "Large Text",
+          "description": "Use larger font sizes throughout the interface"
+        },
+        "reduceMotion": {
+          "label": "Reduce Motion",
+          "description": "Minimize animations and transitions"
         }
       },
       "dangerZone": {

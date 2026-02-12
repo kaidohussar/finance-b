@@ -1,0 +1,385 @@
+{
+  "activity": {
+    "title": "Hiljutine tegevus",
+    "viewAll": "Vaata kõiki",
+    "newUser": "<strong>{{userName}}</strong> registreerus",
+    "paymentReceived": "Makse summas <strong>{{amount}}</strong> saadud ettevõttelt <link>{{company}}</link>",
+    "serverAlert": "Serveri reageerimisaeg suurenes. <link>Vaata üksikasju</link>",
+    "subscriptionRenewed": "Tellimus uuendatud ettevõttele <strong>{{company}}</strong>",
+    "userUpgrade": "<strong>{{userName}}</strong> uuendas plaanile <em>Pro</em>"
+  },
+  "chart": {
+    "period": "Viimased 7 kuud",
+    "title": "Tulude statistika",
+    "description": "Andmed kuvatakse perioodil <strong>{{startDate}}</strong> kuni <strong>{{endDate}}</strong>"
+  },
+  "common": {
+    "error": "Viga andmete laadimisel",
+    "loading": "Laadimine...",
+    "retry": "Proovi uuesti",
+    "errorWithSupport": "Midagi läks valesti. Palun <link>võtke ühendust toega</link>, kui probleem püsib."
+  },
+  "header": {
+    "notifications": "Teavitused",
+    "profile": "Profiil",
+    "search": "Otsi...",
+    "title": "Töölaud",
+    "welcomeMessage": "Tere tulemast tagasi, <strong>{{userName}}</strong>! Teil on <CustomLink>{{count}} uut teavitust</CustomLink>."
+  },
+  "sidebar": {
+    "analytics": "Analüütika",
+    "billing": "Arveldus",
+    "customers": "Kliendid",
+    "dashboard": "Töölaud",
+    "integrations": "Integratsioonid",
+    "reports": "Aruanded",
+    "settings": "Seaded",
+    "upgrade": {
+      "subtitle": "Saa rohkem funktsioone",
+      "title": "Uuenda Pro-ks",
+      "description": "Ava <strong>piiramatu juurdepääs</strong> kõigile premium funktsioonidele. <link>Loe lähemalt</link>",
+      "asdasda": "fgfdgdfgdg"
+    }
+  },
+  "stats": {
+    "activeUsers": "Aktiivsed kasutajad",
+    "conversionRate": "Konversioonimäär",
+    "monthlyGrowth": "Kuine kasv",
+    "totalRevenue": "Kogutulu",
+    "revenueDescription": "Teie tulu kasvas <strong>{{percentage}}%</strong> võrreldes eelmise kuuga",
+    "usersDescription": "<em>{{count}}</em> uut kasutajat liitus sel nädalal"
+  },
+  "account": {
+    "connectedApps": "<strong>{{count}}</strong> rakendust on teie kontoga ühendatud",
+    "email": "E-post: <strong>{{email}}</strong>",
+    "lastLogin": "Viimane sisselogimine <em>{{date}}</em> asukohast <strong>{{location}}</strong>",
+    "passwordChanged": "Parool viimati muudetud <em>{{date}}</em>. <link>Uuenda parooli</link>",
+    "preferences": "Eelistused",
+    "profile": "Profiil",
+    "security": "Turvalisus",
+    "storageUsed": "Kasutate <strong>{{used}}</strong> <strong>{{total}}</strong> salvestusruumist",
+    "title": "Konto seaded",
+    "twoFactor": "Kaheastmeline autentimine on <strong>{{status}}</strong>"
+  },
+  "billing": {
+    "changePlan": "Muuda plaani",
+    "currentPlan": "Praegune plaan",
+    "invoiceReady": "Arve kuu <strong>{{month}}</strong> eest on valmis. <link>Laadi PDF alla</link>",
+    "invoices": "Arved",
+    "nextBilling": "Järgmine arvelduskuupäev: <strong>{{date}}</strong>",
+    "paymentMethod": "Makseviis: <em>{{cardType}}</em> lõppeb numbritega <strong>{{lastFour}}</strong>",
+    "planDetails": "Teil on <strong>{{planName}}</strong> plaan",
+    "savingsMessage": "Säästke <strong>{{percentage}}%</strong> aastase arveldusega",
+    "title": "Arveldus ja plaanid",
+    "trialEnds": "Teie prooviperiood lõpeb <strong>{{days}} päeva</strong> pärast. <link>Uuenda kohe</link>"
+  },
+  "calendar": {
+    "attendees": "<strong>{{confirmed}}</strong> kinnitatud, <em>{{pending}}</em> ootel",
+    "conflict": "See sündmus kattub sündmusega <link>{{conflictingEvent}}</link>",
+    "eventCreated": "<strong>{{eventName}}</strong> planeeritud kuupäevale <em>{{date}}</em>",
+    "noEvents": "Kuupäeval <strong>{{date}}</strong> pole sündmusi planeeritud",
+    "recurring": "Kordub <em>{{frequency}}</em> kuni <strong>{{endDate}}</strong>",
+    "reminder": "Meeldetuletus: <strong>{{eventName}}</strong> algab <em>{{time}}</em> pärast",
+    "title": "Kalender",
+    "today": "Täna",
+    "upcoming": "Tulevased sündmused"
+  },
+  "files": {
+    "downloadCount": "Alla laaditud <strong>{{count}}</strong> korda",
+    "expiringLink": "See link aegub <em>{{time}}</em> pärast. <link>Pikenda juurdepääsu</link>",
+    "fileSize": "Suurus: <strong>{{size}}</strong>",
+    "recent": "Hiljutised failid",
+    "shared": "Minuga jagatud",
+    "sharedBy": "Jagas <strong>{{userName}}</strong> kuupäeval <em>{{date}}</em>",
+    "title": "Failid",
+    "upload": "Laadi fail üles",
+    "uploadFailed": "Faili <em>{{fileName}}</em> üleslaadimine ebaõnnestus. <link>Proovi uuesti</link>",
+    "uploadSuccess": "<strong>{{fileName}}</strong> edukalt üles laaditud"
+  },
+  "inbox": {
+    "attachments": "<strong>{{count}}</strong> manust",
+    "compose": "Uus sõnum",
+    "emptyState": "Sõnumeid pole veel. <link>Alusta vestlust</link>",
+    "mentionedYou": "<strong>{{userName}}</strong> mainis teid kanalis <link>{{channel}}</link>",
+    "newMessage": "Uus sõnum kasutajalt <strong>{{senderName}}</strong>",
+    "replyTo": "Vastamine teemale <em>{{subject}}</em>",
+    "starred": "Tärniga märgitud",
+    "threadCount": "<em>{{count}}</em> vastust selles vestluses",
+    "title": "Sõnumid",
+    "unread": "Lugemata"
+  },
+  "notifications": {
+    "digest": "Päevane kokkuvõte",
+    "email": "E-posti teavitused",
+    "frequency": "Saate <em>{{type}}</em> teavitusi <strong>{{frequency}}</strong>",
+    "markRead": "Märgi kõik loetuks",
+    "muted": "Teavitused vaigistatud kuni <strong>{{time}}</strong>",
+    "newNotifications": "Teil on <strong>{{count}}</strong> uut teavitust",
+    "push": "Push-teavitused",
+    "title": "Teavituste eelistused",
+    "unsubscribe": "Ei soovi neid e-kirju? <link>Halda eelistusi</link>"
+  },
+  "onboarding": {
+    "celebration": "Suurepärane töö, <strong>{{userName}}</strong>! Teie tööruum on valmis.",
+    "complete": "Lõpeta seadistamine",
+    "inviteTeam": "Kutsu oma meeskonnaliikmed tööruumi <em>{{workspaceName}}</em>",
+    "progressMessage": "Olete seadistamisega <strong>{{percentage}}%</strong> valmis",
+    "setupProfile": "Seadistame teie profiili, <strong>{{userName}}</strong>",
+    "skip": "Jäta praegu vahele",
+    "step": "Samm <strong>{{current}}</strong> / <strong>{{total}}</strong>",
+    "tutorial": "Vajate alustamiseks abi? <link>Vaadake meie õpetust</link>",
+    "welcome": "Tere tulemast rakendusse <strong>{{appName}}</strong>!"
+  },
+  "projects": {
+    "archive": "Arhiveeritud",
+    "collaborators": "Jagatud <strong>{{count}}</strong> meeskonnaliikmega",
+    "create": "Uus projekt",
+    "deadline": "Tähtaeg <strong>{{date}}</strong>",
+    "overdue": "See projekt on <em>{{days}} päeva</em> hilinenud. <link>Uuenda tähtaega</link>",
+    "progress": "<strong>{{completed}}</strong> / <strong>{{total}}</strong> ülesannet täidetud",
+    "projectCreated": "<strong>{{projectName}}</strong> loodud kasutaja <link>{{userName}}</link> poolt",
+    "statusUpdate": "Staatus muudetud olekusse <em>{{status}}</em> kasutaja <strong>{{userName}}</strong> poolt",
+    "title": "Projektid"
+  },
+  "tasks": {
+    "addTask": "Lisa ülesanne",
+    "assigned": "Määratud kasutajale <strong>{{userName}}</strong>",
+    "completed": "Lõpetatud",
+    "dueToday": "<strong>{{count}}</strong> ülesannet tähtajaga täna",
+    "inProgress": "Pooleli",
+    "overdueTasks": "Teil on <em>{{count}}</em> hilinenud ülesannet. <link>Vaata üle</link>",
+    "priority": "Prioriteet: <strong>{{level}}</strong>",
+    "subtasks": "<strong>{{completed}}</strong> / <strong>{{total}}</strong> alamülesannet tehtud",
+    "taskCompleted": "<strong>{{userName}}</strong> lõpetas ülesande <em>{{taskName}}</em>",
+    "title": "Ülesanded"
+  },
+  "team": {
+    "invite": "Kutsu liige",
+    "inviteExpired": "Kutse aadressile <strong>{{email}}</strong> on aegunud. <link>Saada kutse uuesti</link>",
+    "inviteSent": "Kutse saadetud aadressile <strong>{{email}}</strong>",
+    "memberJoined": "<strong>{{userName}}</strong> liitus meeskonnaga",
+    "memberRemoved": "<strong>{{userName}}</strong> eemaldati kasutaja <em>{{adminName}}</em> poolt",
+    "pending": "Ootel kutsed",
+    "roleChanged": "<strong>{{userName}}</strong> on nüüd <em>{{role}}</em>",
+    "teamSize": "Teie meeskonnas on <strong>{{count}}</strong> liiget <em>{{departments}} osakonnas</em>",
+    "title": "Meeskonna haldus"
+  },
+  "integrations": {
+    "title": "Integratsioonid",
+    "subtitle": "Ühendage oma lemmiktööriistad ja -teenused",
+    "featuresTitle": "Kõik integratsioonid",
+    "connected": "Ühendatud",
+    "available": "Saadaval",
+    "connect": "Ühenda",
+    "configure": "Seadista",
+    "customIntegration": {
+      "title": "Vajate kohandatud integratsiooni?",
+      "description": "Võtke ühendust meie meeskonnaga, et arutada teie vajadustele vastava kohandatud integratsiooni loomist.",
+      "contactUs": "Võta ühendust"
+    },
+    "items": {
+      "slack": {
+        "name": "Slack",
+        "description": "Saatke teavitusi oma Slacki tööruumi"
+      },
+      "googleAnalytics": {
+        "name": "Google Analytics",
+        "description": "Jälgige veebisaidi analüütikat ja külastajate käitumist"
+      },
+      "stripe": {
+        "name": "Stripe",
+        "description": "Töötlege makseid ja hallake tellimusi"
+      },
+      "mailchimp": {
+        "name": "Mailchimp",
+        "description": "E-posti turunduse ja automatiseerimise platvorm"
+      },
+      "zapier": {
+        "name": "Zapier",
+        "description": "Ühenduge 1000+ rakendusega ja automatiseerige töövooge"
+      },
+      "github": {
+        "name": "GitHub",
+        "description": "Integreerige oma koodihoidlatega"
+      }
+    },
+    "categories": {
+      "communication": "Suhtlus",
+      "analytics": "Analüütika",
+      "payments": "Maksed",
+      "marketing": "Turundus",
+      "automation": "Automatiseerimine",
+      "development": "Arendus"
+    }
+  },
+  "analytics": {
+    "title": "Analüütika",
+    "subtitle": "Jälgige oma veebisaidi jõudlust ja kasutajate käitumist",
+    "topPages": "Populaarsemad lehed",
+    "trafficSources": "Liikluse allikad",
+    "chartPlaceholder": "Liikluse allikate diagrammi visualiseerimine oleks siin",
+    "metrics": {
+      "pageViews": "Lehekülastused",
+      "uniqueVisitors": "Unikaalsed külastajad",
+      "bounceRate": "Põrkemäär",
+      "avgSession": "Keskm. seanss"
+    },
+    "table": {
+      "page": "Leht",
+      "views": "Vaatamised",
+      "uniqueVisitors": "Unikaalsed külastajad"
+    }
+  },
+  "pages": {
+    "dashboard": {
+      "title": "Töölaud",
+      "welcomeBack": "Tere tulemast tagasi, {{userName}}! Siin on, mis teie äris täna toimub."
+    },
+    "customers": {
+      "title": "Kliendid",
+      "subtitle": "Hallake oma kliendibaasi ja suhteid",
+      "searchPlaceholder": "Otsi kliente...",
+      "customerList": "Klientide nimekiri",
+      "table": {
+        "name": "Nimi",
+        "email": "E-post",
+        "status": "Staatus",
+        "orders": "Tellimused",
+        "totalSpent": "Kulutatud kokku"
+      },
+      "stats": {
+        "totalCustomers": "Kliente kokku",
+        "active": "Aktiivsed",
+        "avgOrders": "Keskm. tellimusi"
+      },
+      "status": {
+        "active": "Aktiivne",
+        "inactive": "Mitteaktiivne"
+      }
+    },
+    "billing": {
+      "title": "Arveldus",
+      "subtitle": "Hallake oma tellimust ja makseviise",
+      "currentPlan": "Praegune plaan",
+      "proPlan": "Pro plaan",
+      "perMonth": "/kuus",
+      "nextBillingDate": "Järgmine arvelduskuupäev: {{date}}",
+      "upgradePlan": "Uuenda plaani",
+      "paymentMethods": "Makseviisid",
+      "expires": "Aegub: {{date}}",
+      "default": "Vaikimisi",
+      "edit": "Muuda",
+      "addPaymentMethod": "Lisa makseviis",
+      "invoiceHistory": "Arvete ajalugu",
+      "table": {
+        "invoiceId": "Arve ID",
+        "date": "Kuupäev",
+        "amount": "Summa",
+        "status": "Staatus",
+        "action": "Toiming"
+      },
+      "download": "Laadi alla",
+      "status": {
+        "paid": "Makstud",
+        "pending": "Ootel"
+      }
+    },
+    "settings": {
+      "title": "Seaded",
+      "subtitle": "Hallake oma konto eelistusi ja seadeid",
+      "profile": {
+        "title": "Profiili andmed",
+        "fullName": "Täisnimi",
+        "email": "E-post",
+        "company": "Ettevõte",
+        "saveChanges": "Salvesta muudatused"
+      },
+      "notifications": {
+        "title": "Teavitused",
+        "email": {
+          "label": "E-posti teavitused",
+          "description": "Saate oma konto kohta e-posti uuendusi"
+        },
+        "push": {
+          "label": "Push-teavitused",
+          "description": "Saate push-teavitusi oma seadmesse"
+        }
+      },
+      "appearance": {
+        "title": "Välimus",
+        "darkMode": {
+          "label": "Tume režiim",
+          "description": "Luba kasutajaliidese tume teema"
+        }
+      },
+      "dangerZone": {
+        "title": "Ohtlik tsoon",
+        "resetAccount": {
+          "label": "Lähtesta konto",
+          "description": "Kustuta kõik andmed ja taasta vaikeväärtused",
+          "button": "Lähtesta"
+        },
+        "deleteAccount": {
+          "label": "Kustuta konto",
+          "description": "Kustuta jäädavalt oma konto ja kõik andmed",
+          "button": "Kustuta"
+        }
+      }
+    },
+    "reports": {
+      "title": "Aruanded",
+      "subtitle": "Looge ja ajastage kohandatud aruandeid",
+      "quickReports": "Kiiraruanded",
+      "period": "Periood:",
+      "generate": "Loo",
+      "lastGenerated": "Viimati: {{date}}",
+      "scheduledReports": "Ajastatud aruanded",
+      "scheduleNew": "Ajasta uus aruanne",
+      "customReports": {
+        "title": "Kohandatud aruanded",
+        "description": "Vajate oma vajadustele kohandatud aruannet? Meie meeskond aitab luua spetsialiseeritud aruandeid täpselt teile vajalike mõõdikute ja ülevaadetega.",
+        "request": "Telli kohandatud aruanne"
+      },
+      "items": {
+        "sales": {
+          "name": "Müügiaruanne",
+          "description": "Põhjalik ülevaade müügitulemustest"
+        },
+        "customer": {
+          "name": "Kliendiaruanne",
+          "description": "Klientide demograafia ja käitumise analüüs"
+        },
+        "inventory": {
+          "name": "Laoseisu aruanne",
+          "description": "Varude tasemed ja toodete jõudlus"
+        },
+        "financial": {
+          "name": "Finantsaruanne",
+          "description": "Tulude, kulude ja kasumi analüüs"
+        }
+      },
+      "scheduled": {
+        "weeklySales": "Nädala müügi kokkuvõte",
+        "monthlyAnalytics": "Kuu analüütika",
+        "quarterlyPerformance": "Kvartali tulemuslikkus"
+      },
+      "periods": {
+        "daily": "Päevane",
+        "weekly": "Nädalane",
+        "monthly": "Kuine",
+        "yearly": "Aastane",
+        "quarterly": "Kvartaalne"
+      },
+      "table": {
+        "reportName": "Aruande nimi",
+        "frequency": "Sagedus",
+        "nextRun": "Järgmine käivitus",
+        "actions": "Toimingud"
+      },
+      "actions": {
+        "edit": "Muuda",
+        "delete": "Kustuta"
+      }
+    }
+  }
+}

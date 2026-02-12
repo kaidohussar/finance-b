@@ -7,10 +7,30 @@ const Analytics: React.FC = () => {
   const { t } = useTranslation();
 
   const metrics = [
-    { labelKey: 'analytics.metrics.pageViews', value: '245,678', change: '+12.5%', trend: 'up' },
-    { labelKey: 'analytics.metrics.uniqueVisitors', value: '89,432', change: '+8.3%', trend: 'up' },
-    { labelKey: 'analytics.metrics.bounceRate', value: '34.2%', change: '-3.1%', trend: 'down' },
-    { labelKey: 'analytics.metrics.avgSession', value: '4m 32s', change: '+15.2%', trend: 'up' },
+    {
+      labelKey: 'analytics.metrics.pageViews',
+      value: '245,678',
+      change: '+12.5%',
+      trend: 'up',
+    },
+    {
+      labelKey: 'analytics.metrics.uniqueVisitors',
+      value: '89,432',
+      change: '+8.3%',
+      trend: 'up',
+    },
+    {
+      labelKey: 'analytics.metrics.bounceRate',
+      value: '34.2%',
+      change: '-3.1%',
+      trend: 'down',
+    },
+    {
+      labelKey: 'analytics.metrics.avgSession',
+      value: '4m 32s',
+      change: '+15.2%',
+      trend: 'up',
+    },
   ];
 
   const topPages = [
@@ -49,6 +69,8 @@ const Analytics: React.FC = () => {
                 <th>{t('analytics.table.page')}</th>
                 <th>{t('analytics.table.views')}</th>
                 <th>{t('analytics.table.uniqueVisitors')}</th>
+                <th>{t('analytics.table.test')}</th>
+                <th>{t('analytics.table.test2')}</th>
               </tr>
             </thead>
             <tbody>
@@ -68,7 +90,9 @@ const Analytics: React.FC = () => {
         <h2>{t('analytics.trafficSources')}</h2>
         <div className="chart-placeholder">
           <div className="placeholder-content">
-            <span className="placeholder-icon"><PieChart size={48} /></span>
+            <span className="placeholder-icon">
+              <PieChart size={48} />
+            </span>
             <p>{t('analytics.chartPlaceholder')}</p>
           </div>
         </div>

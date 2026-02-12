@@ -7,6 +7,13 @@ const Settings: React.FC = () => {
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [pushNotifications, setPushNotifications] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [twoFactor, setTwoFactor] = useState(false);
+  const [sessionTimeout, setSessionTimeout] = useState(true);
+  const [activityLog, setActivityLog] = useState(true);
+  const [autoBackup, setAutoBackup] = useState(true);
+  const [highContrast, setHighContrast] = useState(false);
+  const [largeText, setLargeText] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   return (
     <main className="page-content">
@@ -79,6 +86,154 @@ const Settings: React.FC = () => {
                 type="checkbox"
                 checked={darkMode}
                 onChange={(e) => setDarkMode(e.target.checked)}
+              />
+              <span className="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div className="content-section">
+        <h2>{t('pages.settings.language.title')}</h2>
+        <div className="settings-group">
+          <div className="setting-item">
+            <div className="setting-info">
+              <div className="setting-label">{t('pages.settings.language.title')}</div>
+              <div className="setting-description">{t('pages.settings.language.locale')}</div>
+            </div>
+          </div>
+          <div className="setting-item">
+            <div className="setting-info">
+              <div className="setting-label">{t('pages.settings.language.title')}</div>
+              <div className="setting-description">{t('pages.settings.language.timezone')}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="content-section">
+        <h2>{t('pages.settings.privacy.title')}</h2>
+        <div className="settings-group">
+          <div className="setting-item">
+            <div className="setting-info">
+              <div className="setting-label">{t('pages.settings.privacy.twoFactor.label')}</div>
+              <div className="setting-description">{t('pages.settings.privacy.twoFactor.description')}</div>
+            </div>
+            <label className="toggle-switch">
+              <input
+                type="checkbox"
+                checked={twoFactor}
+                onChange={(e) => setTwoFactor(e.target.checked)}
+              />
+              <span className="toggle-slider"></span>
+            </label>
+          </div>
+          <div className="setting-item">
+            <div className="setting-info">
+              <div className="setting-label">{t('pages.settings.privacy.sessionTimeout.label')}</div>
+              <div className="setting-description">{t('pages.settings.privacy.sessionTimeout.description')}</div>
+            </div>
+            <label className="toggle-switch">
+              <input
+                type="checkbox"
+                checked={sessionTimeout}
+                onChange={(e) => setSessionTimeout(e.target.checked)}
+              />
+              <span className="toggle-slider"></span>
+            </label>
+          </div>
+          <div className="setting-item">
+            <div className="setting-info">
+              <div className="setting-label">{t('pages.settings.privacy.activityLog.label')}</div>
+              <div className="setting-description">{t('pages.settings.privacy.activityLog.description')}</div>
+            </div>
+            <label className="toggle-switch">
+              <input
+                type="checkbox"
+                checked={activityLog}
+                onChange={(e) => setActivityLog(e.target.checked)}
+              />
+              <span className="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div className="content-section">
+        <h2>{t('pages.settings.dataStorage.title')}</h2>
+        <div className="settings-group">
+          <div className="setting-item">
+            <div className="setting-info">
+              <div className="setting-label">{t('pages.settings.dataStorage.autoBackup.label')}</div>
+              <div className="setting-description">{t('pages.settings.dataStorage.autoBackup.description')}</div>
+            </div>
+            <label className="toggle-switch">
+              <input
+                type="checkbox"
+                checked={autoBackup}
+                onChange={(e) => setAutoBackup(e.target.checked)}
+              />
+              <span className="toggle-slider"></span>
+            </label>
+          </div>
+          <div className="setting-item">
+            <div className="setting-info">
+              <div className="setting-label">{t('pages.settings.dataStorage.dataExport.label')}</div>
+              <div className="setting-description">{t('pages.settings.dataStorage.dataExport.description')}</div>
+            </div>
+            <button className="btn btn-secondary">{t('pages.settings.dataStorage.dataExport.button')}</button>
+          </div>
+          <div className="setting-item">
+            <div className="setting-info">
+              <div className="setting-label">{t('pages.settings.dataStorage.clearCache.label')}</div>
+              <div className="setting-description">{t('pages.settings.dataStorage.clearCache.description')}</div>
+            </div>
+            <button className="btn btn-secondary">{t('pages.settings.dataStorage.clearCache.button')}</button>
+          </div>
+        </div>
+      </div>
+
+      <div className="content-section">
+        <h2>{t('pages.settings.accessibility.title')}</h2>
+        <div className="settings-group">
+          <div className="setting-item">
+            <div className="setting-info">
+              <div className="setting-label">{t('pages.settings.accessibility.highContrast.label')}</div>
+              <div className="setting-description">{t('pages.settings.accessibility.highContrast.description')}</div>
+            </div>
+            <label className="toggle-switch">
+              <input
+                type="checkbox"
+                checked={highContrast}
+                onChange={(e) => setHighContrast(e.target.checked)}
+              />
+              <span className="toggle-slider"></span>
+            </label>
+          </div>
+          <div className="setting-item">
+            <div className="setting-info">
+              <div className="setting-label">{t('pages.settings.accessibility.fontSize.label')}</div>
+              <div className="setting-description">{t('pages.settings.accessibility.fontSize.description')}</div>
+            </div>
+            <label className="toggle-switch">
+              <input
+                type="checkbox"
+                checked={largeText}
+                onChange={(e) => setLargeText(e.target.checked)}
+              />
+              <span className="toggle-slider"></span>
+            </label>
+          </div>
+          <div className="setting-item">
+            <div className="setting-info">
+              <div className="setting-label">{t('pages.settings.accessibility.reduceMotion.label')}</div>
+              <div className="setting-description">{t('pages.settings.accessibility.reduceMotion.description')}</div>
+            </div>
+            <label className="toggle-switch">
+              <input
+                type="checkbox"
+                checked={reduceMotion}
+                onChange={(e) => setReduceMotion(e.target.checked)}
               />
               <span className="toggle-slider"></span>
             </label>

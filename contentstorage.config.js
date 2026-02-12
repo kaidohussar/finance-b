@@ -13,6 +13,9 @@ const config = {
     // Path for generated TypeScript types
     typesPath: 'src/types/translations.d.ts',
   },
+
+  apiKey: 'csk_382c827a_WYkBxTaRGGaapbpcoH2sugyFk3lNAvg1',
+  projectId: '382c827a-4105-4423-b69b-69bea1152457',
 };
 
 export default config;

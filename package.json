@@ -28,7 +28,7 @@
     "react-router-dom": "^7.9.5"
   },
   "devDependencies": {
-    "@contentstorage/core": "3.0.1",
+    "@contentstorage/core": "3.2.1",
     "@eslint/js": "^9.33.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
