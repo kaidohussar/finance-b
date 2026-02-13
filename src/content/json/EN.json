@@ -1,23 +1,23 @@
 {
   "activity": {
-    "title": "Recent Activity",
-    "viewAll": "View All",
     "newUser": "<strong>{{userName}}</strong> registered",
     "paymentReceived": "Payment of <strong>{{amount}}</strong> received from <link>{{company}}</link>",
     "serverAlert": "Server response time increased. <link>View details</link>",
     "subscriptionRenewed": "Subscription renewed for <strong>{{company}}</strong>",
-    "userUpgrade": "<strong>{{userName}}</strong> upgraded to <em>Pro plan</em>"
+    "title": "Recent Activity",
+    "userUpgrade": "<strong>{{userName}}</strong> upgraded to <em>Pro plan</em>",
+    "viewAll": "View All"
   },
   "chart": {
+    "description": "Showing data from <strong>{{startDate}}</strong> to <strong>{{endDate}}</strong>",
     "period": "Last 7 months",
-    "title": "Revenue Statistics",
-    "description": "Showing data from <strong>{{startDate}}</strong> to <strong>{{endDate}}</strong>"
+    "title": "Revenue Statistics"
   },
   "common": {
     "error": "Error loading data",
+    "errorWithSupport": "Something went wrong. Please <link>contact support</link> if the problem persists.",
     "loading": "Loading...",
-    "retry": "Retry",
-    "errorWithSupport": "Something went wrong. Please <link>contact support</link> if the problem persists."
+    "retry": "Retry"
   },
   "header": {
     "notifications": "Notifications",
@@ -35,9 +35,9 @@
     "reports": "Reports",
     "settings": "Settings",
     "upgrade": {
+      "description": "Unlock <strong>unlimited access</strong> to all premium features. <link>Learn more</link>",
       "subtitle": "Get more features",
       "title": "Upgrade to Pro",
-      "description": "Unlock <strong>unlimited access</strong> to all premium features. <link>Learn more</link>",
       "asdasda": "fgfdgdfgdg"
     }
   },
@@ -45,8 +45,8 @@
     "activeUsers": "Active Users",
     "conversionRate": "Conversion Rate",
     "monthlyGrowth": "Monthly Growth",
-    "totalRevenue": "Total Revenue",
     "revenueDescription": "Your revenue increased by <strong>{{percentage}}%</strong> compared to last month",
+    "totalRevenue": "Total Revenue",
     "usersDescription": "<em>{{count}}</em> new users joined this week"
   },
   "account": {
@@ -60,6 +60,24 @@
     "storageUsed": "Using <strong>{{used}}</strong> of <strong>{{total}}</strong> storage",
     "title": "Account Settings",
     "twoFactor": "Two-factor authentication is <strong>{{status}}</strong>"
+  },
+  "analytics": {
+    "chartPlaceholder": "Traffic sources chart visualization would go here",
+    "metrics": {
+      "avgSession": "Avg. Session",
+      "bounceRate": "Bounce Rate",
+      "pageViews": "Page Views",
+      "uniqueVisitors": "Unique Visitors"
+    },
+    "subtitle": "Track your website performance and user behavior",
+    "table": {
+      "page": "Page",
+      "uniqueVisitors": "Unique Visitors",
+      "views": "Views"
+    },
+    "title": "Analytics",
+    "topPages": "Top Pages",
+    "trafficSources": "Traffic Sources"
   },
   "billing": {
     "changePlan": "Change Plan",
@@ -108,6 +126,54 @@
     "title": "Messages",
     "unread": "Unread"
   },
+  "integrations": {
+    "available": "Available",
+    "categories": {
+      "analytics": "Analytics",
+      "automation": "Automation",
+      "communication": "Communication",
+      "development": "Development",
+      "marketing": "Marketing",
+      "payments": "Payments"
+    },
+    "configure": "Configure",
+    "connect": "Connect",
+    "connected": "Connected",
+    "customIntegration": {
+      "contactUs": "Contact Us",
+      "description": "Contact our team to discuss building a custom integration for your specific needs.",
+      "title": "Need a custom integration?"
+    },
+    "featuresTitle": "All integrations",
+    "items": {
+      "github": {
+        "description": "Integrate with your code repositories",
+        "name": "GitHub"
+      },
+      "googleAnalytics": {
+        "description": "Track website analytics and visitor behavior",
+        "name": "Google Analytics"
+      },
+      "mailchimp": {
+        "description": "Email marketing and automation platform",
+        "name": "Mailchimp"
+      },
+      "slack": {
+        "description": "Send notifications to your Slack workspace",
+        "name": "Slack"
+      },
+      "stripe": {
+        "description": "Process payments and manage subscriptions",
+        "name": "Stripe"
+      },
+      "zapier": {
+        "description": "Connect with 1000+ apps and automate workflows",
+        "name": "Zapier"
+      }
+    },
+    "subtitle": "Connect your favorite tools and services",
+    "title": "Integrations"
+  },
   "notifications": {
     "digest": "Daily Digest",
     "email": "Email Notifications",
@@ -129,6 +195,167 @@
     "step": "Step <strong>{{current}}</strong> of <strong>{{total}}</strong>",
     "tutorial": "Need help getting started? <link>Watch our tutorial</link>",
     "welcome": "Welcome to <strong>{{appName}}</strong>!"
+  },
+  "pages": {
+    "billing": {
+      "addPaymentMethod": "Add Payment Method",
+      "currentPlan": "Current Plan",
+      "default": "Default",
+      "download": "Download",
+      "edit": "Edit",
+      "expires": "Exp: {{date}}",
+      "invoiceHistory": "Invoice History",
+      "nextBillingDate": "Next billing date: {{date}}",
+      "paymentMethods": "Payment Methods",
+      "perMonth": "/month",
+      "proPlan": "Pro Plan",
+      "status": {
+        "paid": "Paid",
+        "pending": "Pending"
+      },
+      "subtitle": "Manage your subscription and payment methods",
+      "table": {
+        "action": "Action",
+        "amount": "Amount",
+        "date": "Date",
+        "invoiceId": "Invoice ID",
+        "status": "Status"
+      },
+      "title": "Billing",
+      "upgradePlan": "Upgrade Plan"
+    },
+    "customers": {
+      "customerList": "Customer List",
+      "searchPlaceholder": "Search customers...",
+      "stats": {
+        "active": "Active",
+        "avgOrders": "Avg Orders",
+        "totalCustomers": "Total Customers"
+      },
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive"
+      },
+      "subtitle": "Manage your customer base and relationships",
+      "table": {
+        "email": "Email",
+        "name": "Name",
+        "orders": "Orders",
+        "status": "Status",
+        "totalSpent": "Total Spent"
+      },
+      "title": "Customers"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "welcomeBack": "Welcome back, {{userName}}! Here's what's happening with your business today."
+    },
+    "reports": {
+      "actions": {
+        "delete": "Delete",
+        "edit": "Edit"
+      },
+      "customReports": {
+        "description": "Need a custom report tailored to your specific needs? Our team can help create specialized reports with the exact metrics and insights you need.",
+        "request": "Request Custom Report",
+        "title": "Custom Reports"
+      },
+      "generate": "Generate",
+      "items": {
+        "customer": {
+          "description": "Customer demographics and behavior analysis",
+          "name": "Customer Report"
+        },
+        "financial": {
+          "description": "Revenue, expenses, and profit analysis",
+          "name": "Financial Report"
+        },
+        "inventory": {
+          "description": "Stock levels and product performance",
+          "name": "Inventory Report"
+        },
+        "sales": {
+          "description": "Comprehensive overview of sales performance",
+          "name": "Sales Report"
+        }
+      },
+      "lastGenerated": "Last: {{date}}",
+      "period": "Period:",
+      "periods": {
+        "daily": "Daily",
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "weekly": "Weekly",
+        "yearly": "Yearly"
+      },
+      "quickReports": "Quick Reports",
+      "scheduleNew": "Schedule New Report",
+      "scheduled": {
+        "monthlyAnalytics": "Monthly Analytics",
+        "quarterlyPerformance": "Quarterly Performance",
+        "weeklySales": "Weekly Sales Summary"
+      },
+      "scheduledReports": "Scheduled Reports",
+      "subtitle": "Generate and schedule custom reports",
+      "table": {
+        "actions": "Actions",
+        "frequency": "Frequency",
+        "nextRun": "Next Run",
+        "reportName": "Report Name"
+      },
+      "title": "Reports"
+    },
+    "settings": {
+      "appearance": {
+        "darkMode": {
+          "description": "Enable dark theme for the interface",
+          "label": "Dark Mode"
+        },
+        "title": "Appearance"
+      },
+      "dangerZone": {
+        "deleteAccount": {
+          "button": "Delete",
+          "description": "Permanently delete your account and all data",
+          "label": "Delete Account"
+        },
+        "resetAccount": {
+          "button": "Reset",
+          "description": "Clear all data and reset to defaults",
+          "label": "Reset Account"
+        },
+        "title": "Danger Zone"
+      },
+      "notifications": {
+        "email": {
+          "description": "Receive email updates about your account",
+          "label": "Email Notifications"
+        },
+        "push": {
+          "description": "Get push notifications on your device",
+          "label": "Push Notifications"
+        },
+        "title": "Notifications"
+      },
+      "profile": {
+        "company": "Company",
+        "email": "Email",
+        "fullName": "Full Name",
+        "saveChanges": "Save Changes",
+        "title": "Profile Information"
+      },
+      "subtitle": "Manage your account preferences and settings",
+      "title": "Settings",
+      "accessibility": {
+        "fontSize": {
+          "description": ""
+        },
+        "reduceMotion": {
+          "label": "",
+          "description": ""
+        }
+      }
+    }
   },
   "projects": {
     "archive": "Archived",
@@ -163,277 +390,5 @@
     "roleChanged": "<strong>{{userName}}</strong> is now a <em>{{role}}</em>",
     "teamSize": "Your team has <strong>{{count}}</strong> members across <em>{{departments}} departments</em>",
     "title": "Team Management"
-  },
-  "integrations": {
-    "title": "Integrations",
-    "subtitle": "Connect your favorite tools and services",
-    "featuresTitle": "All integrations",
-    "connected": "Connected",
-    "available": "Available",
-    "connect": "Connect",
-    "configure": "Configure",
-    "customIntegration": {
-      "title": "Need a custom integration?",
-      "description": "Contact our team to discuss building a custom integration for your specific needs.",
-      "contactUs": "Contact Us"
-    },
-    "items": {
-      "slack": {
-        "name": "Slack",
-        "description": "Send notifications to your Slack workspace"
-      },
-      "googleAnalytics": {
-        "name": "Google Analytics",
-        "description": "Track website analytics and visitor behavior"
-      },
-      "stripe": {
-        "name": "Stripe",
-        "description": "Process payments and manage subscriptions"
-      },
-      "mailchimp": {
-        "name": "Mailchimp",
-        "description": "Email marketing and automation platform"
-      },
-      "zapier": {
-        "name": "Zapier",
-        "description": "Connect with 1000+ apps and automate workflows"
-      },
-      "github": {
-        "name": "GitHub",
-        "description": "Integrate with your code repositories"
-      }
-    },
-    "categories": {
-      "communication": "Communication",
-      "analytics": "Analytics",
-      "payments": "Payments",
-      "marketing": "Marketing",
-      "automation": "Automation",
-      "development": "Development"
-    }
-  },
-  "analytics": {
-    "title": "Analytics",
-    "subtitle": "Track your website performance and user behavior",
-    "topPages": "Top Pages",
-    "trafficSources": "Traffic Sources",
-    "chartPlaceholder": "Traffic sources chart visualization would go here",
-    "metrics": {
-      "pageViews": "Page Views",
-      "uniqueVisitors": "Unique Visitors",
-      "bounceRate": "Bounce Rate",
-      "avgSession": "Avg. Session"
-    },
-    "table": {
-      "page": "Page",
-      "views": "Views",
-      "uniqueVisitors": "Unique Visitors",
-      "test": "Test",
-      "test2": "Test2"
-    }
-  },
-  "pages": {
-    "dashboard": {
-      "title": "Dashboard",
-      "welcomeBack": "Welcome back, {{userName}}! Here's what's happening with your business today."
-    },
-    "customers": {
-      "title": "Customers",
-      "subtitle": "Manage your customer base and relationships",
-      "searchPlaceholder": "Search customers...",
-      "customerList": "Customer List",
-      "table": {
-        "name": "Name",
-        "email": "Email",
-        "status": "Status",
-        "orders": "Orders",
-        "totalSpent": "Total Spent"
-      },
-      "stats": {
-        "totalCustomers": "Total Customers",
-        "active": "Active",
-        "avgOrders": "Avg Orders"
-      },
-      "status": {
-        "active": "Active",
-        "inactive": "Inactive"
-      }
-    },
-    "billing": {
-      "title": "Billing",
-      "subtitle": "Manage your subscription and payment methods",
-      "currentPlan": "Current Plan",
-      "proPlan": "Pro Plan",
-      "perMonth": "/month",
-      "nextBillingDate": "Next billing date: {{date}}",
-      "upgradePlan": "Upgrade Plan",
-      "paymentMethods": "Payment Methods",
-      "expires": "Exp: {{date}}",
-      "default": "Default",
-      "edit": "Edit",
-      "addPaymentMethod": "Add Payment Method",
-      "invoiceHistory": "Invoice History",
-      "table": {
-        "invoiceId": "Invoice ID",
-        "date": "Date",
-        "amount": "Amount",
-        "status": "Status",
-        "action": "Action"
-      },
-      "download": "Download",
-      "status": {
-        "paid": "Paid",
-        "pending": "Pending"
-      }
-    },
-    "settings": {
-      "title": "Settings",
-      "subtitle": "Manage your account preferences and settings",
-      "profile": {
-        "title": "Profile Information",
-        "fullName": "Full Name",
-        "email": "Email",
-        "company": "Company",
-        "saveChanges": "Save Changes"
-      },
-      "notifications": {
-        "title": "Notifications",
-        "email": {
-          "label": "Email Notifications",
-          "description": "Receive email updates about your account"
-        },
-        "push": {
-          "label": "Push Notifications",
-          "description": "Get push notifications on your device"
-        }
-      },
-      "appearance": {
-        "title": "Appearance",
-        "darkMode": {
-          "label": "Dark Mode",
-          "description": "Enable dark theme for the interface"
-        }
-      },
-      "language": {
-        "title": "Language & Region",
-        "locale": "Select your preferred language for the interface",
-        "timezone": "Set your timezone to display dates and times correctly"
-      },
-      "privacy": {
-        "title": "Privacy & Security",
-        "twoFactor": {
-          "label": "Two-Factor Authentication",
-          "description": "Add an extra layer of security to your account"
-        },
-        "sessionTimeout": {
-          "label": "Session Timeout",
-          "description": "Automatically log out after a period of inactivity"
-        },
-        "activityLog": {
-          "label": "Activity Log",
-          "description": "Track and review all actions performed on your account"
-        }
-      },
-      "dataStorage": {
-        "title": "Data & Storage",
-        "autoBackup": {
-          "label": "Automatic Backups",
-          "description": "Regularly back up your data to prevent loss"
-        },
-        "dataExport": {
-          "label": "Export Data",
-          "description": "Download a copy of all your data in CSV format",
-          "button": "Export"
-        },
-        "clearCache": {
-          "label": "Clear Cache",
-          "description": "Remove temporary files to free up storage space",
-          "button": "Clear"
-        }
-      },
-      "accessibility": {
-        "title": "Accessibility",
-        "highContrast": {
-          "label": "High Contrast Mode",
-          "description": "Increase contrast for better visibility"
-        },
-        "fontSize": {
-          "label": "Large Text",
-          "description": "Use larger font sizes throughout the interface"
-        },
-        "reduceMotion": {
-          "label": "Reduce Motion",
-          "description": "Minimize animations and transitions"
-        }
-      },
-      "dangerZone": {
-        "title": "Danger Zone",
-        "resetAccount": {
-          "label": "Reset Account",
-          "description": "Clear all data and reset to defaults",
-          "button": "Reset"
-        },
-        "deleteAccount": {
-          "label": "Delete Account",
-          "description": "Permanently delete your account and all data",
-          "button": "Delete"
-        }
-      }
-    },
-    "reports": {
-      "title": "Reports",
-      "subtitle": "Generate and schedule custom reports",
-      "quickReports": "Quick Reports",
-      "period": "Period:",
-      "generate": "Generate",
-      "lastGenerated": "Last: {{date}}",
-      "scheduledReports": "Scheduled Reports",
-      "scheduleNew": "Schedule New Report",
-      "customReports": {
-        "title": "Custom Reports",
-        "description": "Need a custom report tailored to your specific needs? Our team can help create specialized reports with the exact metrics and insights you need.",
-        "request": "Request Custom Report"
-      },
-      "items": {
-        "sales": {
-          "name": "Sales Report",
-          "description": "Comprehensive overview of sales performance"
-        },
-        "customer": {
-          "name": "Customer Report",
-          "description": "Customer demographics and behavior analysis"
-        },
-        "inventory": {
-          "name": "Inventory Report",
-          "description": "Stock levels and product performance"
-        },
-        "financial": {
-          "name": "Financial Report",
-          "description": "Revenue, expenses, and profit analysis"
-        }
-      },
-      "scheduled": {
-        "weeklySales": "Weekly Sales Summary",
-        "monthlyAnalytics": "Monthly Analytics",
-        "quarterlyPerformance": "Quarterly Performance"
-      },
-      "periods": {
-        "daily": "Daily",
-        "weekly": "Weekly",
-        "monthly": "Monthly",
-        "yearly": "Yearly",
-        "quarterly": "Quarterly"
-      },
-      "table": {
-        "reportName": "Report Name",
-        "frequency": "Frequency",
-        "nextRun": "Next Run",
-        "actions": "Actions"
-      },
-      "actions": {
-        "edit": "Edit",
-        "delete": "Delete"
-      }
-    }
   }
 }

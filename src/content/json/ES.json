@@ -1,23 +1,23 @@
 {
   "activity": {
-    "title": "Actividad Reciente",
-    "viewAll": "Ver Todo",
     "newUser": "<strong>{{userName}}</strong> se registró",
     "paymentReceived": "Pago de <strong>{{amount}}</strong> recibido de <link>{{company}}</link>",
     "serverAlert": "El tiempo de respuesta del servidor aumentó. <link>Ver detalles</link>",
     "subscriptionRenewed": "Suscripción renovada para <strong>{{company}}</strong>",
-    "userUpgrade": "<strong>{{userName}}</strong> actualizó a <em>plan Pro</em>"
+    "title": "Actividad Reciente",
+    "userUpgrade": "<strong>{{userName}}</strong> actualizó a <em>plan Pro</em>",
+    "viewAll": "Ver Todo"
   },
   "chart": {
+    "description": "Mostrando datos desde <strong>{{startDate}}</strong> hasta <strong>{{endDate}}</strong>",
     "period": "Últimos 7 meses",
-    "title": "Tendencia de Ingresos",
-    "description": "Mostrando datos desde <strong>{{startDate}}</strong> hasta <strong>{{endDate}}</strong>"
+    "title": "Tendencia de Ingresos"
   },
   "common": {
     "error": "Error al cargar datos",
+    "errorWithSupport": "Algo salió mal. Por favor <link>contacta con soporte</link> si el problema persiste.",
     "loading": "Cargando...",
-    "retry": "Reintentar",
-    "errorWithSupport": "Algo salió mal. Por favor <link>contacta con soporte</link> si el problema persiste."
+    "retry": "Reintentar"
   },
   "header": {
     "notifications": "Notificaciones",
@@ -35,9 +35,9 @@
     "reports": "Informes",
     "settings": "Configuración!",
     "upgrade": {
+      "description": "Desbloquea <strong>acceso ilimitado</strong> a todas las funciones premium. <link>Más información</link>",
       "subtitle": "Obtén más funciones",
       "title": "Actualizar a Pro",
-      "description": "Desbloquea <strong>acceso ilimitado</strong> a todas las funciones premium. <link>Más información</link>",
       "asdasda": ""
     }
   },
@@ -45,22 +45,15 @@
     "activeUsers": "Usuarios Activos",
     "conversionRate": "Tasa de Conversión",
     "monthlyGrowth": "Crecimiento Mensual",
-    "totalRevenue": "Ingresos Totales",
     "revenueDescription": "Tus ingresos aumentaron un <strong>{{percentage}}%</strong> en comparación con el mes pasado",
+    "totalRevenue": "Ingresos Totales",
     "usersDescription": "<em>{{count}}</em> nuevos usuarios se unieron esta semana"
   },
-  "files": {
-    "upload": "spanis22",
-    "uploadFailed": "spanish",
-    "uploadSuccess": "dfgdfgdg",
-    "title": "sdfsdfsdf",
-    "shared": "espnajol"
-  },
   "account": {
-    "passwordChanged": "Contraseña modificada por última vez el <em>{{date}}</em>. <link>Actualizar contraseña</link>",
     "connectedApps": "<strong>{{count}}</strong> aplicaciones conectadas a tu cuenta",
     "email": "Correo electrónico: <strong>{{email}}</strong>",
     "lastLogin": "Último inicio de sesión <em>{{date}}</em> desde <strong>{{location}}</strong>",
+    "passwordChanged": "Contraseña modificada por última vez el <em>{{date}}</em>. <link>Actualizar contraseña</link>",
     "preferences": "Preferencias",
     "profile": "Perfil",
     "security": "Seguridad",
@@ -68,17 +61,50 @@
     "title": "Configuración de la cuenta",
     "twoFactor": "La autenticación de dos factores está <strong>{{status}}</strong>"
   },
+  "analytics": {
+    "chartPlaceholder": "La visualización del gráfico de fuentes de tráfico iría aquí",
+    "metrics": {
+      "avgSession": "Sesión promedio",
+      "bounceRate": "Tasa de rebote",
+      "pageViews": "Visitas de página",
+      "uniqueVisitors": "Visitantes únicos"
+    },
+    "subtitle": "Rastrea el rendimiento de tu sitio web y el comportamiento de usuarios",
+    "table": {
+      "page": "Página",
+      "uniqueVisitors": "Visitantes únicos",
+      "views": "Visitas"
+    },
+    "title": "Analítica",
+    "topPages": "Páginas principales",
+    "trafficSources": "Fuentes de tráfico"
+  },
   "billing": {
-    "invoices": "Facturas",
-    "nextBilling": "Próxima fecha de facturación: <strong>{{date}}</strong>",
     "changePlan": "Cambiar plan",
     "currentPlan": "Plan actual",
     "invoiceReady": "La factura de <strong>{{month}}</strong> está lista. <link>Descargar PDF</link>",
+    "invoices": "Facturas",
+    "nextBilling": "Próxima fecha de facturación: <strong>{{date}}</strong>",
     "paymentMethod": "Método de pago: <em>{{cardType}}</em> terminado en <strong>{{lastFour}}</strong>",
     "planDetails": "Estás en el plan <strong>{{planName}}</strong>",
     "savingsMessage": "Ahorra <strong>{{percentage}}%</strong> con la facturación anual",
     "title": "Facturación y Planes",
     "trialEnds": "Tu prueba termina en <strong>{{days}} días</strong>. <link>Actualizar ahora</link>"
+  },
+  "calendar": {
+    "attendees": "<strong>{{confirmed}}</strong> confirmados, <em>{{pending}}</em> pendientes",
+    "conflict": "Este evento se superpone con <link>{{conflictingEvent}}</link>",
+    "eventCreated": "<strong>{{eventName}}</strong> programado para el <em>{{date}}</em>",
+    "title": "Calendario",
+    "today": "Hoy",
+    "upcoming": "Próximos eventos"
+  },
+  "files": {
+    "shared": "espnajol",
+    "title": "sdfsdfsdf",
+    "upload": "spanis22",
+    "uploadFailed": "spanish",
+    "uploadSuccess": "dfgdfgdg"
   },
   "inbox": {
     "attachments": "<strong>{{count}}</strong> adjuntos",
@@ -89,6 +115,225 @@
     "replyTo": "Respondiendo a <em>{{subject}}</em>",
     "starred": "Destacado",
     "threadCount": "<em>{{count}}</em> respuestas en este hilo"
+  },
+  "integrations": {
+    "available": "Disponible",
+    "categories": {
+      "analytics": "Analítica",
+      "automation": "Automatización",
+      "communication": "Comunicación",
+      "development": "Desarrollo",
+      "marketing": "Marketing",
+      "payments": "Pagos"
+    },
+    "configure": "Configurar",
+    "connect": "Conectar",
+    "connected": "Conectado",
+    "customIntegration": {
+      "contactUs": "Contáctanos",
+      "description": "Contacta con nuestro equipo para discutir la creación de una integración personalizada para tus necesidades específicas.",
+      "title": "¿Necesitas una integración personalizada?"
+    },
+    "featuresTitle": "Todas las integraciones",
+    "items": {
+      "github": {
+        "description": "Integra con tus repositorios de código",
+        "name": "GitHub"
+      },
+      "googleAnalytics": {
+        "description": "Rastrea analíticas del sitio web y comportamiento de visitantes",
+        "name": "Google Analytics"
+      },
+      "mailchimp": {
+        "description": "Plataforma de marketing por email y automatización",
+        "name": "Mailchimp"
+      },
+      "slack": {
+        "description": "Envía notificaciones a tu espacio de trabajo de Slack",
+        "name": "Slack"
+      },
+      "stripe": {
+        "description": "Procesa pagos y gestiona suscripciones",
+        "name": "Stripe"
+      },
+      "zapier": {
+        "description": "Conecta con más de 1000 aplicaciones y automatiza flujos de trabajo",
+        "name": "Zapier"
+      }
+    },
+    "subtitle": "Conecta tus herramientas y servicios favoritos",
+    "title": "Integraciones"
+  },
+  "onboarding": {
+    "step": "Paso <strong>{{current}}</strong> de <strong>{{total}}</strong>",
+    "tutorial": "¿Necesitas ayuda para empezar? <link>Ver nuestro tutorial</link>",
+    "welcome": "¡Bienvenido a <strong>{{appName}}</strong>!"
+  },
+  "pages": {
+    "billing": {
+      "addPaymentMethod": "Agregar método de pago",
+      "currentPlan": "Plan actual",
+      "default": "Predeterminado",
+      "download": "Descargar",
+      "edit": "Editar",
+      "expires": "Exp: {{date}}",
+      "invoiceHistory": "Historial de facturas",
+      "nextBillingDate": "Próxima fecha de facturación: {{date}}",
+      "paymentMethods": "Métodos de pago",
+      "perMonth": "/mes",
+      "proPlan": "Plan Pro",
+      "status": {
+        "paid": "Pagado",
+        "pending": "Pendiente"
+      },
+      "subtitle": "Gestiona tu suscripción y métodos de pago",
+      "table": {
+        "action": "Acción",
+        "amount": "Monto",
+        "date": "Fecha",
+        "invoiceId": "ID de factura",
+        "status": "Estado"
+      },
+      "title": "Facturación",
+      "upgradePlan": "Actualizar plan"
+    },
+    "customers": {
+      "customerList": "Lista de clientes",
+      "searchPlaceholder": "Buscar clientes...",
+      "stats": {
+        "active": "Activos",
+        "avgOrders": "Pedidos promedio",
+        "totalCustomers": "Total de clientes"
+      },
+      "status": {
+        "active": "Activo",
+        "inactive": "Inactivo"
+      },
+      "subtitle": "Gestiona tu base de clientes y relaciones",
+      "table": {
+        "email": "Email",
+        "name": "Nombre",
+        "orders": "Pedidos",
+        "status": "Estado",
+        "totalSpent": "Total gastado"
+      },
+      "title": "Clientes"
+    },
+    "dashboard": {
+      "title": "Panel de control",
+      "welcomeBack": "¡Bienvenido de nuevo, {{userName}}! Esto es lo que está pasando con tu negocio hoy."
+    },
+    "reports": {
+      "actions": {
+        "delete": "Eliminar",
+        "edit": "Editar"
+      },
+      "customReports": {
+        "description": "¿Necesitas un informe adaptado a tus necesidades específicas? Nuestro equipo puede ayudarte a crear informes especializados con las métricas exactas que necesitas.",
+        "request": "Solicitar informe personalizado",
+        "title": "Informes personalizados"
+      },
+      "generate": "Generar",
+      "items": {
+        "customer": {
+          "description": "Demografía y análisis del comportamiento de clientes",
+          "name": "Informe de clientes"
+        },
+        "financial": {
+          "description": "Análisis de ingresos, gastos y beneficios",
+          "name": "Informe financiero"
+        },
+        "inventory": {
+          "description": "Niveles de stock y rendimiento de productos",
+          "name": "Informe de inventario"
+        },
+        "sales": {
+          "description": "Resumen completo del rendimiento de ventas",
+          "name": "Informe de ventas"
+        }
+      },
+      "lastGenerated": "Último: {{date}}",
+      "period": "Período:",
+      "periods": {
+        "daily": "Diario",
+        "monthly": "Mensual",
+        "quarterly": "Trimestral",
+        "weekly": "Semanal",
+        "yearly": "Anual"
+      },
+      "quickReports": "Informes rápidos",
+      "scheduleNew": "Programar nuevo informe",
+      "scheduled": {
+        "monthlyAnalytics": "Analítica mensual",
+        "quarterlyPerformance": "Rendimiento trimestral",
+        "weeklySales": "Resumen semanal de ventas"
+      },
+      "scheduledReports": "Informes programados",
+      "subtitle": "Genera y programa informes personalizados",
+      "table": {
+        "actions": "Acciones",
+        "frequency": "Frecuencia",
+        "nextRun": "Próxima ejecución",
+        "reportName": "Nombre del informe"
+      },
+      "title": "Informes"
+    },
+    "settings": {
+      "appearance": {
+        "darkMode": {
+          "description": "Habilitar tema oscuro para la interfaz",
+          "label": "Modo oscuro"
+        },
+        "title": "Apariencia"
+      },
+      "dangerZone": {
+        "deleteAccount": {
+          "button": "Eliminar",
+          "description": "Eliminar permanentemente tu cuenta y todos los datos",
+          "label": "Eliminar cuenta"
+        },
+        "resetAccount": {
+          "button": "Restablecer",
+          "description": "Borrar todos los datos y restablecer a valores predeterminados",
+          "label": "Restablecer cuenta"
+        },
+        "title": "Zona de peligro"
+      },
+      "notifications": {
+        "email": {
+          "description": "Recibe actualizaciones por email sobre tu cuenta",
+          "label": "Notificaciones por email"
+        },
+        "push": {
+          "description": "Recibe notificaciones push en tu dispositivo",
+          "label": "Notificaciones push"
+        },
+        "title": "Notificaciones"
+      },
+      "profile": {
+        "company": "Empresa",
+        "email": "Email",
+        "fullName": "Nombre completo",
+        "saveChanges": "Guardar cambios",
+        "title": "Información del perfil"
+      },
+      "subtitle": "Gestiona las preferencias y configuraciones de tu cuenta",
+      "title": "Configuración",
+      "accessibility": {
+        "fontSize": {
+          "description": ""
+        },
+        "reduceMotion": {
+          "label": "",
+          "description": ""
+        }
+      }
+    }
+  },
+  "projects": {
+    "create": "Nuevo proyecto",
+    "deadline": "Vence el <strong>{{date}}</strong>",
+    "overdue": "Este proyecto está <em>retrasado {{days}} días</em>. <link>Actualizar fecha límite</link>"
   },
   "tasks": {
     "addTask": "Agregar tarea",
@@ -101,241 +346,5 @@
     "subtasks": "<strong>{{completed}}</strong> de <strong>{{total}}</strong> subtareas completadas",
     "taskCompleted": "<strong>{{userName}}</strong> completó <em>{{taskName}}</em>",
     "title": "Tareas"
-  },
-  "calendar": {
-    "attendees": "<strong>{{confirmed}}</strong> confirmados, <em>{{pending}}</em> pendientes",
-    "conflict": "Este evento se superpone con <link>{{conflictingEvent}}</link>",
-    "eventCreated": "<strong>{{eventName}}</strong> programado para el <em>{{date}}</em>",
-    "title": "Calendario",
-    "today": "Hoy",
-    "upcoming": "Próximos eventos"
-  },
-  "onboarding": {
-    "step": "Paso <strong>{{current}}</strong> de <strong>{{total}}</strong>",
-    "tutorial": "¿Necesitas ayuda para empezar? <link>Ver nuestro tutorial</link>",
-    "welcome": "¡Bienvenido a <strong>{{appName}}</strong>!"
-  },
-  "projects": {
-    "create": "Nuevo proyecto",
-    "deadline": "Vence el <strong>{{date}}</strong>",
-    "overdue": "Este proyecto está <em>retrasado {{days}} días</em>. <link>Actualizar fecha límite</link>"
-  },
-  "integrations": {
-    "title": "Integraciones",
-    "subtitle": "Conecta tus herramientas y servicios favoritos",
-    "featuresTitle": "Todas las integraciones",
-    "connected": "Conectado",
-    "available": "Disponible",
-    "connect": "Conectar",
-    "configure": "Configurar",
-    "customIntegration": {
-      "title": "¿Necesitas una integración personalizada?",
-      "description": "Contacta con nuestro equipo para discutir la creación de una integración personalizada para tus necesidades específicas.",
-      "contactUs": "Contáctanos"
-    },
-    "items": {
-      "slack": {
-        "name": "Slack",
-        "description": "Envía notificaciones a tu espacio de trabajo de Slack"
-      },
-      "googleAnalytics": {
-        "name": "Google Analytics",
-        "description": "Rastrea analíticas del sitio web y comportamiento de visitantes"
-      },
-      "stripe": {
-        "name": "Stripe",
-        "description": "Procesa pagos y gestiona suscripciones"
-      },
-      "mailchimp": {
-        "name": "Mailchimp",
-        "description": "Plataforma de marketing por email y automatización"
-      },
-      "zapier": {
-        "name": "Zapier",
-        "description": "Conecta con más de 1000 aplicaciones y automatiza flujos de trabajo"
-      },
-      "github": {
-        "name": "GitHub",
-        "description": "Integra con tus repositorios de código"
-      }
-    },
-    "categories": {
-      "communication": "Comunicación",
-      "analytics": "Analítica",
-      "payments": "Pagos",
-      "marketing": "Marketing",
-      "automation": "Automatización",
-      "development": "Desarrollo"
-    }
-  },
-  "analytics": {
-    "title": "Analítica",
-    "subtitle": "Rastrea el rendimiento de tu sitio web y el comportamiento de usuarios",
-    "topPages": "Páginas principales",
-    "trafficSources": "Fuentes de tráfico",
-    "chartPlaceholder": "La visualización del gráfico de fuentes de tráfico iría aquí",
-    "metrics": {
-      "pageViews": "Visitas de página",
-      "uniqueVisitors": "Visitantes únicos",
-      "bounceRate": "Tasa de rebote",
-      "avgSession": "Sesión promedio"
-    },
-    "table": {
-      "page": "Página",
-      "views": "Visitas",
-      "uniqueVisitors": "Visitantes únicos"
-    }
-  },
-  "pages": {
-    "dashboard": {
-      "title": "Panel de control",
-      "welcomeBack": "¡Bienvenido de nuevo, {{userName}}! Esto es lo que está pasando con tu negocio hoy."
-    },
-    "customers": {
-      "title": "Clientes",
-      "subtitle": "Gestiona tu base de clientes y relaciones",
-      "searchPlaceholder": "Buscar clientes...",
-      "customerList": "Lista de clientes",
-      "table": {
-        "name": "Nombre",
-        "email": "Email",
-        "status": "Estado",
-        "orders": "Pedidos",
-        "totalSpent": "Total gastado"
-      },
-      "stats": {
-        "totalCustomers": "Total de clientes",
-        "active": "Activos",
-        "avgOrders": "Pedidos promedio"
-      },
-      "status": {
-        "active": "Activo",
-        "inactive": "Inactivo"
-      }
-    },
-    "billing": {
-      "title": "Facturación",
-      "subtitle": "Gestiona tu suscripción y métodos de pago",
-      "currentPlan": "Plan actual",
-      "proPlan": "Plan Pro",
-      "perMonth": "/mes",
-      "nextBillingDate": "Próxima fecha de facturación: {{date}}",
-      "upgradePlan": "Actualizar plan",
-      "paymentMethods": "Métodos de pago",
-      "expires": "Exp: {{date}}",
-      "default": "Predeterminado",
-      "edit": "Editar",
-      "addPaymentMethod": "Agregar método de pago",
-      "invoiceHistory": "Historial de facturas",
-      "table": {
-        "invoiceId": "ID de factura",
-        "date": "Fecha",
-        "amount": "Monto",
-        "status": "Estado",
-        "action": "Acción"
-      },
-      "download": "Descargar",
-      "status": {
-        "paid": "Pagado",
-        "pending": "Pendiente"
-      }
-    },
-    "settings": {
-      "title": "Configuración",
-      "subtitle": "Gestiona las preferencias y configuraciones de tu cuenta",
-      "profile": {
-        "title": "Información del perfil",
-        "fullName": "Nombre completo",
-        "email": "Email",
-        "company": "Empresa",
-        "saveChanges": "Guardar cambios"
-      },
-      "notifications": {
-        "title": "Notificaciones",
-        "email": {
-          "label": "Notificaciones por email",
-          "description": "Recibe actualizaciones por email sobre tu cuenta"
-        },
-        "push": {
-          "label": "Notificaciones push",
-          "description": "Recibe notificaciones push en tu dispositivo"
-        }
-      },
-      "appearance": {
-        "title": "Apariencia",
-        "darkMode": {
-          "label": "Modo oscuro",
-          "description": "Habilitar tema oscuro para la interfaz"
-        }
-      },
-      "dangerZone": {
-        "title": "Zona de peligro",
-        "resetAccount": {
-          "label": "Restablecer cuenta",
-          "description": "Borrar todos los datos y restablecer a valores predeterminados",
-          "button": "Restablecer"
-        },
-        "deleteAccount": {
-          "label": "Eliminar cuenta",
-          "description": "Eliminar permanentemente tu cuenta y todos los datos",
-          "button": "Eliminar"
-        }
-      }
-    },
-    "reports": {
-      "title": "Informes",
-      "subtitle": "Genera y programa informes personalizados",
-      "quickReports": "Informes rápidos",
-      "period": "Período:",
-      "generate": "Generar",
-      "lastGenerated": "Último: {{date}}",
-      "scheduledReports": "Informes programados",
-      "scheduleNew": "Programar nuevo informe",
-      "customReports": {
-        "title": "Informes personalizados",
-        "description": "¿Necesitas un informe adaptado a tus necesidades específicas? Nuestro equipo puede ayudarte a crear informes especializados con las métricas exactas que necesitas.",
-        "request": "Solicitar informe personalizado"
-      },
-      "items": {
-        "sales": {
-          "name": "Informe de ventas",
-          "description": "Resumen completo del rendimiento de ventas"
-        },
-        "customer": {
-          "name": "Informe de clientes",
-          "description": "Demografía y análisis del comportamiento de clientes"
-        },
-        "inventory": {
-          "name": "Informe de inventario",
-          "description": "Niveles de stock y rendimiento de productos"
-        },
-        "financial": {
-          "name": "Informe financiero",
-          "description": "Análisis de ingresos, gastos y beneficios"
-        }
-      },
-      "scheduled": {
-        "weeklySales": "Resumen semanal de ventas",
-        "monthlyAnalytics": "Analítica mensual",
-        "quarterlyPerformance": "Rendimiento trimestral"
-      },
-      "periods": {
-        "daily": "Diario",
-        "weekly": "Semanal",
-        "monthly": "Mensual",
-        "yearly": "Anual",
-        "quarterly": "Trimestral"
-      },
-      "table": {
-        "reportName": "Nombre del informe",
-        "frequency": "Frecuencia",
-        "nextRun": "Próxima ejecución",
-        "actions": "Acciones"
-      },
-      "actions": {
-        "edit": "Editar",
-        "delete": "Eliminar"
-      }
-    }
   }
 }
