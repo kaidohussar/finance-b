@@ -1,10 +1,12 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
+import { useAuth } from '../hooks/useAuth';
 import './Header.css';
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
+  const { logout } = useAuth();
 
   return (
     <header className="header">
@@ -41,6 +43,9 @@ const Header: React.FC = () => {
           <div className="user-avatar-main">
             <span>JD</span>
           </div>
+          <button className="btn btn-secondary" onClick={logout}>
+            Sign Out
+          </button>
         </div>
       </div>
     </header>
