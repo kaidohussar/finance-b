@@ -187,7 +187,132 @@
     "signingIn": "Signing in...",
     "signOut": "Sign Out",
     "subtitle": "Sign in to your account to continue",
-    "title": "Welcome Back"
+    "title": "Welcome Back",
+    "forgotPassword": "Forgot password?"
+  },
+  "landing": {
+    "nav": {
+      "features": "Features",
+      "testimonials": "Testimonials",
+      "pricing": "Pricing",
+      "login": "Sign In"
+    },
+    "hero": {
+      "title": "Smart Financial Management for Modern Teams",
+      "subtitle": "Track revenue, manage customers, and grow your business with powerful analytics and real-time insights. Everything you need in one dashboard.",
+      "cta": "Get Started Free",
+      "learnMore": "Learn More",
+      "note": "No credit card required. Free 14-day trial.",
+      "preview": {
+        "revenue": "Revenue",
+        "users": "Active Users"
+      }
+    },
+    "features": {
+      "title": "Everything You Need to Succeed",
+      "subtitle": "Powerful tools designed to help you manage your finances, track performance, and make data-driven decisions.",
+      "analytics": {
+        "title": "Advanced Analytics",
+        "description": "Gain deep insights into your business performance with real-time charts, trends, and customizable reports."
+      },
+      "security": {
+        "title": "Enterprise Security",
+        "description": "Bank-grade encryption and two-factor authentication keep your financial data safe and secure at all times."
+      },
+      "performance": {
+        "title": "Lightning Fast",
+        "description": "Optimized for speed with sub-second load times. Your dashboard updates in real-time, no refreshing needed."
+      },
+      "global": {
+        "title": "Multi-Currency Support",
+        "description": "Manage finances across borders with support for 50+ currencies and automatic exchange rate updates."
+      },
+      "mobile": {
+        "title": "Mobile Ready",
+        "description": "Access your dashboard anywhere. Fully responsive design works perfectly on phones, tablets, and desktops."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Our dedicated support team is always available to help. Get answers via chat, email, or phone anytime."
+      }
+    },
+    "testimonials": {
+      "title": "Trusted by Teams Worldwide",
+      "subtitle": "See what our customers have to say about their experience with FinanceB.",
+      "testimonial1": {
+        "quote": "FinanceB transformed how we handle our financial operations. The analytics are incredibly detailed and the interface is a joy to use.",
+        "name": "Jane Doe",
+        "role": "CFO at TechStart Inc."
+      },
+      "testimonial2": {
+        "quote": "We switched from three different tools to just FinanceB. It handles everything — billing, reports, and customer management in one place.",
+        "name": "Sam Kim",
+        "role": "Operations Manager at GrowthCo"
+      },
+      "testimonial3": {
+        "quote": "The real-time dashboard gives us instant visibility into our financial health. Best investment we've made for our finance team.",
+        "name": "Maria Rodriguez",
+        "role": "Finance Director at ScaleUp Ltd."
+      }
+    },
+    "pricing": {
+      "title": "Simple, Transparent Pricing",
+      "subtitle": "Choose the plan that fits your team. Upgrade or downgrade at any time.",
+      "period": "month",
+      "popular": "Most Popular",
+      "cta": "Get Started",
+      "starter": {
+        "name": "Starter",
+        "feature1": "Up to 5 team members",
+        "feature2": "Basic analytics dashboard",
+        "feature3": "Email support"
+      },
+      "pro": {
+        "name": "Professional",
+        "feature1": "Up to 25 team members",
+        "feature2": "Advanced analytics & reports",
+        "feature3": "Priority support",
+        "feature4": "Custom integrations"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "feature1": "Unlimited team members",
+        "feature2": "Full analytics suite",
+        "feature3": "Dedicated account manager",
+        "feature4": "Custom SLA & onboarding"
+      }
+    },
+    "cta": {
+      "title": "Ready to Take Control of Your Finances?",
+      "description": "Join <strong>10,000+</strong> teams already using FinanceB to grow their business.",
+      "button": "Start Your Free Trial"
+    },
+    "footer": {
+      "description": "Smart financial management for modern teams.",
+      "product": "Product",
+      "company": "Company",
+      "legal": "Legal",
+      "about": "About Us",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "copyright": "© 2026 FinanceB. All rights reserved."
+    }
+  },
+  "forgotPassword": {
+    "title": "Forgot Your Password?",
+    "subtitle": "No worries! Enter the email address associated with your account and we'll send you a link to reset your password.",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "Enter your email address",
+    "submit": "Send Reset Link",
+    "sending": "Sending...",
+    "backToLogin": "← Back to Sign In",
+    "success": {
+      "title": "Check Your Email",
+      "message": "We've sent a password reset link to <strong>{{email}}</strong>. Click the link in the email to create a new password.",
+      "hint": "Didn't receive the email? Check your spam folder or try again with a different email address.",
+      "backToLogin": "Back to Sign In"
+    }
   },
   "notifications": {
     "digest": "Daily Digest",

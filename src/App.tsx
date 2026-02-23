@@ -8,6 +8,8 @@ import Settings from './pages/Settings';
 import Integrations from './pages/Integrations';
 import Reports from './pages/Reports';
 import Login from './pages/Login';
+import Landing from './pages/Landing';
+import ForgotPassword from './pages/ForgotPassword';
 import { useAuth } from './hooks/useAuth';
 import './App.css';
 
@@ -18,7 +20,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
+          <Route path="/landing" element={<Landing />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           {isAuthenticated ? (
             <Route path="/" element={<Layout />}>
               <Route index element={<MainContent />} />
@@ -30,7 +34,7 @@ function App() {
               <Route path="reports" element={<Reports />} />
             </Route>
           ) : (
-            <Route path="*" element={<Navigate to="/login" replace />} />
+            <Route path="*" element={<Navigate to="/landing" replace />} />
           )}
         </Routes>
       </BrowserRouter>

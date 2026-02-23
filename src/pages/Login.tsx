@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
 import './Login.css';
@@ -64,16 +64,22 @@ const Login: React.FC = () => {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary" disabled={loading} style={{ width: '100%' }}>
+          <div className="login-forgot">
+            <Link to="/forgot-password">{t('login.forgotPassword')}</Link>
+          </div>
+
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={loading}
+            style={{ width: '100%' }}
+          >
             {loading ? t('login.signingIn') : t('login.signIn')}
           </button>
         </form>
 
         <div className="login-hint">
-          <Trans
-            i18nKey="login.hint"
-            components={{ code: <code /> }}
-          />
+          <Trans i18nKey="login.hint" components={{ code: <code /> }} />
         </div>
       </div>
     </div>
