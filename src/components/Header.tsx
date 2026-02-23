@@ -44,7 +44,7 @@ const Header: React.FC = () => {
             <span>JD</span>
           </div>
           <button className="btn btn-secondary" onClick={logout}>
-            Sign Out
+            {t('login.signOut')}
           </button>
         </div>
       </div>

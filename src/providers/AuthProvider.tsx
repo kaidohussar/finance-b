@@ -21,11 +21,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     if (email.toLowerCase() !== 'test@example.com') {
-      return { success: false, error: 'Invalid email address' };
+      return { success: false, error: 'login.errorInvalidEmail' };
     }
 
     if (!password) {
-      return { success: false, error: 'Password is required' };
+      return { success: false, error: 'login.errorPasswordRequired' };
     }
 
     const newUser: User = { email: email.toLowerCase() };

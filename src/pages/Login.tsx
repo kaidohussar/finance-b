@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 import { useAuth } from '../hooks/useAuth';
 import './Login.css';
 
 const Login: React.FC = () => {
+  const { t } = useTranslation();
   const { isAuthenticated, login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,7 +24,7 @@ const Login: React.FC = () => {
     const result = await login(email, password);
 
     if (!result.success) {
-      setError(result.error || 'Login failed');
+      setError(t(result.error || 'login.errorGeneric'));
       setLoading(false);
     }
   };
@@ -30,19 +32,19 @@ const Login: React.FC = () => {
   return (
     <div className="login-page">
       <div className="login-card">
-        <h1>Welcome Back</h1>
-        <p>Sign in to your account to continue</p>
+        <h1>{t('login.title')}</h1>
+        <p>{t('login.subtitle')}</p>
 
         {error && <div className="login-error">{error}</div>}
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">{t('login.emailLabel')}</label>
             <input
               id="email"
               type="email"
               className="form-input"
-              placeholder="Enter your email"
+              placeholder={t('login.emailPlaceholder')}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -50,12 +52,12 @@ const Login: React.FC = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">{t('login.passwordLabel')}</label>
             <input
               id="password"
               type="password"
               className="form-input"
-              placeholder="Enter your password"
+              placeholder={t('login.passwordPlaceholder')}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -63,12 +65,15 @@ const Login: React.FC = () => {
           </div>
 
           <button type="submit" className="btn btn-primary" disabled={loading} style={{ width: '100%' }}>
-            {loading ? 'Signing in...' : 'Sign In'}
+            {loading ? t('login.signingIn') : t('login.signIn')}
           </button>
         </form>
 
         <div className="login-hint">
-          Demo credentials: <code>test@example.com</code> with any password
+          <Trans
+            i18nKey="login.hint"
+            components={{ code: <code /> }}
+          />
         </div>
       </div>
     </div>

@@ -164,6 +164,21 @@
     "subtitle": "Conecta tus herramientas y servicios favoritos",
     "title": "Integraciones"
   },
+  "login": {
+    "errorGeneric": "Error de inicio de sesión",
+    "errorInvalidEmail": "Dirección de correo inválida",
+    "errorPasswordRequired": "La contraseña es obligatoria",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "Introduce tu correo electrónico",
+    "hint": "Credenciales de demostración: <code>test@example.com</code> con cualquier contraseña",
+    "passwordLabel": "Contraseña",
+    "passwordPlaceholder": "Introduce tu contraseña",
+    "signIn": "Iniciar sesión",
+    "signingIn": "Iniciando sesión...",
+    "signOut": "Cerrar sesión",
+    "subtitle": "Inicia sesión en tu cuenta para continuar",
+    "title": "Bienvenido de nuevo"
+  },
   "onboarding": {
     "step": "Paso <strong>{{current}}</strong> de <strong>{{total}}</strong>",
     "tutorial": "¿Necesitas ayuda para empezar? <link>Ver nuestro tutorial</link>",

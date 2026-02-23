@@ -174,6 +174,21 @@
     "subtitle": "Ühendage oma lemmiktööriistad ja -teenused",
     "title": "Integratsioonid"
   },
+  "login": {
+    "errorGeneric": "Sisselogimine ebaõnnestus",
+    "errorInvalidEmail": "Vigane e-posti aadress",
+    "errorPasswordRequired": "Parool on kohustuslik",
+    "emailLabel": "E-post",
+    "emailPlaceholder": "Sisesta oma e-post",
+    "hint": "Demo kasutajaandmed: <code>test@example.com</code> suvalise parooliga",
+    "passwordLabel": "Parool",
+    "passwordPlaceholder": "Sisesta oma parool",
+    "signIn": "Logi sisse",
+    "signingIn": "Sisselogimine...",
+    "signOut": "Logi välja",
+    "subtitle": "Jätkamiseks logi oma kontole sisse",
+    "title": "Tere tulemast tagasi"
+  },
   "notifications": {
     "digest": "Päevane kokkuvõte",
     "email": "E-posti teavitused",

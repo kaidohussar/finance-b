@@ -162,6 +162,21 @@
     "subtitle": "Connectez vos outils et services préférés",
     "title": "Intégrations"
   },
+  "login": {
+    "errorGeneric": "Échec de la connexion",
+    "errorInvalidEmail": "Adresse e-mail invalide",
+    "errorPasswordRequired": "Le mot de passe est requis",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Entrez votre e-mail",
+    "hint": "Identifiants de démonstration : <code>test@example.com</code> avec n'importe quel mot de passe",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "signIn": "Se connecter",
+    "signingIn": "Connexion en cours...",
+    "signOut": "Déconnexion",
+    "subtitle": "Connectez-vous à votre compte pour continuer",
+    "title": "Bon retour"
+  },
   "onboarding": {
     "step": "Étape <strong>{{current}}</strong> sur <strong>{{total}}</strong>",
     "tutorial": "Besoin d'aide pour démarrer ? <link>Regarder notre tutoriel</link>",
