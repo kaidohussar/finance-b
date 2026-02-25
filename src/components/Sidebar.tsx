@@ -9,6 +9,15 @@ import {
   Settings,
   Plug,
   FileText,
+  UserCircle,
+  CalendarDays,
+  FolderOpen,
+  Mail,
+  Bell,
+  Rocket,
+  FolderKanban,
+  CheckSquare,
+  UsersRound,
 } from 'lucide-react';
 import './Sidebar.css';
 
@@ -50,6 +59,51 @@ const Sidebar: React.FC = () => {
       icon: <FileText size={20} />,
       labelKey: 'sidebar.reports',
       path: '/reports',
+    },
+    {
+      icon: <UserCircle size={20} />,
+      labelKey: 'sidebar.account',
+      path: '/account',
+    },
+    {
+      icon: <CalendarDays size={20} />,
+      labelKey: 'sidebar.calendar',
+      path: '/calendar',
+    },
+    {
+      icon: <FolderOpen size={20} />,
+      labelKey: 'sidebar.files',
+      path: '/files',
+    },
+    {
+      icon: <Mail size={20} />,
+      labelKey: 'sidebar.inbox',
+      path: '/inbox',
+    },
+    {
+      icon: <Bell size={20} />,
+      labelKey: 'sidebar.notifications',
+      path: '/notifications',
+    },
+    {
+      icon: <Rocket size={20} />,
+      labelKey: 'sidebar.onboarding',
+      path: '/onboarding',
+    },
+    {
+      icon: <FolderKanban size={20} />,
+      labelKey: 'sidebar.projects',
+      path: '/projects',
+    },
+    {
+      icon: <CheckSquare size={20} />,
+      labelKey: 'sidebar.tasks',
+      path: '/tasks',
+    },
+    {
+      icon: <UsersRound size={20} />,
+      labelKey: 'sidebar.team',
+      path: '/team',
     },
   ];
 

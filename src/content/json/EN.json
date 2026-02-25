@@ -37,9 +37,17 @@
     "upgrade": {
       "description": "Unlock <strong>unlimited access</strong> to all premium features. <link>Learn more</link>",
       "subtitle": "Get more features",
-      "title": "Upgrade to Pro",
-      "asdasda": "fgfdgdfgdg"
-    }
+      "title": "Upgrade to Pro"
+    },
+    "account": "Account",
+    "calendar": "Calendar",
+    "files": "Files",
+    "inbox": "Messages",
+    "notifications": "Notifications",
+    "onboarding": "Onboarding",
+    "projects": "Projects",
+    "tasks": "Tasks",
+    "team": "Team"
   },
   "stats": {
     "activeUsers": "Active Users",
@@ -486,13 +494,56 @@
       },
       "subtitle": "Manage your account preferences and settings",
       "title": "Settings",
+      "language": {
+        "title": "Language & Region",
+        "locale": "Select your preferred language and locale settings",
+        "timezone": "Set your timezone for accurate scheduling"
+      },
+      "privacy": {
+        "title": "Privacy & Security",
+        "twoFactor": {
+          "label": "Two-Factor Authentication",
+          "description": "Add an extra layer of security to your account"
+        },
+        "sessionTimeout": {
+          "label": "Session Timeout",
+          "description": "Automatically log out after a period of inactivity"
+        },
+        "activityLog": {
+          "label": "Activity Log",
+          "description": "Track and review all account activity"
+        }
+      },
+      "dataStorage": {
+        "title": "Data & Storage",
+        "autoBackup": {
+          "label": "Automatic Backup",
+          "description": "Automatically back up your data on a regular schedule"
+        },
+        "dataExport": {
+          "label": "Export Data",
+          "description": "Download a copy of all your data",
+          "button": "Export"
+        },
+        "clearCache": {
+          "label": "Clear Cache",
+          "description": "Remove cached data to free up storage",
+          "button": "Clear"
+        }
+      },
       "accessibility": {
+        "title": "Accessibility",
+        "highContrast": {
+          "label": "High Contrast",
+          "description": "Increase contrast for better visibility"
+        },
         "fontSize": {
-          "description": ""
+          "label": "Large Text",
+          "description": "Increase the default font size for easier reading"
         },
         "reduceMotion": {
-          "label": "",
-          "description": ""
+          "label": "Reduce Motion",
+          "description": "Minimize animations and transitions"
         }
       }
     }

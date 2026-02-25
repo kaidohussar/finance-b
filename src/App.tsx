@@ -7,6 +7,15 @@ import Billing from './pages/Billing';
 import Settings from './pages/Settings';
 import Integrations from './pages/Integrations';
 import Reports from './pages/Reports';
+import Account from './pages/Account';
+import Calendar from './pages/Calendar';
+import Files from './pages/Files';
+import Inbox from './pages/Inbox';
+import Notifications from './pages/Notifications';
+import Onboarding from './pages/Onboarding';
+import Projects from './pages/Projects';
+import Tasks from './pages/Tasks';
+import Team from './pages/Team';
 import Login from './pages/Login';
 import Landing from './pages/Landing';
 import ForgotPassword from './pages/ForgotPassword';
@@ -32,6 +41,15 @@ function App() {
               <Route path="settings" element={<Settings />} />
               <Route path="integrations" element={<Integrations />} />
               <Route path="reports" element={<Reports />} />
+              <Route path="account" element={<Account />} />
+              <Route path="calendar" element={<Calendar />} />
+              <Route path="files" element={<Files />} />
+              <Route path="inbox" element={<Inbox />} />
+              <Route path="notifications" element={<Notifications />} />
+              <Route path="onboarding" element={<Onboarding />} />
+              <Route path="projects" element={<Projects />} />
+              <Route path="tasks" element={<Tasks />} />
+              <Route path="team" element={<Team />} />
             </Route>
           ) : (
             <Route path="*" element={<Navigate to="/landing" replace />} />
