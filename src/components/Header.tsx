@@ -32,7 +32,7 @@ const Header: React.FC = () => {
         </div>
 
         <div>
-          <Trans i18nKey="header.testMessage3" />
+          <Trans i18nKey="header.testMessage2" />
         </div>
       </div>
       <div className="header-right">
