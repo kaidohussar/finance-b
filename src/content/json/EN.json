@@ -26,7 +26,7 @@
     "title": "Dashboard",
     "welcomeMessage": "Welcome back, <strong>{{userName}}</strong>! You have <CustomLink>{{count}} new notifications</CustomLink>.",
     "testMessage2": "This is a test message",
-    "generalGreeting1": "Hello good sir, the weather is nice and you are ready for some actions"
+    "generalGreeting2": "Hello good sir, the weather is nice and you are ready for some actions"
   },
   "sidebar": {
     "analytics": "Analytics",
