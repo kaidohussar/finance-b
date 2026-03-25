@@ -36,7 +36,7 @@ const Header: React.FC = () => {
         </div>
 
         <div>
-          <Trans i18nKey="header.generalGreeting" />
+          <Trans i18nKey="header.generalGreeting1" />
         </div>
       </div>
       <div className="header-right">
