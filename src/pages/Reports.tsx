@@ -55,7 +55,7 @@ const Reports: React.FC = () => {
       nextRun: '2024-06-01',
     },
     {
-      nameKey: 'pages.reports.scheduled.monthlyStats1',
+      nameKey: 'pages.reports.scheduled.monthlyStats2',
       frequencyKey: 'pages.reports.periods.monthly',
       nextRun: '2026-06-01',
     },
