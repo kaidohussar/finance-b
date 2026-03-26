@@ -443,7 +443,8 @@
       "scheduled": {
         "monthlyAnalytics": "Monthly Analytics",
         "quarterlyPerformance": "Quarterly Performance",
-        "weeklySales": "Weekly Sales Summary"
+        "weeklySales": "Weekly Sales Summary",
+        "monthlyStats": "Monthly stats"
       },
       "scheduledReports": "Scheduled Reports",
       "subtitle": "Generate and schedule custom reports",

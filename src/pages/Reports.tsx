@@ -39,9 +39,26 @@ const Reports: React.FC = () => {
   ];
 
   const scheduledReports = [
-    { nameKey: 'pages.reports.scheduled.weeklySales', frequencyKey: 'pages.reports.periods.weekly', nextRun: '2024-03-15' },
-    { nameKey: 'pages.reports.scheduled.monthlyAnalytics', frequencyKey: 'pages.reports.periods.monthly', nextRun: '2024-04-01' },
-    { nameKey: 'pages.reports.scheduled.quarterlyPerformance', frequencyKey: 'pages.reports.periods.quarterly', nextRun: '2024-06-01' },
+    {
+      nameKey: 'pages.reports.scheduled.weeklySales',
+      frequencyKey: 'pages.reports.periods.weekly',
+      nextRun: '2024-03-15',
+    },
+    {
+      nameKey: 'pages.reports.scheduled.monthlyAnalytics',
+      frequencyKey: 'pages.reports.periods.monthly',
+      nextRun: '2024-04-01',
+    },
+    {
+      nameKey: 'pages.reports.scheduled.quarterlyPerformance',
+      frequencyKey: 'pages.reports.periods.quarterly',
+      nextRun: '2024-06-01',
+    },
+    {
+      nameKey: 'pages.reports.scheduled.monthlyStats',
+      frequencyKey: 'pages.reports.periods.monthly',
+      nextRun: '2026-06-01',
+    },
   ];
 
   return (
@@ -62,9 +79,15 @@ const Reports: React.FC = () => {
               className="filter-select"
             >
               <option value="daily">{t('pages.reports.periods.daily')}</option>
-              <option value="weekly">{t('pages.reports.periods.weekly')}</option>
-              <option value="monthly">{t('pages.reports.periods.monthly')}</option>
-              <option value="yearly">{t('pages.reports.periods.yearly')}</option>
+              <option value="weekly">
+                {t('pages.reports.periods.weekly')}
+              </option>
+              <option value="monthly">
+                {t('pages.reports.periods.monthly')}
+              </option>
+              <option value="yearly">
+                {t('pages.reports.periods.yearly')}
+              </option>
             </select>
           </div>
         </div>
@@ -77,9 +100,15 @@ const Reports: React.FC = () => {
               <p className="report-description">{t(report.descriptionKey)}</p>
               <div className="report-meta">
                 <span className="report-format">{report.format}</span>
-                <span className="report-date">{t('pages.reports.lastGenerated', { date: report.lastGenerated })}</span>
+                <span className="report-date">
+                  {t('pages.reports.lastGenerated', {
+                    date: report.lastGenerated,
+                  })}
+                </span>
               </div>
-              <button className="btn btn-primary">{t('pages.reports.generate')}</button>
+              <button className="btn btn-primary">
+                {t('pages.reports.generate')}
+              </button>
             </div>
           ))}
         </div>
@@ -104,22 +133,30 @@ const Reports: React.FC = () => {
                   <td>{t(report.frequencyKey)}</td>
                   <td>{report.nextRun}</td>
                   <td>
-                    <button className="btn-link">{t('pages.reports.actions.edit')}</button>
-                    <button className="btn-link text-danger">{t('pages.reports.actions.delete')}</button>
+                    <button className="btn-link">
+                      {t('pages.reports.actions.edit')}
+                    </button>
+                    <button className="btn-link text-danger">
+                      {t('pages.reports.actions.delete')}
+                    </button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <button className="btn btn-secondary">{t('pages.reports.scheduleNew')}</button>
+        <button className="btn btn-secondary">
+          {t('pages.reports.scheduleNew')}
+        </button>
       </div>
 
       <div className="content-section">
         <div className="info-box">
           <h3>{t('pages.reports.customReports.title')}</h3>
           <p>{t('pages.reports.customReports.description')}</p>
-          <button className="btn btn-secondary">{t('pages.reports.customReports.request')}</button>
+          <button className="btn btn-secondary">
+            {t('pages.reports.customReports.request')}
+          </button>
         </div>
       </div>
     </main>
