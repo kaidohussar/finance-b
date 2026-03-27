@@ -357,7 +357,21 @@
         "status": "Estado",
         "totalSpent": "Total gastado"
       },
-      "title": "Clientes"
+      "title": "Clientes",
+      "drawer": {
+        "phone": "Teléfono",
+        "company": "Empresa",
+        "joinDate": "Fecha de registro",
+        "recentOrders": "Pedidos recientes",
+        "orderId": "ID de pedido",
+        "date": "Fecha",
+        "amount": "Monto",
+        "orderStatus": "Estado",
+        "notes": "Notas",
+        "notesPlaceholder": "Agregar notas sobre este cliente...",
+        "sendEmail": "Enviar correo",
+        "editCustomer": "Editar cliente"
+      }
     },
     "dashboard": {
       "title": "Panel de control",

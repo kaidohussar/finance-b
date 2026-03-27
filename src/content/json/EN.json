@@ -394,7 +394,21 @@
         "status": "Status",
         "totalSpent": "Total Spent"
       },
-      "title": "Customers"
+      "title": "Customers",
+      "drawer": {
+        "phone": "Phone",
+        "company": "Company",
+        "joinDate": "Join Date",
+        "recentOrders": "Recent Orders",
+        "orderId": "Order ID",
+        "date": "Date",
+        "amount": "Amount",
+        "orderStatus": "Status",
+        "notes": "Notes",
+        "notesPlaceholder": "Add notes about this customer...",
+        "sendEmail": "Send Email",
+        "editCustomer": "Edit Customer"
+      }
     },
     "dashboard": {
       "title": "Dashboard",
