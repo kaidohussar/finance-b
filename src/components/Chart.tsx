@@ -12,10 +12,10 @@ const Chart: React.FC = () => {
     { month: 'Apr', value: 75 },
     { month: 'May', value: 88 },
     { month: 'Jun', value: 92 },
-    { month: 'Jul', value: 96 },
+    { month: 'Jul', value: 26 },
   ];
 
-  const maxValue = Math.max(...data.map(d => d.value));
+  const maxValue = Math.max(...data.map((d) => d.value));
 
   return (
     <div className="chart-container">
@@ -30,10 +30,10 @@ const Chart: React.FC = () => {
           i18nKey="chart.description"
           values={{
             startDate: 'Jan 2024',
-            endDate: 'Jul 2024'
+            endDate: 'Jul 2024',
           }}
           components={{
-            strong: <strong className="date-highlight" />
+            strong: <strong className="date-highlight" />,
           }}
         />
       </div>
