@@ -569,6 +569,13 @@
   margin-bottom: 1rem;
 }
 
+.report-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary, #4f46e5);
+  margin: 0.25rem 0 0.75rem;
+}
+
 .report-meta {
   display: flex;
   justify-content: space-around;
