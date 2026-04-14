@@ -105,7 +105,7 @@ const Reports: React.FC = () => {
             <label>{t('pages.reports.period')}</label>
             <select
               value={selectedPeriod}
-              onChange={(e) => setSelectedPeriod(e.target.value)}
+              onChange={(e) => setSelectedPeriod(e.target.value as Period)}
               className="filter-select"
             >
               <option value="daily">{t('pages.reports.periods.daily')}</option>
