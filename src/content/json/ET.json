@@ -259,21 +259,7 @@
         "status": "Staatus",
         "totalSpent": "Kulutatud kokku"
       },
-      "title": "Kliendid",
-      "drawer": {
-        "phone": "Telefon",
-        "company": "Ettevõte",
-        "joinDate": "Liitumiskuupäev",
-        "recentOrders": "Viimased tellimused",
-        "orderId": "Tellimuse ID",
-        "date": "Kuupäev",
-        "amount": "Summa",
-        "orderStatus": "Staatus",
-        "notes": "Märkmed",
-        "notesPlaceholder": "Lisa märkmeid selle kliendi kohta...",
-        "sendEmail": "Saada e-kiri",
-        "editCustomer": "Muuda klienti"
-      }
+      "title": "Kliendid"
     },
     "dashboard": {
       "title": "Töölaud",
