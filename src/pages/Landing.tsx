@@ -1,11 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
 import LanguageSelector from '../components/LanguageSelector';
+import { useAuth } from '../hooks/useAuth';
 import './Landing.css';
 
 const Landing: React.FC = () => {
   const { t } = useTranslation();
+  const { isAuthenticated } = useAuth();
+
+  if (isAuthenticated) {
+    return <Navigate to="/" replace />;
+  }
 
   const features = [
     { icon: '📊', key: 'analytics' },
