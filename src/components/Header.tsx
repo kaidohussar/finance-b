@@ -30,14 +30,6 @@ const Header: React.FC = () => {
             }}
           />
         </div>
-
-        <div>
-          <Trans i18nKey="header.testMessage2" />
-        </div>
-
-        <div>
-          <Trans i18nKey="header.generalGreeting2" />
-        </div>
       </div>
       <div className="header-right">
         <div className="search-box">
