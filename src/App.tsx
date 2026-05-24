@@ -15,6 +15,7 @@ import Notifications from './pages/Notifications';
 import Onboarding from './pages/Onboarding';
 import Projects from './pages/Projects';
 import Tasks from './pages/Tasks';
+import BudgetPlanner from './pages/BudgetPlanner';
 import Team from './pages/Team';
 import Login from './pages/Login';
 import Landing from './pages/Landing';
@@ -49,6 +50,7 @@ function App() {
               <Route path="onboarding" element={<Onboarding />} />
               <Route path="projects" element={<Projects />} />
               <Route path="tasks" element={<Tasks />} />
+              <Route path="budget" element={<BudgetPlanner />} />
               <Route path="team" element={<Team />} />
             </Route>
           ) : (
