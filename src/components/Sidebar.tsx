@@ -18,6 +18,7 @@ import {
   FolderKanban,
   CheckSquare,
   UsersRound,
+  Wallet,
 } from 'lucide-react';
 import './Sidebar.css';
 
@@ -104,6 +105,11 @@ const Sidebar: React.FC = () => {
       icon: <UsersRound size={20} />,
       labelKey: 'sidebar.team',
       path: '/team',
+    },
+    {
+      icon: <Wallet size={20} />,
+      labelKey: 'sidebar.budget',
+      path: '/budget',
     },
   ];
 
