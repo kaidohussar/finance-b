@@ -575,7 +575,42 @@
     "progress": "<strong>{{completed}}</strong> of <strong>{{total}}</strong> tasks completed",
     "projectCreated": "<strong>{{projectName}}</strong> created by <link>{{userName}}</link>",
     "statusUpdate": "Status changed to <em>{{status}}</em> by <strong>{{userName}}</strong>",
-    "title": "Projects"
+    "title": "Projects",
+    "modal": {
+      "title": "Create new project",
+      "stepIndicator": "Step {{current}} of {{total}}",
+      "step1Title": "Project details",
+      "step2Title": "Schedule & team",
+      "close": "Close",
+      "cancel": "Cancel",
+      "back": "Back",
+      "next": "Next",
+      "createProject": "Create project",
+      "optional": "optional",
+      "successToast": "Project \"{{name}}\" created",
+      "fields": {
+        "name": "Project name",
+        "description": "Description",
+        "status": "Status",
+        "deadline": "Deadline",
+        "totalTasks": "Total tasks",
+        "collaborators": "Number of collaborators"
+      },
+      "placeholders": {
+        "name": "e.g. Website Redesign",
+        "description": "What is this project about?"
+      },
+      "statuses": {
+        "planning": "Planning",
+        "inProgress": "In Progress",
+        "onHold": "On Hold"
+      },
+      "errors": {
+        "nameRequired": "Project name is required",
+        "statusRequired": "Please choose a status",
+        "deadlineRequired": "Deadline is required"
+      }
+    }
   },
   "tasks": {
     "addTask": "Add Task",

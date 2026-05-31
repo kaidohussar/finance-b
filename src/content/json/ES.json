@@ -473,7 +473,42 @@
   "projects": {
     "create": "Nuevo proyecto",
     "deadline": "Vence el <strong>{{date}}</strong>",
-    "overdue": "Este proyecto está <em>retrasado {{days}} días</em>. <link>Actualizar fecha límite</link>"
+    "overdue": "Este proyecto está <em>retrasado {{days}} días</em>. <link>Actualizar fecha límite</link>",
+    "modal": {
+      "title": "Crear nuevo proyecto",
+      "stepIndicator": "Paso {{current}} de {{total}}",
+      "step1Title": "Detalles del proyecto",
+      "step2Title": "Calendario y equipo",
+      "close": "Cerrar",
+      "cancel": "Cancelar",
+      "back": "Atrás",
+      "next": "Siguiente",
+      "createProject": "Crear proyecto",
+      "optional": "opcional",
+      "successToast": "Proyecto \"{{name}}\" creado",
+      "fields": {
+        "name": "Nombre del proyecto",
+        "description": "Descripción",
+        "status": "Estado",
+        "deadline": "Fecha límite",
+        "totalTasks": "Total de tareas",
+        "collaborators": "Número de colaboradores"
+      },
+      "placeholders": {
+        "name": "p. ej. Rediseño del sitio web",
+        "description": "¿De qué trata este proyecto?"
+      },
+      "statuses": {
+        "planning": "Planificación",
+        "inProgress": "En curso",
+        "onHold": "En espera"
+      },
+      "errors": {
+        "nameRequired": "El nombre del proyecto es obligatorio",
+        "statusRequired": "Por favor elige un estado",
+        "deadlineRequired": "La fecha límite es obligatoria"
+      }
+    }
   },
   "tasks": {
     "addTask": "Agregar tarea",

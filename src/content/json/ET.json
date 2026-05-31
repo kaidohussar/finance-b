@@ -381,7 +381,42 @@
     "progress": "<strong>{{completed}}</strong> / <strong>{{total}}</strong> ülesannet täidetud",
     "projectCreated": "<strong>{{projectName}}</strong> loodud kasutaja <link>{{userName}}</link> poolt",
     "statusUpdate": "Staatus muudetud olekusse <em>{{status}}</em> kasutaja <strong>{{userName}}</strong> poolt",
-    "title": "Projektid"
+    "title": "Projektid",
+    "modal": {
+      "title": "Loo uus projekt",
+      "stepIndicator": "Samm {{current}} / {{total}}",
+      "step1Title": "Projekti üksikasjad",
+      "step2Title": "Ajakava ja meeskond",
+      "close": "Sulge",
+      "cancel": "Tühista",
+      "back": "Tagasi",
+      "next": "Edasi",
+      "createProject": "Loo projekt",
+      "optional": "valikuline",
+      "successToast": "Projekt \"{{name}}\" loodud",
+      "fields": {
+        "name": "Projekti nimi",
+        "description": "Kirjeldus",
+        "status": "Staatus",
+        "deadline": "Tähtaeg",
+        "totalTasks": "Ülesannete arv",
+        "collaborators": "Kaastööliste arv"
+      },
+      "placeholders": {
+        "name": "nt. Veebilehe uuendamine",
+        "description": "Millest see projekt räägib?"
+      },
+      "statuses": {
+        "planning": "Planeerimisel",
+        "inProgress": "Pooleli",
+        "onHold": "Ootel"
+      },
+      "errors": {
+        "nameRequired": "Projekti nimi on kohustuslik",
+        "statusRequired": "Palun vali staatus",
+        "deadlineRequired": "Tähtaeg on kohustuslik"
+      }
+    }
   },
   "tasks": {
     "addTask": "Lisa ülesanne",

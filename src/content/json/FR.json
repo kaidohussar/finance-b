@@ -485,7 +485,42 @@
   "projects": {
     "archive": "Archivé",
     "collaborators": "Partagé avec <strong>{{count}}</strong> membres de l'équipe",
-    "create": "Nouveau projet"
+    "create": "Nouveau projet",
+    "modal": {
+      "title": "Créer un nouveau projet",
+      "stepIndicator": "Étape {{current}} sur {{total}}",
+      "step1Title": "Détails du projet",
+      "step2Title": "Calendrier et équipe",
+      "close": "Fermer",
+      "cancel": "Annuler",
+      "back": "Retour",
+      "next": "Suivant",
+      "createProject": "Créer le projet",
+      "optional": "facultatif",
+      "successToast": "Projet « {{name}} » créé",
+      "fields": {
+        "name": "Nom du projet",
+        "description": "Description",
+        "status": "Statut",
+        "deadline": "Date limite",
+        "totalTasks": "Nombre de tâches",
+        "collaborators": "Nombre de collaborateurs"
+      },
+      "placeholders": {
+        "name": "ex. Refonte du site web",
+        "description": "De quoi parle ce projet ?"
+      },
+      "statuses": {
+        "planning": "Planification",
+        "inProgress": "En cours",
+        "onHold": "En attente"
+      },
+      "errors": {
+        "nameRequired": "Le nom du projet est requis",
+        "statusRequired": "Veuillez choisir un statut",
+        "deadlineRequired": "La date limite est requise"
+      }
+    }
   },
   "tasks": {
     "addTask": "Ajouter une tâche",

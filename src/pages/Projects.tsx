@@ -1,42 +1,92 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import NewProjectModal, {
+  type NewProjectData,
+} from '../components/NewProjectModal';
 import './Pages.css';
+
+interface Project {
+  name: string;
+  creator: string;
+  status: string;
+  completed: number;
+  total: number;
+  collaborators: number;
+  deadline: string;
+  overdueDays: number;
+}
+
+const initialProjects: Project[] = [
+  {
+    name: 'Website Redesign',
+    creator: 'Sarah Johnson',
+    status: 'In Progress',
+    completed: 12,
+    total: 20,
+    collaborators: 5,
+    deadline: 'April 15, 2024',
+    overdueDays: 0,
+  },
+  {
+    name: 'Mobile App Launch',
+    creator: 'Michael Brown',
+    status: 'Planning',
+    completed: 3,
+    total: 15,
+    collaborators: 8,
+    deadline: 'June 1, 2024',
+    overdueDays: 0,
+  },
+  {
+    name: 'API Integration',
+    creator: 'David Wilson',
+    status: 'Overdue',
+    completed: 7,
+    total: 10,
+    collaborators: 3,
+    deadline: 'March 1, 2024',
+    overdueDays: 14,
+  },
+];
+
+const formatDeadline = (iso: string) => {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString(undefined, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+};
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
+  const [projects, setProjects] = useState<Project[]>(initialProjects);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
+  const toastTimerRef = useRef<number | undefined>(undefined);
 
-  const projects = [
-    {
-      name: 'Website Redesign',
-      creator: 'Sarah Johnson',
-      status: 'In Progress',
-      completed: 12,
-      total: 20,
-      collaborators: 5,
-      deadline: 'April 15, 2024',
+  const showToast = (msg: string) => {
+    setToast(msg);
+    window.clearTimeout(toastTimerRef.current);
+    toastTimerRef.current = window.setTimeout(() => setToast(null), 2800);
+  };
+
+  const handleCreateProject = (data: NewProjectData) => {
+    const newProject: Project = {
+      name: data.name,
+      creator: 'You',
+      status: data.status,
+      completed: 0,
+      total: data.totalTasks,
+      collaborators: data.collaborators,
+      deadline: formatDeadline(data.deadline),
       overdueDays: 0,
-    },
-    {
-      name: 'Mobile App Launch',
-      creator: 'Michael Brown',
-      status: 'Planning',
-      completed: 3,
-      total: 15,
-      collaborators: 8,
-      deadline: 'June 1, 2024',
-      overdueDays: 0,
-    },
-    {
-      name: 'API Integration',
-      creator: 'David Wilson',
-      status: 'Overdue',
-      completed: 7,
-      total: 10,
-      collaborators: 3,
-      deadline: 'March 1, 2024',
-      overdueDays: 14,
-    },
-  ];
+    };
+    setProjects((prev) => [newProject, ...prev]);
+    setModalOpen(false);
+    showToast(t('projects.modal.successToast', { name: data.name }));
+  };
 
   const recentUpdates = [
     { projectName: 'Website Redesign', userName: 'Sarah Johnson', type: 'created' },
@@ -47,7 +97,13 @@ const Projects: React.FC = () => {
     <main className="page-content">
       <div className="page-header">
         <h1>{t('projects.title')}</h1>
-        <button className="btn btn-primary" style={{ marginTop: '0.5rem' }}>{t('projects.create')}</button>
+        <button
+          className="btn btn-primary"
+          style={{ marginTop: '0.5rem' }}
+          onClick={() => setModalOpen(true)}
+        >
+          {t('projects.create')}
+        </button>
       </div>
 
       <div className="content-section">
@@ -75,7 +131,7 @@ const Projects: React.FC = () => {
               <div style={{ width: '100%', height: '6px', backgroundColor: '#e5e7eb', borderRadius: '3px' }}>
                 <div
                   style={{
-                    width: `${(project.completed / project.total) * 100}%`,
+                    width: `${project.total > 0 ? (project.completed / project.total) * 100 : 0}%`,
                     height: '100%',
                     backgroundColor: project.overdueDays > 0 ? '#ef4444' : '#3b82f6',
                     borderRadius: '3px',
@@ -138,6 +194,15 @@ const Projects: React.FC = () => {
           ))}
         </div>
       </div>
+
+      {isModalOpen && (
+        <NewProjectModal
+          onClose={() => setModalOpen(false)}
+          onCreate={handleCreateProject}
+        />
+      )}
+
+      {toast && <div className="success-toast">{toast}</div>}
     </main>
   );
 };
