@@ -17,3 +17,22 @@ export const getUser = async (): Promise<User> => {
     }, 1500);
   });
 };
+
+export class ApiError extends Error {
+  status: number;
+  constructor(status: number, message: string) {
+    super(message);
+    this.name = 'ApiError';
+    this.status = status;
+  }
+}
+
+export interface Report {
+  id: string;
+  url: string;
+}
+
+export const generateReport = async (): Promise<Report> => {
+  await new Promise((r) => setTimeout(r, 1200));
+  throw new ApiError(500, 'Internal Server Error');
+};
