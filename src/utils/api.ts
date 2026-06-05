@@ -33,6 +33,17 @@ export interface Report {
 }
 
 export const generateReport = async (): Promise<Report> => {
-  await new Promise((r) => setTimeout(r, 1200));
-  throw new ApiError(500, 'Internal Server Error');
+  const [response] = await Promise.all([
+    fetch('/generate-report', {
+      method: 'POST',
+      headers: { Accept: 'application/json' }
+    }),
+    new Promise((r) => setTimeout(r, 800))
+  ]);
+
+  if (!response.ok) {
+    throw new ApiError(response.status, response.statusText || 'Request failed');
+  }
+
+  return response.json();
 };
