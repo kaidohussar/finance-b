@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import FileDropzone from '../components/FileDropzone';
 import './Pages.css';
 
 const Files: React.FC = () => {
@@ -48,9 +49,11 @@ const Files: React.FC = () => {
     <main className="page-content">
       <div className="page-header">
         <h1>{t('files.title')}</h1>
-        <button className="btn btn-primary" style={{ marginTop: '0.5rem' }}>
-          {t('files.upload')}
-        </button>
+      </div>
+
+      <div className="content-section">
+        <h2>{t('files.upload')}</h2>
+        <FileDropzone />
       </div>
 
       <div className="content-section">
