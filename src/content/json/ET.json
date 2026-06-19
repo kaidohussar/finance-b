@@ -259,7 +259,10 @@
         "status": "Staatus",
         "totalSpent": "Kulutatud kokku"
       },
-      "title": "Kliendid"
+      "title": "Kliendid",
+      "contextMenu": {
+        "deleteRow": "Kustuta rida"
+      }
     },
     "dashboard": {
       "title": "Töölaud",

@@ -369,6 +369,9 @@
         "notesPlaceholder": "Ajouter des notes sur ce client...",
         "sendEmail": "Envoyer un e-mail",
         "editCustomer": "Modifier le client"
+      },
+      "contextMenu": {
+        "deleteRow": "Supprimer la ligne"
       }
     },
     "dashboard": {

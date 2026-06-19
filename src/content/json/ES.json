@@ -357,7 +357,10 @@
         "status": "Estado",
         "totalSpent": "Total gastado"
       },
-      "title": "Clientes"
+      "title": "Clientes",
+      "contextMenu": {
+        "deleteRow": "Eliminar fila"
+      }
     },
     "dashboard": {
       "title": "Panel de control",

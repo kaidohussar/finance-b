@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { X, Mail, Pencil } from 'lucide-react';
+import { X, Mail, Pencil, Trash2 } from 'lucide-react';
 import './Pages.css';
+
+interface ContextMenuState {
+  x: number;
+  y: number;
+  customer: Customer;
+}
 
 interface RecentOrder {
   id: string;
@@ -23,7 +29,7 @@ interface Customer {
   recentOrders: RecentOrder[];
 }
 
-const customers: Customer[] = [
+const initialCustomers: Customer[] = [
   {
     id: 1,
     name: 'John Smith',
@@ -129,8 +135,10 @@ const getInitials = (name: string) =>
 const Customers: React.FC = () => {
   const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
+  const [customers, setCustomers] = useState<Customer[]>(initialCustomers);
   const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(null);
   const [notes, setNotes] = useState('');
+  const [contextMenu, setContextMenu] = useState<ContextMenuState | null>(null);
 
   useEffect(() => {
     if (!selectedCustomer) return;
@@ -142,6 +150,36 @@ const Customers: React.FC = () => {
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [selectedCustomer]);
+
+  // Dismiss the context menu on any outside click, scroll, or Escape.
+  useEffect(() => {
+    if (!contextMenu) return;
+
+    const close = () => setContextMenu(null);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setContextMenu(null);
+    };
+
+    document.addEventListener('click', close);
+    document.addEventListener('scroll', close, true);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('click', close);
+      document.removeEventListener('scroll', close, true);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [contextMenu]);
+
+  const handleRowContextMenu = (e: React.MouseEvent, customer: Customer) => {
+    e.preventDefault();
+    setContextMenu({ x: e.clientX, y: e.clientY, customer });
+  };
+
+  const handleDeleteRow = (customer: Customer) => {
+    setCustomers((prev) => prev.filter((c) => c.id !== customer.id));
+    if (selectedCustomer?.id === customer.id) setSelectedCustomer(null);
+    setContextMenu(null);
+  };
 
   const filteredCustomers = customers.filter(
     (customer) =>
@@ -176,7 +214,7 @@ const Customers: React.FC = () => {
         </div>
 
         <div className="table-container">
-          <table className="data-table">
+          <table className="data-table" data-testid="customers-table">
             <thead>
               <tr>
                 <th>{t('pages.customers.table.name')}</th>
@@ -191,7 +229,11 @@ const Customers: React.FC = () => {
                 <tr
                   key={customer.id}
                   onClick={() => openDrawer(customer)}
+                  onContextMenu={(e) => handleRowContextMenu(e, customer)}
                   style={{ cursor: 'pointer' }}
+                  data-testid="customer-row"
+                  data-customer-id={customer.id}
+                  data-customer-name={customer.name}
                 >
                   <td>{customer.name}</td>
                   <td>{customer.email}</td>
@@ -339,6 +381,30 @@ const Customers: React.FC = () => {
             </div>
           </div>
         </div>
+      )}
+
+      {contextMenu && (
+        <ul
+          className="context-menu"
+          role="menu"
+          data-testid="row-context-menu"
+          style={{ top: contextMenu.y, left: contextMenu.x }}
+          onClick={(e) => e.stopPropagation()}
+          onContextMenu={(e) => e.preventDefault()}
+        >
+          <li role="presentation">
+            <button
+              type="button"
+              role="menuitem"
+              className="context-menu-item danger"
+              data-testid="context-menu-delete"
+              onClick={() => handleDeleteRow(contextMenu.customer)}
+            >
+              <Trash2 size={16} />
+              {t('pages.customers.contextMenu.deleteRow')}
+            </button>
+          </li>
+        </ul>
       )}
     </main>
   );

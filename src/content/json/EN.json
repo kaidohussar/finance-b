@@ -408,6 +408,9 @@
         "notesPlaceholder": "Add notes about this customer...",
         "sendEmail": "Send Email",
         "editCustomer": "Edit Customer"
+      },
+      "contextMenu": {
+        "deleteRow": "Delete row"
       }
     },
     "dashboard": {
