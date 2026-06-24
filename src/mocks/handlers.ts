@@ -38,11 +38,11 @@ const routes: Record<string, Handler> = {
   'GET /api/dashboard/stats': () => ok(data.stats),
   'GET /api/dashboard/chart': () => ok(data.chart),
   'GET /api/dashboard/activity': () => ok(data.activities),
-  'POST /api/reports/generate': () =>
-    created({
-      id: `RPT-${1000 + Math.floor(Math.random() * 9000)}`,
-      url: '/reports/latest.pdf',
-    }),
+  // Intentionally fails, to demonstrate error handling on the dashboard.
+  'POST /api/reports/generate': () => ({
+    status: 500,
+    body: { error: 'Failed to generate report' },
+  }),
 
   /* Projects ------------------------------------------------------ */
   'GET /api/projects': () =>

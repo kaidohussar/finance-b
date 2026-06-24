@@ -28,7 +28,7 @@ const MainContent: React.FC = () => {
       await generateReport();
       showToast(t('pages.dashboard.reportReady', 'Report generated'));
     } catch {
-      showToast('Something went wrong');
+      showToast(t('pages.dashboard.reportFailed', 'Failed to generate report'));
     } finally {
       setReportLoading(false);
     }

@@ -1,80 +1,44 @@
 /**
- * Browser-side mock API.
+ * Browser-side mock API powered by Mock Service Worker (MSW).
  *
- * Patches `window.fetch` so every request to `/api/*` is served by the shared
- * handlers instead of hitting the network. This runs in BOTH dev and the
- * deployed static build (Netlify), so there is no real backend required.
- *
- * Artificial latency is added so the UI exercises genuine loading states.
+ * MSW registers a real Service Worker that intercepts network requests, so
+ * every `/api/*` call shows up in the browser's Network tab (served from
+ * ServiceWorker) while still being answered from the in-memory mock. This works
+ * in both local dev and the deployed static build — no backend required.
  */
+import { setupWorker } from 'msw/browser';
+import { http, HttpResponse, delay } from 'msw';
 import { handleApiRequest } from './handlers';
 
 const LATENCY_MIN = 400;
 const LATENCY_MAX = 900;
 
-const delay = () =>
-  new Promise<void>((resolve) =>
-    setTimeout(resolve, LATENCY_MIN + Math.random() * (LATENCY_MAX - LATENCY_MIN))
-  );
+const resolver = async ({ request }: { request: Request }) => {
+  const url = new URL(request.url);
 
-const resolvePathname = (input: RequestInfo | URL): string => {
-  const url =
-    typeof input === 'string'
-      ? input
-      : input instanceof URL
-        ? input.href
-        : input.url;
-  try {
-    return new URL(url, window.location.origin).pathname;
-  } catch {
-    return url.split('?')[0];
-  }
-};
-
-const resolveMethod = (input: RequestInfo | URL, init?: RequestInit): string => {
-  if (init?.method) return init.method;
-  if (input instanceof Request) return input.method;
-  return 'GET';
-};
-
-const resolveBody = async (
-  input: RequestInfo | URL,
-  init?: RequestInit
-): Promise<unknown> => {
-  let raw: string | undefined;
-  if (init?.body != null) {
-    raw = typeof init.body === 'string' ? init.body : undefined;
-  } else if (input instanceof Request) {
-    raw = await input.clone().text();
-  }
-  if (!raw) return undefined;
-  try {
-    return JSON.parse(raw);
-  } catch {
-    return undefined;
-  }
-};
-
-export function installMockApi(): void {
-  const originalFetch = window.fetch.bind(window);
-
-  window.fetch = async (input: RequestInfo | URL, init?: RequestInit): Promise<Response> => {
-    const pathname = resolvePathname(input);
-
-    if (!pathname.startsWith('/api/')) {
-      return originalFetch(input, init);
+  let body: unknown;
+  if (request.method !== 'GET' && request.method !== 'HEAD') {
+    try {
+      body = await request.clone().json();
+    } catch {
+      body = undefined;
     }
+  }
 
-    const method = resolveMethod(input, init);
-    const body = await resolveBody(input, init);
+  // Artificial latency so the UI exercises genuine loading states.
+  await delay(LATENCY_MIN + Math.random() * (LATENCY_MAX - LATENCY_MIN));
 
-    await delay();
+  const { status, body: payload } = handleApiRequest(request.method, url.pathname, body);
+  return HttpResponse.json(payload as object | null, { status });
+};
 
-    const { status, body: payload } = handleApiRequest(method, pathname, body);
+const worker = setupWorker(http.all('/api/*', resolver));
 
-    return new Response(JSON.stringify(payload), {
-      status,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  };
+export async function installMockApi(): Promise<void> {
+  await worker.start({
+    // Let non-API requests (assets, translations, HMR) hit the network as usual.
+    onUnhandledRequest: 'bypass',
+    quiet: true,
+    serviceWorker: { url: `${import.meta.env.BASE_URL}mockServiceWorker.js` },
+  });
 }

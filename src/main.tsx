@@ -7,16 +7,16 @@ import { LanguageProvider } from './providers/LanguageProvider'
 import { AuthProvider } from './providers/AuthProvider'
 import { installMockApi } from './mocks/browser'
 
-// Serve all `/api/*` requests from the in-browser mock so the app works the
-// same in local dev and in the deployed static build (no backend required).
-installMockApi()
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <LanguageProvider>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </LanguageProvider>
-  </StrictMode>,
-)
+// Start the Service Worker mock before rendering so the first `/api/*` requests
+// are intercepted. Works the same in dev and the deployed static build.
+installMockApi().then(() => {
+  createRoot(document.getElementById('root')!).render(
+    <StrictMode>
+      <LanguageProvider>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </LanguageProvider>
+    </StrictMode>,
+  )
+})
