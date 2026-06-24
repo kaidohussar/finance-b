@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { mockApiPlugin } from './src/mocks/server';
+
+// The mock API runs in the browser (see src/mocks/browser.ts), so it works in
+// both dev and the deployed static build — no dev-server middleware needed.
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), mockApiPlugin()],
+  plugins: [react()],
   build: {
     sourcemap: true,
   },
