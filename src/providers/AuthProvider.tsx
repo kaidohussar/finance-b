@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import type { ReactNode } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import type { User } from '../types/auth';
+import { loginRequest, ApiError } from '../utils/api';
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -14,20 +15,16 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   });
 
   const login = async (email: string, password: string) => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-
-    if (email.toLowerCase() !== 'test@example.com') {
-      return { success: false, error: 'login.errorInvalidEmail' };
+    try {
+      const { user } = await loginRequest(email, password);
+      const newUser: User = { email: user.email };
+      setUser(newUser);
+      localStorage.setItem('auth_user', JSON.stringify(newUser));
+      return { success: true };
+    } catch (err) {
+      const code = err instanceof ApiError ? err.message : 'login.errorGeneric';
+      return { success: false, error: code };
     }
-
-    if (!password) {
-      return { success: false, error: 'login.errorPasswordRequired' };
-    }
-
-    const newUser: User = { email: email.toLowerCase() };
-    setUser(newUser);
-    localStorage.setItem('auth_user', JSON.stringify(newUser));
-    return { success: true };
   };
 
   const logout = () => {

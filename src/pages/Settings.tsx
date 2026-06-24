@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Pages.css';
+import { useApi } from '../hooks/useApi';
+import { getSettings, updateSettings } from '../utils/api';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Settings: React.FC = () => {
   const { t } = useTranslation();
+  const { data, loading, error } = useApi(getSettings);
+
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [pushNotifications, setPushNotifications] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
@@ -14,6 +19,58 @@ const Settings: React.FC = () => {
   const [highContrast, setHighContrast] = useState(false);
   const [largeText, setLargeText] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
+
+  const [saving, setSaving] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!data) return;
+    const { toggles } = data;
+    setEmailNotifications(toggles.emailNotifications);
+    setPushNotifications(toggles.pushNotifications);
+    setDarkMode(toggles.darkMode);
+    setTwoFactor(toggles.twoFactor);
+    setSessionTimeout(toggles.sessionTimeout);
+    setActivityLog(toggles.activityLog);
+    setAutoBackup(toggles.autoBackup);
+    setHighContrast(toggles.highContrast);
+    setLargeText(toggles.largeText);
+    setReduceMotion(toggles.reduceMotion);
+  }, [data]);
+
+  const handleSave = async () => {
+    setSaving(true);
+    try {
+      await updateSettings({
+        toggles: {
+          emailNotifications,
+          pushNotifications,
+          darkMode,
+          twoFactor,
+          sessionTimeout,
+          activityLog,
+          autoBackup,
+          highContrast,
+          largeText,
+          reduceMotion,
+        },
+      });
+      setToast(t('common.saved', 'Saved'));
+      window.setTimeout(() => setToast(null), 2800);
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  if (loading || error || !data) {
+    return (
+      <main className="page-content">
+        <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
+          {loading ? <LoadingSpinner /> : <span>{t('common.error', 'Failed to load')}</span>}
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="page-content">
@@ -26,17 +83,19 @@ const Settings: React.FC = () => {
         <h2>{t('pages.settings.profile.title')}</h2>
         <div className="form-group">
           <label>{t('pages.settings.profile.fullName')}</label>
-          <input type="text" className="form-input" defaultValue="John Doe" />
+          <input type="text" className="form-input" defaultValue={data.profile.fullName} />
         </div>
         <div className="form-group">
           <label>{t('pages.settings.profile.email')}</label>
-          <input type="email" className="form-input" defaultValue="john@example.com" />
+          <input type="email" className="form-input" defaultValue={data.profile.email} />
         </div>
         <div className="form-group">
           <label>{t('pages.settings.profile.company')}</label>
-          <input type="text" className="form-input" defaultValue="Acme Inc." />
+          <input type="text" className="form-input" defaultValue={data.profile.company} />
         </div>
-        <button className="btn btn-primary">{t('pages.settings.profile.saveChanges')}</button>
+        <button className="btn btn-primary" onClick={handleSave} disabled={saving}>
+          {saving ? t('common.saving', 'Saving...') : t('pages.settings.profile.saveChanges')}
+        </button>
       </div>
 
       <div className="content-section">
@@ -260,6 +319,8 @@ const Settings: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {toast && <div className="success-toast">{toast}</div>}
     </main>
   );
 };

@@ -1,12 +1,52 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import './Pages.css';
+import { useApi } from '../hooks/useApi';
+import { getNotifications, updateNotificationSettings } from '../utils/api';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Notifications: React.FC = () => {
   const { t } = useTranslation();
+  const { data, loading, error, setData } = useApi(getNotifications);
+
   const [emailEnabled, setEmailEnabled] = useState(true);
   const [pushEnabled, setPushEnabled] = useState(true);
   const [digestEnabled, setDigestEnabled] = useState(false);
+
+  useEffect(() => {
+    if (!data) return;
+    setEmailEnabled(data.settings.emailEnabled);
+    setPushEnabled(data.settings.pushEnabled);
+    setDigestEnabled(data.settings.digestEnabled);
+  }, [data]);
+
+  const handleEmailChange = async (value: boolean) => {
+    setEmailEnabled(value);
+    const result = await updateNotificationSettings({ emailEnabled: value });
+    setData(result);
+  };
+
+  const handlePushChange = async (value: boolean) => {
+    setPushEnabled(value);
+    const result = await updateNotificationSettings({ pushEnabled: value });
+    setData(result);
+  };
+
+  const handleDigestChange = async (value: boolean) => {
+    setDigestEnabled(value);
+    const result = await updateNotificationSettings({ digestEnabled: value });
+    setData(result);
+  };
+
+  if (loading || error || !data) {
+    return (
+      <main className="page-content">
+        <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
+          {loading ? <LoadingSpinner /> : <span>{t('common.error', 'Failed to load')}</span>}
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="page-content">
@@ -19,7 +59,7 @@ const Notifications: React.FC = () => {
           <div className="setting-label">
             <Trans
               i18nKey="notifications.newNotifications"
-              values={{ count: 5 }}
+              values={{ count: data.newNotifications }}
               components={{ strong: <strong /> }}
             />
           </div>
@@ -31,7 +71,7 @@ const Notifications: React.FC = () => {
             <div className="setting-description">
               <Trans
                 i18nKey="notifications.muted"
-                values={{ time: '5:00 PM' }}
+                values={{ time: data.mutedUntil }}
                 components={{ strong: <strong /> }}
               />
             </div>
@@ -57,7 +97,7 @@ const Notifications: React.FC = () => {
               <input
                 type="checkbox"
                 checked={emailEnabled}
-                onChange={(e) => setEmailEnabled(e.target.checked)}
+                onChange={(e) => handleEmailChange(e.target.checked)}
               />
               <span className="toggle-slider"></span>
             </label>
@@ -77,7 +117,7 @@ const Notifications: React.FC = () => {
               <input
                 type="checkbox"
                 checked={pushEnabled}
-                onChange={(e) => setPushEnabled(e.target.checked)}
+                onChange={(e) => handlePushChange(e.target.checked)}
               />
               <span className="toggle-slider"></span>
             </label>
@@ -97,7 +137,7 @@ const Notifications: React.FC = () => {
               <input
                 type="checkbox"
                 checked={digestEnabled}
-                onChange={(e) => setDigestEnabled(e.target.checked)}
+                onChange={(e) => handleDigestChange(e.target.checked)}
               />
               <span className="toggle-slider"></span>
             </label>

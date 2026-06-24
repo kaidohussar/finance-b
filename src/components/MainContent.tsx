@@ -5,15 +5,8 @@ import StatsCards from './StatsCards';
 import Chart from './Chart';
 import RecentActivity from './RecentActivity';
 import FullScreenLoader from './FullScreenLoader';
-import { generateReport, getUser } from '../utils/api';
+import { generateReport, getUser, type User } from '../utils/api';
 import './MainContent.css';
-
-interface User {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-}
 
 const MainContent: React.FC = () => {
   const { t } = useTranslation();
@@ -33,6 +26,7 @@ const MainContent: React.FC = () => {
     setReportLoading(true);
     try {
       await generateReport();
+      showToast(t('pages.dashboard.reportReady', 'Report generated'));
     } catch {
       showToast('Something went wrong');
     } finally {

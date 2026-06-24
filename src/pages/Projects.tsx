@@ -3,51 +3,10 @@ import { useTranslation, Trans } from 'react-i18next';
 import NewProjectModal, {
   type NewProjectData,
 } from '../components/NewProjectModal';
+import { getProjects, createProject } from '../utils/api';
+import { useApi } from '../hooks/useApi';
+import LoadingSpinner from '../components/LoadingSpinner';
 import './Pages.css';
-
-interface Project {
-  name: string;
-  creator: string;
-  status: string;
-  completed: number;
-  total: number;
-  collaborators: number;
-  deadline: string;
-  overdueDays: number;
-}
-
-const initialProjects: Project[] = [
-  {
-    name: 'Website Redesign',
-    creator: 'Sarah Johnson',
-    status: 'In Progress',
-    completed: 12,
-    total: 20,
-    collaborators: 5,
-    deadline: 'April 15, 2024',
-    overdueDays: 0,
-  },
-  {
-    name: 'Mobile App Launch',
-    creator: 'Michael Brown',
-    status: 'Planning',
-    completed: 3,
-    total: 15,
-    collaborators: 8,
-    deadline: 'June 1, 2024',
-    overdueDays: 0,
-  },
-  {
-    name: 'API Integration',
-    creator: 'David Wilson',
-    status: 'Overdue',
-    completed: 7,
-    total: 10,
-    collaborators: 3,
-    deadline: 'March 1, 2024',
-    overdueDays: 14,
-  },
-];
 
 const formatDeadline = (iso: string) => {
   const d = new Date(iso);
@@ -61,8 +20,9 @@ const formatDeadline = (iso: string) => {
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
-  const [projects, setProjects] = useState<Project[]>(initialProjects);
+  const { data, loading, error, setData } = useApi(getProjects);
   const [isModalOpen, setModalOpen] = useState(false);
+  const [creating, setCreating] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const toastTimerRef = useRef<number | undefined>(undefined);
 
@@ -72,26 +32,45 @@ const Projects: React.FC = () => {
     toastTimerRef.current = window.setTimeout(() => setToast(null), 2800);
   };
 
-  const handleCreateProject = (data: NewProjectData) => {
-    const newProject: Project = {
-      name: data.name,
-      creator: 'You',
-      status: data.status,
-      completed: 0,
-      total: data.totalTasks,
-      collaborators: data.collaborators,
-      deadline: formatDeadline(data.deadline),
-      overdueDays: 0,
-    };
-    setProjects((prev) => [newProject, ...prev]);
-    setModalOpen(false);
-    showToast(t('projects.modal.successToast', { name: data.name }));
+  const handleCreateProject = async (formData: NewProjectData) => {
+    setCreating(true);
+    try {
+      const created = await createProject({
+        name: formData.name,
+        description: formData.description,
+        status: formData.status,
+        deadline: formatDeadline(formData.deadline),
+        total: formData.totalTasks,
+        collaborators: formData.collaborators,
+      });
+      setData((prev) => ({ ...prev!, projects: [created, ...prev!.projects] }));
+      setModalOpen(false);
+      showToast(t('projects.modal.successToast', { name: formData.name }));
+    } catch {
+      showToast(t('common.error', 'Failed to load'));
+    } finally {
+      setCreating(false);
+    }
   };
 
-  const recentUpdates = [
-    { projectName: 'Website Redesign', userName: 'Sarah Johnson', type: 'created' },
-    { projectName: 'API Integration', userName: 'David Wilson', status: 'On Hold', type: 'statusUpdate' },
-  ];
+  if (loading || error || !data) {
+    return (
+      <main className="page-content">
+        <div
+          style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}
+        >
+          {loading ? (
+            <LoadingSpinner />
+          ) : (
+            <span>{t('common.error', 'Failed to load')}</span>
+          )}
+        </div>
+      </main>
+    );
+  }
+
+  const projects = data.projects;
+  const recentUpdates = data.recentUpdates;
 
   return (
     <main className="page-content">
@@ -199,6 +178,7 @@ const Projects: React.FC = () => {
         <NewProjectModal
           onClose={() => setModalOpen(false)}
           onCreate={handleCreateProject}
+          submitting={creating}
         />
       )}
 

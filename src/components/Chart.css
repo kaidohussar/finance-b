@@ -80,3 +80,10 @@
   color: var(--gray-600);
   font-weight: 500;
 }
+.chart-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  color: var(--gray-600);
+}

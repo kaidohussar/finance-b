@@ -4,24 +4,19 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { ChevronDown, Check, ArrowUpDown } from 'lucide-react';
 import TaskActionsMenu from '../components/TaskActionsMenu';
 import type { TaskAction } from '../components/TaskActionsMenu';
+import {
+  getTasks,
+  completeTask,
+  duplicateTask,
+  deleteTask,
+  editTask,
+} from '../utils/api';
+import type { InProgressTask } from '../utils/api';
+import { useApi } from '../hooks/useApi';
+import LoadingSpinner from '../components/LoadingSpinner';
 import './Pages.css';
 
 type Priority = 'Critical' | 'High' | 'Medium' | 'Low';
-
-interface InProgressTask {
-  id: string;
-  name: string;
-  assignee: string;
-  priority: Priority;
-  subtasksCompleted: number;
-  subtasksTotal: number;
-}
-
-interface CompletedTask {
-  id: string;
-  taskName: string;
-  userName: string;
-}
 
 type SortKey = 'priority' | 'assignee' | 'progress' | 'name';
 
@@ -32,43 +27,9 @@ const priorityRank: Record<Priority, number> = {
   Low: 3,
 };
 
-const initialInProgress: InProgressTask[] = [
-  {
-    id: 't1',
-    name: 'Update dashboard UI',
-    assignee: 'Sarah Johnson',
-    priority: 'High',
-    subtasksCompleted: 3,
-    subtasksTotal: 5,
-  },
-  {
-    id: 't2',
-    name: 'Fix payment gateway',
-    assignee: 'Michael Brown',
-    priority: 'Critical',
-    subtasksCompleted: 1,
-    subtasksTotal: 4,
-  },
-  {
-    id: 't3',
-    name: 'Write API docs',
-    assignee: 'Emily Davis',
-    priority: 'Medium',
-    subtasksCompleted: 6,
-    subtasksTotal: 8,
-  },
-];
-
-const initialCompleted: CompletedTask[] = [
-  { id: 'c1', taskName: 'Setup CI/CD pipeline', userName: 'David Wilson' },
-  { id: 'c2', taskName: 'Database migration', userName: 'Lisa Anderson' },
-];
-
 const Tasks: React.FC = () => {
   const { t } = useTranslation();
-  const [inProgress, setInProgress] =
-    useState<InProgressTask[]>(initialInProgress);
-  const [completed, setCompleted] = useState<CompletedTask[]>(initialCompleted);
+  const { data, loading, error, setData } = useApi(getTasks);
   const [sortKey, setSortKey] = useState<SortKey>('priority');
   const [toast, setToast] = useState<string | null>(null);
 
@@ -77,6 +38,8 @@ const Tasks: React.FC = () => {
     window.clearTimeout((showToast as any)._tid);
     (showToast as any)._tid = window.setTimeout(() => setToast(null), 2200);
   };
+
+  const inProgress = data?.inProgress ?? [];
 
   const sortedInProgress = useMemo(() => {
     const tasks = [...inProgress];
@@ -107,39 +70,52 @@ const Tasks: React.FC = () => {
     name: 'Name',
   };
 
-  const handleTaskAction = (task: InProgressTask, action: TaskAction) => {
-    switch (action) {
-      case 'complete':
-        setInProgress((prev) => prev.filter((t) => t.id !== task.id));
-        setCompleted((prev) => [
-          { id: `c-${task.id}`, taskName: task.name, userName: task.assignee },
-          ...prev,
-        ]);
-        showToast(`Marked "${task.name}" as complete`);
-        break;
-      case 'edit':
-        showToast(`Opening editor for "${task.name}"`);
-        break;
-      case 'duplicate': {
-        const dupId = `${task.id}-${Date.now()}`;
-        setInProgress((prev) => [
-          ...prev,
-          {
-            ...task,
-            id: dupId,
-            name: `${task.name} (copy)`,
-            subtasksCompleted: 0,
-          },
-        ]);
-        showToast(`Duplicated "${task.name}"`);
-        break;
+  const handleTaskAction = async (task: InProgressTask, action: TaskAction) => {
+    try {
+      switch (action) {
+        case 'complete': {
+          const res = await completeTask(task.id);
+          setData((prev) => ({ ...prev!, ...res }));
+          showToast(`Marked "${task.name}" as complete`);
+          break;
+        }
+        case 'edit':
+          await editTask(task.id);
+          showToast(`Opening editor for "${task.name}"`);
+          break;
+        case 'duplicate': {
+          const res = await duplicateTask(task.id);
+          setData((prev) => ({ ...prev!, ...res }));
+          showToast(`Duplicated "${task.name}"`);
+          break;
+        }
+        case 'delete': {
+          const res = await deleteTask(task.id);
+          setData((prev) => ({ ...prev!, ...res }));
+          showToast(`Deleted "${task.name}"`);
+          break;
+        }
       }
-      case 'delete':
-        setInProgress((prev) => prev.filter((t) => t.id !== task.id));
-        showToast(`Deleted "${task.name}"`);
-        break;
+    } catch {
+      showToast(t('common.error', 'Failed to load'));
     }
   };
+
+  if (loading || error || !data) {
+    return (
+      <main className="page-content">
+        <div
+          style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}
+        >
+          {loading ? (
+            <LoadingSpinner />
+          ) : (
+            <span>{t('common.error', 'Failed to load')}</span>
+          )}
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="page-content">
@@ -198,7 +174,7 @@ const Tasks: React.FC = () => {
           <div className="metric-label">
             <Trans
               i18nKey="tasks.dueToday"
-              values={{ count: 4 }}
+              values={{ count: data.dueToday }}
               components={{ strong: <strong /> }}
             />
           </div>
@@ -209,7 +185,7 @@ const Tasks: React.FC = () => {
         </div>
         <div className="metric-card">
           <div className="metric-label">{t('tasks.completed')}</div>
-          <div className="metric-value">{completed.length}</div>
+          <div className="metric-value">{data.completed.length}</div>
         </div>
       </div>
 
@@ -222,7 +198,7 @@ const Tasks: React.FC = () => {
             <div className="setting-description" style={{ color: '#ef4444' }}>
               <Trans
                 i18nKey="tasks.overdueTasks"
-                values={{ count: 2 }}
+                values={{ count: data.overdue }}
                 components={{ em: <em />, link: <a href="#review" /> }}
               />
             </div>
@@ -316,7 +292,7 @@ const Tasks: React.FC = () => {
       <div className="content-section">
         <h2>{t('tasks.completed')}</h2>
         <div className="settings-group">
-          {completed.map((task) => (
+          {data.completed.map((task) => (
             <div key={task.id} className="setting-item">
               <div className="setting-info">
                 <div className="setting-description">

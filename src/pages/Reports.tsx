@@ -2,39 +2,15 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Pages.css';
 import { DollarSign, Users, Package, Wallet } from 'lucide-react';
-
-type Period = 'daily' | 'weekly' | 'monthly' | 'yearly';
-
-const periodData: Record<Period, { value: string; lastGenerated: string }[]> = {
-  daily: [
-    { value: '$4,250', lastGenerated: '2026-04-13' },
-    { value: '127 new', lastGenerated: '2026-04-13' },
-    { value: '48 items low', lastGenerated: '2026-04-13' },
-    { value: '$3,890', lastGenerated: '2026-04-13' },
-  ],
-  weekly: [
-    { value: '$28,400', lastGenerated: '2026-04-07' },
-    { value: '843 new', lastGenerated: '2026-04-07' },
-    { value: '312 items low', lastGenerated: '2026-04-07' },
-    { value: '$26,100', lastGenerated: '2026-04-07' },
-  ],
-  monthly: [
-    { value: '$124,500', lastGenerated: '2026-03-31' },
-    { value: '3,421 new', lastGenerated: '2026-03-31' },
-    { value: '1,240 items low', lastGenerated: '2026-03-31' },
-    { value: '$112,800', lastGenerated: '2026-03-31' },
-  ],
-  yearly: [
-    { value: '$1,490,000', lastGenerated: '2025-12-31' },
-    { value: '41,052 new', lastGenerated: '2025-12-31' },
-    { value: '14,880 items low', lastGenerated: '2025-12-31' },
-    { value: '$1,353,600', lastGenerated: '2025-12-31' },
-  ],
-};
+import { useApi } from '../hooks/useApi';
+import { getReports } from '../utils/api';
+import type { Period } from '../utils/api';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Reports: React.FC = () => {
   const { t } = useTranslation();
   const [selectedPeriod, setSelectedPeriod] = useState<Period>('monthly');
+  const { data, loading, error } = useApi(getReports);
 
   const reports = [
     {
@@ -63,33 +39,15 @@ const Reports: React.FC = () => {
     },
   ];
 
-  const scheduledReports = [
-    {
-      nameKey: 'pages.reports.scheduled.weeklySales',
-      frequencyKey: 'pages.reports.periods.weekly',
-      nextRun: '2024-03-15',
-    },
-    {
-      nameKey: 'pages.reports.scheduled.monthlyAnalytics',
-      frequencyKey: 'pages.reports.periods.monthly',
-      nextRun: '2024-04-01',
-    },
-    {
-      nameKey: 'pages.reports.scheduled.quarterlyPerformance',
-      frequencyKey: 'pages.reports.periods.quarterly',
-      nextRun: '2024-06-01',
-    },
-    {
-      nameKey: 'pages.reports.scheduled.monthlyStats',
-      frequencyKey: 'pages.reports.periods.monthly',
-      nextRun: '2026-06-01',
-    },
-    {
-      nameKey: 'pages.reports.scheduled.yearlyStats',
-      frequencyKey: 'pages.reports.periods.yearly',
-      nextRun: '2026-06-01',
-    },
-  ];
+  if (loading || error || !data) {
+    return (
+      <main className="page-content">
+        <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
+          {loading ? <LoadingSpinner /> : <span>{t('common.error', 'Failed to load')}</span>}
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="page-content">
@@ -124,7 +82,7 @@ const Reports: React.FC = () => {
 
         <div className="reports-grid">
           {reports.map((report, index) => {
-            const { value, lastGenerated } = periodData[selectedPeriod][index];
+            const { value, lastGenerated } = data.periodData[selectedPeriod][index];
             return (
               <div key={index} className="report-card">
                 <div className="report-icon">{report.icon}</div>
@@ -161,7 +119,7 @@ const Reports: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {scheduledReports.map((report, index) => (
+              {data.scheduledReports.map((report, index) => (
                 <tr key={index}>
                   <td>{t(report.nameKey)}</td>
                   <td>{t(report.frequencyKey)}</td>

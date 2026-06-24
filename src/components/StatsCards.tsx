@@ -1,54 +1,38 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { DollarSign, Users, BarChart3, TrendingUp } from 'lucide-react';
+import { getDashboardStats, type StatIconKey } from '../utils/api';
+import { useApi } from '../hooks/useApi';
+import LoadingSpinner from './LoadingSpinner';
 import './StatsCards.css';
+
+const ICONS: Record<StatIconKey, React.ReactNode> = {
+  revenue: <DollarSign size={20} />,
+  users: <Users size={20} />,
+  conversion: <BarChart3 size={20} />,
+  growth: <TrendingUp size={20} />,
+};
 
 const StatsCards: React.FC = () => {
   const { t } = useTranslation();
+  const { data: stats, loading, error } = useApi(getDashboardStats);
 
-  const stats = [
-    {
-      titleKey: 'stats.totalRevenue',
-      value: '$45,234',
-      change: '+12.5%',
-      changeValue: 12.5,
-      trend: 'up',
-      icon: <DollarSign size={20} />,
-      descriptionKey: 'stats.revenueDescription'
-    },
-    {
-      titleKey: 'stats.activeUsers',
-      value: '2,845',
-      change: '+8.2%',
-      changeValue: 234,
-      trend: 'up',
-      icon: <Users size={20} />,
-      descriptionKey: 'stats.usersDescription'
-    },
-    {
-      titleKey: 'stats.conversionRate',
-      value: '3.24%',
-      change: '-2.1%',
-      changeValue: 2.1,
-      trend: 'down',
-      icon: <BarChart3 size={20} />
-    },
-    {
-      titleKey: 'stats.monthlyGrowth',
-      value: '24.8%',
-      change: '+5.7%',
-      changeValue: 5.7,
-      trend: 'up',
-      icon: <TrendingUp size={20} />
-    }
-  ];
+  if (loading || error || !stats) {
+    return (
+      <div className="stats-cards">
+        <div className="stats-cards-state">
+          {loading ? <LoadingSpinner /> : <span>{t('common.error', 'Failed to load')}</span>}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="stats-cards">
       {stats.map((stat, index) => (
         <div key={index} className="stat-card">
           <div className="stat-header">
-            <span className="stat-icon">{stat.icon}</span>
+            <span className="stat-icon">{ICONS[stat.iconKey]}</span>
             <span className={`stat-change ${stat.trend}`}>
               {stat.change}
             </span>

@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { X, Mail, Pencil, Trash2 } from 'lucide-react';
+import { getCustomers, deleteCustomer } from '../utils/api';
+import type { Customer } from '../utils/api';
+import { useApi } from '../hooks/useApi';
+import LoadingSpinner from '../components/LoadingSpinner';
 import './Pages.css';
 
 interface ContextMenuState {
@@ -8,122 +12,6 @@ interface ContextMenuState {
   y: number;
   customer: Customer;
 }
-
-interface RecentOrder {
-  id: string;
-  date: string;
-  amount: string;
-  status: 'Paid' | 'Pending';
-}
-
-interface Customer {
-  id: number;
-  name: string;
-  email: string;
-  status: 'Active' | 'Inactive';
-  orders: number;
-  total: string;
-  phone: string;
-  company: string;
-  joinDate: string;
-  recentOrders: RecentOrder[];
-}
-
-const initialCustomers: Customer[] = [
-  {
-    id: 1,
-    name: 'John Smith',
-    email: 'john@example.com',
-    status: 'Active',
-    orders: 24,
-    total: '$12,450',
-    phone: '+1 (555) 123-4567',
-    company: 'Acme Corp',
-    joinDate: '2024-03-15',
-    recentOrders: [
-      { id: 'ORD-1001', date: '2026-03-20', amount: '$540', status: 'Paid' },
-      { id: 'ORD-1002', date: '2026-03-10', amount: '$320', status: 'Paid' },
-      { id: 'ORD-1003', date: '2026-02-28', amount: '$180', status: 'Pending' },
-    ],
-  },
-  {
-    id: 2,
-    name: 'Sarah Johnson',
-    email: 'sarah@example.com',
-    status: 'Active',
-    orders: 18,
-    total: '$8,920',
-    phone: '+1 (555) 234-5678',
-    company: 'TechStart Inc.',
-    joinDate: '2024-06-22',
-    recentOrders: [
-      { id: 'ORD-2001', date: '2026-03-18', amount: '$890', status: 'Paid' },
-      { id: 'ORD-2002', date: '2026-03-05', amount: '$245', status: 'Paid' },
-    ],
-  },
-  {
-    id: 3,
-    name: 'Michael Brown',
-    email: 'michael@example.com',
-    status: 'Active',
-    orders: 32,
-    total: '$18,340',
-    phone: '+1 (555) 345-6789',
-    company: 'GrowthCo',
-    joinDate: '2023-11-08',
-    recentOrders: [
-      { id: 'ORD-3001', date: '2026-03-22', amount: '$1,200', status: 'Pending' },
-      { id: 'ORD-3002', date: '2026-03-15', amount: '$670', status: 'Paid' },
-      { id: 'ORD-3003', date: '2026-03-01', amount: '$430', status: 'Paid' },
-    ],
-  },
-  {
-    id: 4,
-    name: 'Emily Davis',
-    email: 'emily@example.com',
-    status: 'Inactive',
-    orders: 5,
-    total: '$2,150',
-    phone: '+1 (555) 456-7890',
-    company: 'Davis & Co',
-    joinDate: '2025-01-10',
-    recentOrders: [
-      { id: 'ORD-4001', date: '2025-09-14', amount: '$320', status: 'Paid' },
-      { id: 'ORD-4002', date: '2025-08-20', amount: '$150', status: 'Paid' },
-    ],
-  },
-  {
-    id: 5,
-    name: 'David Wilson',
-    email: 'david@example.com',
-    status: 'Active',
-    orders: 41,
-    total: '$25,670',
-    phone: '+1 (555) 567-8901',
-    company: 'ScaleUp Ltd.',
-    joinDate: '2023-07-19',
-    recentOrders: [
-      { id: 'ORD-5001', date: '2026-03-25', amount: '$2,100', status: 'Pending' },
-      { id: 'ORD-5002', date: '2026-03-17', amount: '$780', status: 'Paid' },
-      { id: 'ORD-5003', date: '2026-03-08', amount: '$560', status: 'Paid' },
-    ],
-  },
-  {
-    id: 6,
-    name: 'Lisa Anderson',
-    email: 'lisa@example.com',
-    status: 'Active',
-    orders: 15,
-    total: '$7,890',
-    phone: '+1 (555) 678-9012',
-    company: 'Anderson Media',
-    joinDate: '2024-09-03',
-    recentOrders: [
-      { id: 'ORD-6001', date: '2026-03-19', amount: '$410', status: 'Paid' },
-      { id: 'ORD-6002', date: '2026-03-02', amount: '$290', status: 'Paid' },
-    ],
-  },
-];
 
 const getInitials = (name: string) =>
   name
@@ -134,8 +22,8 @@ const getInitials = (name: string) =>
 
 const Customers: React.FC = () => {
   const { t } = useTranslation();
+  const { data, loading, error, setData } = useApi(getCustomers);
   const [searchTerm, setSearchTerm] = useState('');
-  const [customers, setCustomers] = useState<Customer[]>(initialCustomers);
   const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(null);
   const [notes, setNotes] = useState('');
   const [contextMenu, setContextMenu] = useState<ContextMenuState | null>(null);
@@ -175,22 +63,39 @@ const Customers: React.FC = () => {
     setContextMenu({ x: e.clientX, y: e.clientY, customer });
   };
 
-  const handleDeleteRow = (customer: Customer) => {
-    setCustomers((prev) => prev.filter((c) => c.id !== customer.id));
-    if (selectedCustomer?.id === customer.id) setSelectedCustomer(null);
-    setContextMenu(null);
+  const handleDeleteRow = async (customer: Customer) => {
+    try {
+      const res = await deleteCustomer(customer.id);
+      setData((prev) => ({ ...prev!, customers: res.customers }));
+      if (selectedCustomer?.id === customer.id) setSelectedCustomer(null);
+      setContextMenu(null);
+    } catch {
+      setContextMenu(null);
+    }
   };
+
+  const openDrawer = (customer: Customer) => {
+    setSelectedCustomer(customer);
+    setNotes('');
+  };
+
+  if (loading || error || !data) {
+    return (
+      <main className="page-content">
+        <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
+          {loading ? <LoadingSpinner /> : <span>{t('common.error', 'Failed to load')}</span>}
+        </div>
+      </main>
+    );
+  }
+
+  const customers = data.customers;
 
   const filteredCustomers = customers.filter(
     (customer) =>
       customer.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       customer.email.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  const openDrawer = (customer: Customer) => {
-    setSelectedCustomer(customer);
-    setNotes('');
-  };
 
   return (
     <main className="page-content">

@@ -1,36 +1,23 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import './Pages.css';
+import { useApi } from '../hooks/useApi';
+import { getCalendar } from '../utils/api';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Calendar: React.FC = () => {
   const { t } = useTranslation();
+  const { data, loading, error } = useApi(getCalendar);
 
-  const events = [
-    {
-      name: 'Team Standup',
-      date: 'March 15, 2024',
-      confirmed: 8,
-      pending: 2,
-      frequency: 'daily',
-      endDate: 'December 31, 2024',
-    },
-    {
-      name: 'Sprint Planning',
-      date: 'March 18, 2024',
-      confirmed: 12,
-      pending: 3,
-      frequency: 'bi-weekly',
-      endDate: 'June 30, 2024',
-    },
-    {
-      name: 'Product Review',
-      date: 'March 20, 2024',
-      confirmed: 5,
-      pending: 1,
-      frequency: 'weekly',
-      endDate: 'March 20, 2025',
-    },
-  ];
+  if (loading || error || !data) {
+    return (
+      <main className="page-content">
+        <div className="page-state" style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
+          {loading ? <LoadingSpinner /> : <span>{t('common.error', 'Failed to load')}</span>}
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="page-content">
@@ -78,7 +65,7 @@ const Calendar: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {events.map((event, index) => (
+              {data.events.map((event, index) => (
                 <tr key={index}>
                   <td>
                     <div className="setting-label">

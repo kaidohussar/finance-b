@@ -1,9 +1,23 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import './Pages.css';
+import { useApi } from '../hooks/useApi';
+import { getAccount } from '../utils/api';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Account: React.FC = () => {
   const { t } = useTranslation();
+  const { data, loading, error } = useApi(getAccount);
+
+  if (loading || error || !data) {
+    return (
+      <main className="page-content">
+        <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
+          {loading ? <LoadingSpinner /> : <span>{t('common.error', 'Failed to load')}</span>}
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="page-content">
@@ -17,7 +31,7 @@ const Account: React.FC = () => {
           <div className="setting-description">
             <Trans
               i18nKey="account.email"
-              values={{ email: 'john@example.com' }}
+              values={{ email: data.email }}
               components={{ strong: <strong /> }}
             />
           </div>
@@ -27,7 +41,7 @@ const Account: React.FC = () => {
           <div className="setting-description">
             <Trans
               i18nKey="account.twoFactor"
-              values={{ status: 'enabled' }}
+              values={{ status: data.twoFactorStatus }}
               components={{ strong: <strong /> }}
             />
           </div>
@@ -37,7 +51,7 @@ const Account: React.FC = () => {
           <div className="setting-description">
             <Trans
               i18nKey="account.connectedApps"
-              values={{ count: 4 }}
+              values={{ count: data.connectedApps }}
               components={{ strong: <strong /> }}
             />
           </div>
@@ -52,7 +66,7 @@ const Account: React.FC = () => {
               <div className="setting-description">
                 <Trans
                   i18nKey="account.lastLogin"
-                  values={{ date: '2024-03-14', location: 'San Francisco, CA' }}
+                  values={{ date: data.lastLoginDate, location: data.lastLoginLocation }}
                   components={{ em: <em />, strong: <strong /> }}
                 />
               </div>
@@ -63,7 +77,7 @@ const Account: React.FC = () => {
               <div className="setting-description">
                 <Trans
                   i18nKey="account.passwordChanged"
-                  values={{ date: '2024-02-28' }}
+                  values={{ date: data.passwordChangedDate }}
                   components={{ em: <em />, link: <a href="#update-password" /> }}
                 />
               </div>
@@ -79,7 +93,7 @@ const Account: React.FC = () => {
             <div className="setting-description">
               <Trans
                 i18nKey="account.storageUsed"
-                values={{ used: '4.2 GB', total: '10 GB' }}
+                values={{ used: data.storageUsed, total: data.storageTotal }}
                 components={{ strong: <strong /> }}
               />
             </div>

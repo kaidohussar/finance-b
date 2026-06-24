@@ -15,9 +15,10 @@ export interface NewProjectData {
 interface Props {
   onClose: () => void;
   onCreate: (project: NewProjectData) => void;
+  submitting?: boolean;
 }
 
-const NewProjectModal: React.FC<Props> = ({ onClose, onCreate }) => {
+const NewProjectModal: React.FC<Props> = ({ onClose, onCreate, submitting }) => {
   const { t } = useTranslation();
   const [step, setStep] = useState<1 | 2>(1);
 
@@ -240,6 +241,7 @@ const NewProjectModal: React.FC<Props> = ({ onClose, onCreate }) => {
             className="btn btn-link"
             type="button"
             onClick={onClose}
+            disabled={submitting}
           >
             {t('projects.modal.cancel')}
           </button>
@@ -249,6 +251,7 @@ const NewProjectModal: React.FC<Props> = ({ onClose, onCreate }) => {
                 className="btn btn-secondary"
                 type="button"
                 onClick={handleBack}
+                disabled={submitting}
               >
                 {t('projects.modal.back')}
               </button>
@@ -266,8 +269,11 @@ const NewProjectModal: React.FC<Props> = ({ onClose, onCreate }) => {
                 className="btn btn-primary"
                 type="button"
                 onClick={handleCreate}
+                disabled={submitting}
               >
-                {t('projects.modal.createProject')}
+                {submitting
+                  ? t('projects.modal.creating', 'Creating…')
+                  : t('projects.modal.createProject')}
               </button>
             )}
           </div>

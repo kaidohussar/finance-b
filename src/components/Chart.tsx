@@ -1,21 +1,16 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { getDashboardChart } from '../utils/api';
+import { useApi } from '../hooks/useApi';
+import LoadingSpinner from './LoadingSpinner';
 import './Chart.css';
 
 const Chart: React.FC = () => {
   const { t } = useTranslation();
+  const { data, loading, error } = useApi(getDashboardChart);
 
-  const data = [
-    { month: 'Jan', value: 65 },
-    { month: 'Feb', value: 78 },
-    { month: 'Mar', value: 82 },
-    { month: 'Apr', value: 75 },
-    { month: 'May', value: 88 },
-    { month: 'Jun', value: 92 },
-    { month: 'Jul', value: 26 },
-  ];
-
-  const maxValue = Math.max(...data.map((d) => d.value));
+  const points = data?.points ?? [];
+  const maxValue = points.length ? Math.max(...points.map((d) => d.value)) : 0;
 
   return (
     <div className="chart-container">
@@ -29,8 +24,8 @@ const Chart: React.FC = () => {
         <Trans
           i18nKey="chart.description"
           values={{
-            startDate: 'Jan 2024',
-            endDate: 'Jul 2024',
+            startDate: data?.startDate ?? '',
+            endDate: data?.endDate ?? '',
           }}
           components={{
             strong: <strong className="date-highlight" />,
@@ -39,19 +34,25 @@ const Chart: React.FC = () => {
       </div>
 
       <div className="chart">
-        <div className="chart-bars">
-          {data.map((item, index) => (
-            <div key={index} className="bar-container">
-              <div
-                className="bar"
-                style={{ height: `${(item.value / maxValue) * 200}px` }}
-              >
-                <div className="bar-value">{item.value}%</div>
+        {loading || error || !data ? (
+          <div className="chart-state">
+            {loading ? <LoadingSpinner /> : <span>{t('common.error', 'Failed to load')}</span>}
+          </div>
+        ) : (
+          <div className="chart-bars">
+            {points.map((item, index) => (
+              <div key={index} className="bar-container">
+                <div
+                  className="bar"
+                  style={{ height: `${(item.value / maxValue) * 200}px` }}
+                >
+                  <div className="bar-value">{item.value}%</div>
+                </div>
+                <div className="bar-label">{item.month}</div>
               </div>
-              <div className="bar-label">{item.month}</div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

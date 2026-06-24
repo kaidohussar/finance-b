@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
 import LanguageSelector from '../components/LanguageSelector';
+import { requestPasswordReset } from '../utils/api';
 import './ForgotPassword.css';
 
 const ForgotPassword: React.FC = () => {
@@ -14,11 +15,14 @@ const ForgotPassword: React.FC = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Mock API call delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setLoading(false);
-    setSubmitted(true);
+    try {
+      await requestPasswordReset(email);
+      setSubmitted(true);
+    } catch {
+      // Ignore errors; stop loading regardless to avoid leaking account info.
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

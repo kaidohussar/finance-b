@@ -1,20 +1,23 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './Pages.css';
+import { useApi } from '../hooks/useApi';
+import { getBilling } from '../utils/api';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Billing: React.FC = () => {
   const { t } = useTranslation();
+  const { data, loading, error } = useApi(getBilling);
 
-  const invoices = [
-    { id: 'INV-2024-001', date: '2024-01-15', amount: '$299.00', status: 'Paid' },
-    { id: 'INV-2024-002', date: '2024-02-15', amount: '$299.00', status: 'Paid' },
-    { id: 'INV-2024-003', date: '2024-03-15', amount: '$299.00', status: 'Pending' },
-  ];
-
-  const paymentMethods = [
-    { type: 'Visa', last4: '4242', expiry: '12/25', default: true },
-    { type: 'Mastercard', last4: '8888', expiry: '06/26', default: false },
-  ];
+  if (loading || error || !data) {
+    return (
+      <main className="page-content">
+        <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
+          {loading ? <LoadingSpinner /> : <span>{t('common.error', 'Failed to load')}</span>}
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="page-content">
@@ -27,9 +30,9 @@ const Billing: React.FC = () => {
         <h2>{t('pages.billing.currentPlan')}</h2>
         <div className="plan-card">
           <div className="plan-info">
-            <h3>{t('pages.billing.proPlan')}</h3>
-            <div className="plan-price">$299<span>{t('pages.billing.perMonth')}</span></div>
-            <p>{t('pages.billing.nextBillingDate', { date: 'March 15, 2024' })}</p>
+            <h3>{data.plan.name}</h3>
+            <div className="plan-price">{data.plan.price}<span>{t('pages.billing.perMonth')}</span></div>
+            <p>{t('pages.billing.nextBillingDate', { date: data.plan.nextBilling })}</p>
           </div>
           <button className="btn btn-primary">{t('pages.billing.upgradePlan')}</button>
         </div>
@@ -38,7 +41,7 @@ const Billing: React.FC = () => {
       <div className="content-section">
         <h2>{t('pages.billing.paymentMethods')}</h2>
         <div className="payment-methods">
-          {paymentMethods.map((method, index) => (
+          {data.paymentMethods.map((method, index) => (
             <div key={index} className="payment-card">
               <div className="payment-info">
                 <span className="payment-type">{method.type}</span>
@@ -67,7 +70,7 @@ const Billing: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {invoices.map((invoice) => (
+              {data.invoices.map((invoice) => (
                 <tr key={invoice.id}>
                   <td>{invoice.id}</td>
                   <td>{invoice.date}</td>

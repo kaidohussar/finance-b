@@ -1,49 +1,14 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { User, CreditCard, AlertTriangle, Activity } from 'lucide-react';
+import { getDashboardActivity } from '../utils/api';
+import { useApi } from '../hooks/useApi';
+import LoadingSpinner from './LoadingSpinner';
 import './RecentActivity.css';
 
 const RecentActivity: React.FC = () => {
   const { t } = useTranslation();
-
-  const activities = [
-    {
-      type: 'user',
-      i18nKey: 'activity.newUser',
-      userName: 'Sarah Johnson',
-      time: '2 minutes ago',
-      avatar: 'SJ'
-    },
-    {
-      type: 'payment',
-      i18nKey: 'activity.paymentReceived',
-      company: 'Acme Corp',
-      amount: '$2,450',
-      time: '5 minutes ago',
-      avatar: 'AC'
-    },
-    {
-      type: 'alert',
-      i18nKey: 'activity.serverAlert',
-      time: '12 minutes ago',
-      severity: 'warning'
-    },
-    {
-      type: 'user',
-      i18nKey: 'activity.userUpgrade',
-      userName: 'Mike Chen',
-      time: '18 minutes ago',
-      avatar: 'MC'
-    },
-    {
-      type: 'payment',
-      i18nKey: 'activity.subscriptionRenewed',
-      company: 'TechStart Inc',
-      amount: '$599',
-      time: '1 hour ago',
-      avatar: 'TI'
-    }
-  ];
+  const { data: activities, loading, error } = useApi(getDashboardActivity);
 
   const getActivityIcon = (type: string) => {
     switch (type) {
@@ -70,45 +35,51 @@ const RecentActivity: React.FC = () => {
         <button className="view-all-btn">{t('activity.viewAll')}</button>
       </div>
 
-      <div className="activity-list">
-        {activities.map((activity, index) => (
-          <div key={index} className="activity-item">
-            <div
-              className="activity-icon"
-              style={{ backgroundColor: getActivityColor(activity.type) }}
-            >
-              {getActivityIcon(activity.type)}
-            </div>
-            <div className="activity-content">
-              <div className="activity-message">
-                <Trans
-                  i18nKey={activity.i18nKey}
-                  values={{
-                    userName: activity.userName,
-                    company: activity.company,
-                    amount: activity.amount
-                  }}
-                  components={{
-                    strong: <strong />,
-                    em: <em />,
-                    link: <a href="#details" className="activity-link" />
-                  }}
-                />
+      {loading || error || !activities ? (
+        <div className="activity-state">
+          {loading ? <LoadingSpinner /> : <span>{t('common.error', 'Failed to load')}</span>}
+        </div>
+      ) : (
+        <div className="activity-list">
+          {activities.map((activity, index) => (
+            <div key={index} className="activity-item">
+              <div
+                className="activity-icon"
+                style={{ backgroundColor: getActivityColor(activity.type) }}
+              >
+                {getActivityIcon(activity.type)}
               </div>
-              {(activity.userName || activity.company) && (
-                <div className="activity-user">
-                  <span className="user-avatar">{activity.avatar}</span>
-                  <span className="user-name">{activity.userName || activity.company}</span>
-                  {activity.amount && (
-                    <span className="activity-amount">{activity.amount}</span>
-                  )}
+              <div className="activity-content">
+                <div className="activity-message">
+                  <Trans
+                    i18nKey={activity.i18nKey}
+                    values={{
+                      userName: activity.userName,
+                      company: activity.company,
+                      amount: activity.amount
+                    }}
+                    components={{
+                      strong: <strong />,
+                      em: <em />,
+                      link: <a href="#details" className="activity-link" />
+                    }}
+                  />
                 </div>
-              )}
-              <div className="activity-time">{activity.time}</div>
+                {(activity.userName || activity.company) && (
+                  <div className="activity-user">
+                    <span className="user-avatar">{activity.avatar}</span>
+                    <span className="user-name">{activity.userName || activity.company}</span>
+                    {activity.amount && (
+                      <span className="activity-amount">{activity.amount}</span>
+                    )}
+                  </div>
+                )}
+                <div className="activity-time">{activity.time}</div>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

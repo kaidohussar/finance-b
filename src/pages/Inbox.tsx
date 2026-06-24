@@ -1,42 +1,24 @@
 import React, { useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import './Pages.css';
+import { useApi } from '../hooks/useApi';
+import { getInbox } from '../utils/api';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Inbox: React.FC = () => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'unread' | 'starred'>('unread');
+  const { data, loading, error } = useApi(getInbox);
 
-  const messages = [
-    {
-      id: 1,
-      sender: 'Sarah Johnson',
-      subject: 'Q1 Revenue Report',
-      attachments: 3,
-      replies: 5,
-      unread: true,
-    },
-    {
-      id: 2,
-      sender: 'Michael Brown',
-      subject: 'Sprint Planning Notes',
-      attachments: 1,
-      replies: 12,
-      unread: true,
-    },
-    {
-      id: 3,
-      sender: 'Emily Davis',
-      subject: 'Design Review Feedback',
-      attachments: 0,
-      replies: 8,
-      unread: false,
-    },
-  ];
-
-  const mentions = [
-    { userName: 'David Wilson', channel: '#engineering' },
-    { userName: 'Lisa Anderson', channel: '#design' },
-  ];
+  if (loading || error || !data) {
+    return (
+      <main className="page-content">
+        <div className="page-state" style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
+          {loading ? <LoadingSpinner /> : <span>{t('common.error', 'Failed to load')}</span>}
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="page-content">
@@ -64,7 +46,7 @@ const Inbox: React.FC = () => {
         </div>
 
         <div className="settings-group">
-          {messages.map((msg) => (
+          {data.messages.map((msg) => (
             <div key={msg.id} className="setting-item">
               <div className="setting-info">
                 <div className="setting-label">
@@ -108,7 +90,7 @@ const Inbox: React.FC = () => {
       <div className="content-section">
         <h2>Mentions</h2>
         <div className="settings-group">
-          {mentions.map((mention, index) => (
+          {data.mentions.map((mention, index) => (
             <div key={index} className="setting-item">
               <div className="setting-info">
                 <div className="setting-description">

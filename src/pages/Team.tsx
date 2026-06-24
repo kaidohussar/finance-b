@@ -1,29 +1,23 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import './Pages.css';
+import { useApi } from '../hooks/useApi';
+import { getTeam } from '../utils/api';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Team: React.FC = () => {
   const { t } = useTranslation();
+  const { data, loading, error } = useApi(getTeam);
 
-  const members = [
-    { name: 'Sarah Johnson', email: 'sarah@example.com', role: 'Admin', status: 'Active' },
-    { name: 'Michael Brown', email: 'michael@example.com', role: 'Developer', status: 'Active' },
-    { name: 'Emily Davis', email: 'emily@example.com', role: 'Designer', status: 'Active' },
-    { name: 'David Wilson', email: 'david@example.com', role: 'Developer', status: 'Active' },
-    { name: 'Lisa Anderson', email: 'lisa@example.com', role: 'Marketing', status: 'Active' },
-  ];
-
-  const pendingInvites = [
-    { email: 'newdev@example.com', expired: false },
-    { email: 'contractor@example.com', expired: true },
-  ];
-
-  const recentActivity = [
-    { type: 'joined', userName: 'Lisa Anderson' },
-    { type: 'roleChanged', userName: 'Michael Brown', role: 'Lead Developer' },
-    { type: 'removed', userName: 'Alex Thompson', adminName: 'Sarah Johnson' },
-    { type: 'invited', email: 'newdev@example.com' },
-  ];
+  if (loading || error || !data) {
+    return (
+      <main className="page-content">
+        <div className="page-state" style={{ display: 'flex', justifyContent: 'center', padding: '4rem' }}>
+          {loading ? <LoadingSpinner /> : <span>{t('common.error', 'Failed to load')}</span>}
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="page-content">
@@ -38,7 +32,7 @@ const Team: React.FC = () => {
             <div className="setting-label">
               <Trans
                 i18nKey="team.teamSize"
-                values={{ count: members.length, departments: 4 }}
+                values={{ count: data.members.length, departments: data.departments }}
                 components={{ strong: <strong />, em: <em /> }}
               />
             </div>
@@ -59,7 +53,7 @@ const Team: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {members.map((member, index) => (
+              {data.members.map((member, index) => (
                 <tr key={index}>
                   <td>{member.name}</td>
                   <td>{member.email}</td>
@@ -75,7 +69,7 @@ const Team: React.FC = () => {
       <div className="content-section">
         <h2>{t('team.pending')}</h2>
         <div className="settings-group">
-          {pendingInvites.map((invite, index) => (
+          {data.pendingInvites.map((invite, index) => (
             <div key={index} className="setting-item">
               <div className="setting-info">
                 <div className="setting-description">
@@ -105,7 +99,7 @@ const Team: React.FC = () => {
       <div className="content-section">
         <h2>Recent Activity</h2>
         <div className="settings-group">
-          {recentActivity.map((activity, index) => (
+          {data.recentActivity.map((activity, index) => (
             <div key={index} className="setting-item">
               <div className="setting-info">
                 <div className="setting-description">
