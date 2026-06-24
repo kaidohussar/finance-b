@@ -35,7 +35,7 @@ const RecentActivity: React.FC = () => {
         <button className="view-all-btn">{t('activity.viewAll')}</button>
       </div>
 
-      {loading || error || !activities ? (
+      {loading || error || !Array.isArray(activities) ? (
         <div className="activity-state">
           {loading ? <LoadingSpinner /> : <span>{t('common.error', 'Failed to load')}</span>}
         </div>

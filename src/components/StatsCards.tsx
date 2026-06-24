@@ -17,7 +17,7 @@ const StatsCards: React.FC = () => {
   const { t } = useTranslation();
   const { data: stats, loading, error } = useApi(getDashboardStats);
 
-  if (loading || error || !stats) {
+  if (loading || error || !Array.isArray(stats)) {
     return (
       <div className="stats-cards">
         <div className="stats-cards-state">
