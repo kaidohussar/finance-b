@@ -1,0 +1,119 @@
+.category-picker-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 260px;
+  padding: 0.4rem 0.625rem;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.category-picker-trigger:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.category-picker-trigger[data-state='open'] {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.category-picker-trigger.has-value {
+  color: #1a1a1a;
+}
+
+.category-picker-trigger .category-picker-tag {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.category-picker-trigger.has-value .category-picker-tag {
+  color: #3b82f6;
+}
+
+.category-picker-label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.category-picker-trigger .chevron {
+  flex-shrink: 0;
+  color: #9ca3af;
+  transition: transform 0.15s ease;
+}
+
+.category-picker-trigger[data-state='open'] .chevron {
+  transform: rotate(180deg);
+}
+
+/* Shared menu surface (self-contained copy so the picker works anywhere) */
+.dropdown-menu-content {
+  min-width: 200px;
+  background: white;
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+  animation: dropdownFadeIn 0.12s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: #1a1a1a;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.dropdown-menu-item[data-highlighted] {
+  background: #f3f4f6;
+}
+
+.dropdown-menu-item[data-state='open'] {
+  background: #f3f4f6;
+}
+
+.dropdown-menu-item-text {
+  flex: 1;
+}
+
+.dropdown-menu-sub-trigger {
+  padding-right: 0.5rem;
+}
+
+.submenu-chevron {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.submenu-check {
+  color: #3b82f6;
+  flex-shrink: 0;
+}

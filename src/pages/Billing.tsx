@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Pages.css';
 import { useApi } from '../hooks/useApi';
 import { getBilling } from '../utils/api';
 import LoadingSpinner from '../components/LoadingSpinner';
+import CategoryPicker from '../components/CategoryPicker';
+import type { CategorySelection } from '../data/categories';
 
 const Billing: React.FC = () => {
   const { t } = useTranslation();
   const { data, loading, error } = useApi(getBilling);
+  const [categories, setCategories] = useState<
+    Record<string, CategorySelection>
+  >({});
 
   if (loading || error || !data) {
     return (
@@ -66,6 +71,7 @@ const Billing: React.FC = () => {
                 <th>{t('pages.billing.table.date')}</th>
                 <th>{t('pages.billing.table.amount')}</th>
                 <th>{t('pages.billing.table.status')}</th>
+                <th>{t('pages.billing.table.category', 'Category')}</th>
                 <th>{t('pages.billing.table.action')}</th>
               </tr>
             </thead>
@@ -79,6 +85,17 @@ const Billing: React.FC = () => {
                     <span className={`status-badge ${invoice.status.toLowerCase()}`}>
                       {t(`pages.billing.status.${invoice.status.toLowerCase()}`)}
                     </span>
+                  </td>
+                  <td>
+                    <CategoryPicker
+                      value={categories[invoice.id] ?? null}
+                      onChange={(selection) =>
+                        setCategories((prev) => ({
+                          ...prev,
+                          [invoice.id]: selection,
+                        }))
+                      }
+                    />
                   </td>
                   <td>
                     <button className="btn-link">{t('pages.billing.download')}</button>
