@@ -6,6 +6,7 @@ import {
   TrendingUp,
   Users,
   CreditCard,
+  Calculator,
   Settings,
   Plug,
   FileText,
@@ -44,6 +45,11 @@ const Sidebar: React.FC = () => {
       icon: <CreditCard size={20} />,
       labelKey: 'sidebar.billing',
       path: '/billing',
+    },
+    {
+      icon: <Calculator size={20} />,
+      labelKey: 'sidebar.calculator',
+      path: '/calculator',
     },
     {
       icon: <Settings size={20} />,

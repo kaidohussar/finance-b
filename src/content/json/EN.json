@@ -49,7 +49,8 @@
     "onboarding": "Onboarding",
     "projects": "Projects",
     "tasks": "Tasks",
-    "team": "Team"
+    "team": "Team",
+    "calculator": "Calculator"
   },
   "stats": {
     "activeUsers": "Active Users",
@@ -567,6 +568,21 @@
           "description": "Minimize animations and transitions"
         }
       }
+    },
+    "calculator": {
+      "title": "Loan Calculator",
+      "subtitle": "Drag the sliders to estimate your monthly payment",
+      "detailsTitle": "Loan Details",
+      "resultsTitle": "Payment Summary",
+      "loanAmount": "Loan amount",
+      "loanTerm": "Loan term",
+      "interestRate": "Interest rate",
+      "years_one": "{{count}} year",
+      "years_other": "{{count}} years",
+      "monthlyPayment": "Monthly payment",
+      "principal": "Principal",
+      "totalInterest": "Total interest",
+      "totalPaid": "Total paid"
     }
   },
   "projects": {

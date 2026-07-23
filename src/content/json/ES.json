@@ -39,7 +39,8 @@
       "subtitle": "Obtén más funciones",
       "title": "Actualizar a Pro",
       "asdasda": ""
-    }
+    },
+    "calculator": "Calculadora"
   },
   "stats": {
     "activeUsers": "Usuarios Activos",
@@ -471,6 +472,21 @@
           "description": ""
         }
       }
+    },
+    "calculator": {
+      "title": "Calculadora de préstamos",
+      "subtitle": "Arrastra los controles para estimar tu cuota mensual",
+      "detailsTitle": "Datos del préstamo",
+      "resultsTitle": "Resumen de pagos",
+      "loanAmount": "Importe del préstamo",
+      "loanTerm": "Plazo del préstamo",
+      "interestRate": "Tipo de interés",
+      "years_one": "{{count}} año",
+      "years_other": "{{count}} años",
+      "monthlyPayment": "Cuota mensual",
+      "principal": "Capital",
+      "totalInterest": "Intereses totales",
+      "totalPaid": "Total a pagar"
     }
   },
   "projects": {

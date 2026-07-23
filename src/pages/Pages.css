@@ -898,3 +898,110 @@
 .context-menu-item.danger:hover {
   background-color: #fee2e2;
 }
+
+/* Calculator */
+.calculator-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.calculator-layout .calculator-panel {
+  margin-bottom: 0;
+}
+
+.calculator-monthly {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.calculator-monthly-label {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.calculator-monthly-value {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--primary-green);
+  font-variant-numeric: tabular-nums;
+}
+
+.calculator-breakdown-bar {
+  height: 10px;
+  border-radius: 5px;
+  background: var(--light-green);
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.calculator-breakdown-principal {
+  height: 100%;
+  background: var(--primary-green);
+  border-radius: 5px 0 0 5px;
+  transition: width 0.15s ease;
+}
+
+.calculator-breakdown-legend {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.8125rem;
+  color: var(--gray-600);
+}
+
+.calculator-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.calculator-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.calculator-legend-dot.principal {
+  background: var(--primary-green);
+}
+
+.calculator-legend-dot.interest {
+  background: var(--light-green);
+}
+
+.calculator-result-rows {
+  border-top: 1px solid var(--gray-200);
+}
+
+.calculator-result-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+}
+
+.calculator-result-row span:last-child {
+  font-weight: 500;
+  color: var(--gray-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.calculator-result-total {
+  font-weight: 600;
+}
+
+.calculator-result-total span:last-child {
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .calculator-layout {
+    grid-template-columns: 1fr;
+  }
+}

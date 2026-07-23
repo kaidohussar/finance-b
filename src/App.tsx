@@ -4,6 +4,7 @@ import MainContent from './components/MainContent';
 import Analytics from './pages/Analytics';
 import Customers from './pages/Customers';
 import Billing from './pages/Billing';
+import Calculator from './pages/Calculator';
 import Settings from './pages/Settings';
 import Integrations from './pages/Integrations';
 import Reports from './pages/Reports';
@@ -38,6 +39,7 @@ function App() {
               <Route path="analytics" element={<Analytics />} />
               <Route path="customers" element={<Customers />} />
               <Route path="billing" element={<Billing />} />
+              <Route path="calculator" element={<Calculator />} />
               <Route path="settings" element={<Settings />} />
               <Route path="integrations" element={<Integrations />} />
               <Route path="reports" element={<Reports />} />

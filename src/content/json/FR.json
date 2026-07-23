@@ -39,7 +39,8 @@
       "subtitle": "Obtenez plus de fonctionnalités",
       "title": "Passer à Pro",
       "asdasda": ""
-    }
+    },
+    "calculator": "Calculateur"
   },
   "stats": {
     "activeUsers": "Utilisateurs Actifs",
@@ -483,6 +484,21 @@
           "description": ""
         }
       }
+    },
+    "calculator": {
+      "title": "Calculateur de prêt",
+      "subtitle": "Faites glisser les curseurs pour estimer votre mensualité",
+      "detailsTitle": "Détails du prêt",
+      "resultsTitle": "Résumé des paiements",
+      "loanAmount": "Montant du prêt",
+      "loanTerm": "Durée du prêt",
+      "interestRate": "Taux d'intérêt",
+      "years_one": "{{count}} an",
+      "years_other": "{{count}} ans",
+      "monthlyPayment": "Mensualité",
+      "principal": "Capital",
+      "totalInterest": "Intérêts totaux",
+      "totalPaid": "Total remboursé"
     }
   },
   "projects": {
