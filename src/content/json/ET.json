@@ -376,19 +376,18 @@
       }
     },
     "calculator": {
-      "title": "Laenukalkulaator",
-      "subtitle": "Lohista liugureid, et hinnata oma igakuist makset",
-      "detailsTitle": "Laenu andmed",
-      "resultsTitle": "Maksete kokkuvõte",
-      "loanAmount": "Laenusumma",
-      "loanTerm": "Laenuperiood",
-      "interestRate": "Intressimäär",
-      "years_one": "{{count}} aasta",
-      "years_other": "{{count}} aastat",
-      "monthlyPayment": "Kuumakse",
-      "principal": "Põhiosa",
-      "totalInterest": "Intress kokku",
-      "totalPaid": "Kokku tagasimakstav"
+      "title": "",
+      "subtitle": "",
+      "detailsTitle": "",
+      "resultsTitle": "",
+      "loanAmount": "",
+      "loanTerm": "",
+      "years_one": "",
+      "years_other": "",
+      "monthlyPayment": "",
+      "principal": "",
+      "totalInterest": "",
+      "totalPaid": ""
     }
   },
   "projects": {
