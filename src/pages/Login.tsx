@@ -33,7 +33,7 @@ const Login: React.FC = () => {
     <div className="login-page">
       <div className="login-card">
         <h1>{t('login.title')}</h1>
-        <p style={{ whiteSpace: 'nowrap' }}>{t('login.subtitle')}</p>
+        <p className="login-subtitle">{t('login.subtitle')}</p>
 
         {error && <div className="login-error">{error}</div>}
 
