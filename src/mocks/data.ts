@@ -809,3 +809,20 @@ export const notifications: NotificationsData = {
     digestEnabled: false,
   },
 };
+
+/* ------------------------------------------------------------------ */
+/* Reimbursements                                                     */
+/* ------------------------------------------------------------------ */
+
+export interface ReimbursementInput {
+  description: string;
+  amount: number;
+  category: string;
+  expenseDate: string;
+  notes: string;
+}
+
+export interface Reimbursement extends ReimbursementInput {
+  reference: string;
+  status: string;
+}

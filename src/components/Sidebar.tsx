@@ -17,6 +17,7 @@ import {
   Bell,
   Rocket,
   FolderKanban,
+  Receipt,
   CheckSquare,
   UsersRound,
 } from 'lucide-react';
@@ -100,6 +101,11 @@ const Sidebar: React.FC = () => {
       icon: <FolderKanban size={20} />,
       labelKey: 'sidebar.projects',
       path: '/projects',
+    },
+    {
+      icon: <Receipt size={20} />,
+      labelKey: 'sidebar.reimbursements',
+      path: '/reimbursements',
     },
     {
       icon: <CheckSquare size={20} />,

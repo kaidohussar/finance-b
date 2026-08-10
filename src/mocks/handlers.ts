@@ -26,6 +26,9 @@ const db = {
   recentFiles: structuredClone(data.recentFiles),
 };
 
+// Sequence for generated reimbursement reference numbers.
+let reimbursementCount = 0;
+
 type Handler = (body: unknown) => MockResponse;
 
 const ok = (body: unknown): MockResponse => ({ status: 200, body });
@@ -155,6 +158,22 @@ const routes: Record<string, Handler> = {
     const { id } = (body ?? {}) as { id?: number };
     db.customers = db.customers.filter((c) => c.id !== id);
     return ok({ customers: db.customers });
+  },
+
+  /* Reimbursements ------------------------------------------------ */
+  'POST /api/reimbursements': (body) => {
+    const input = (body ?? {}) as Partial<data.ReimbursementInput>;
+    reimbursementCount += 1;
+    const reimbursement: data.Reimbursement = {
+      description: input.description ?? '',
+      amount: input.amount ?? 0,
+      category: input.category ?? 'other',
+      expenseDate: input.expenseDate ?? '',
+      notes: input.notes ?? '',
+      reference: `RB-${1000 + reimbursementCount}`,
+      status: 'pending',
+    };
+    return created(reimbursement);
   },
 
   /* Billing ------------------------------------------------------- */

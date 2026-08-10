@@ -15,6 +15,7 @@ import Inbox from './pages/Inbox';
 import Notifications from './pages/Notifications';
 import Onboarding from './pages/Onboarding';
 import Projects from './pages/Projects';
+import Reimbursement from './pages/Reimbursement';
 import Tasks from './pages/Tasks';
 import Team from './pages/Team';
 import Login from './pages/Login';
@@ -50,6 +51,7 @@ function App() {
               <Route path="notifications" element={<Notifications />} />
               <Route path="onboarding" element={<Onboarding />} />
               <Route path="projects" element={<Projects />} />
+              <Route path="reimbursements" element={<Reimbursement />} />
               <Route path="tasks" element={<Tasks />} />
               <Route path="team" element={<Team />} />
             </Route>

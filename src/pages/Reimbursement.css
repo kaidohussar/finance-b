@@ -1,0 +1,93 @@
+.reimbursement-panel {
+  max-width: 640px;
+}
+
+.reimbursement-panel h2 {
+  margin-bottom: 1.25rem;
+}
+
+.reimbursement-panel .required {
+  color: #ef4444;
+  margin-left: 0.25rem;
+}
+
+.reimbursement-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.reimbursement-notes {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.reimbursement-panel .form-input.has-error {
+  border-color: #ef4444;
+}
+
+.reimbursement-panel .form-error {
+  color: #ef4444;
+  font-size: 0.8125rem;
+  margin-top: 0.375rem;
+}
+
+/* Confirmation state */
+.reimbursement-success {
+  text-align: center;
+}
+
+.reimbursement-success-icon {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.reimbursement-success h2 {
+  margin-bottom: 0.5rem;
+}
+
+.reimbursement-success > p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.reimbursement-summary {
+  text-align: left;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.reimbursement-summary h3 {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.reimbursement-summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.375rem 0;
+  font-size: 0.9375rem;
+}
+
+.reimbursement-summary-row span:first-child {
+  color: #6b7280;
+}
+
+.reimbursement-summary-row span:last-child {
+  font-weight: 500;
+  color: #111827;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .reimbursement-row {
+    grid-template-columns: 1fr;
+  }
+}

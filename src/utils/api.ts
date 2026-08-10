@@ -17,6 +17,8 @@ import type {
   Project,
   ProjectsData,
   RecentFile,
+  Reimbursement,
+  ReimbursementInput,
   Report,
   ReportsData,
   SettingsData,
@@ -59,6 +61,8 @@ export type {
   ProjectsData,
   RecentFile,
   RecentOrder,
+  Reimbursement,
+  ReimbursementInput,
   Report,
   ReportValue,
   ReportsData,
@@ -171,6 +175,10 @@ export const deleteCustomer = (id: number) =>
 
 /* Billing --------------------------------------------------------- */
 export const getBilling = () => request<BillingData>('/api/billing');
+
+/* Reimbursements -------------------------------------------------- */
+export const submitReimbursement = (input: ReimbursementInput) =>
+  request<Reimbursement>('/api/reimbursements', 'POST', input);
 
 /* Integrations ---------------------------------------------------- */
 export const getIntegrations = () => request<{ integrations: Integration[] }>('/api/integrations');

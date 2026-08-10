@@ -50,7 +50,8 @@
     "projects": "Projects",
     "tasks": "Tasks",
     "team": "Team",
-    "calculator": "Calculator"
+    "calculator": "Calculator",
+    "reimbursements": "Reimbursements"
   },
   "stats": {
     "activeUsers": "Active Users",
@@ -653,5 +654,46 @@
     "roleChanged": "<strong>{{userName}}</strong> is now a <em>{{role}}</em>",
     "teamSize": "Your team has <strong>{{count}}</strong> members across <em>{{departments}} departments</em>",
     "title": "Team Management"
+  },
+  "reimbursement": {
+    "title": "Reimbursements",
+    "subtitle": "Submit an expense reimbursement request for approval.",
+    "form": {
+      "title": "New Reimbursement Request",
+      "description": "Description",
+      "descriptionPlaceholder": "e.g. Taxi from airport to client office",
+      "amount": "Amount (USD)",
+      "amountPlaceholder": "0.00",
+      "category": "Category",
+      "categoryPlaceholder": "Select a category",
+      "expenseDate": "Expense Date",
+      "notes": "Additional Notes",
+      "notesPlaceholder": "Anything the approver should know (optional)",
+      "submit": "Submit Request",
+      "submitting": "Submitting..."
+    },
+    "categories": {
+      "travel": "Travel",
+      "meals": "Meals & Entertainment",
+      "equipment": "Equipment",
+      "software": "Software & Subscriptions",
+      "other": "Other"
+    },
+    "errors": {
+      "descriptionRequired": "Please describe the expense",
+      "amountRequired": "Please enter an amount",
+      "amountInvalid": "Amount must be a number greater than zero",
+      "categoryRequired": "Please select a category",
+      "dateRequired": "Please select the expense date",
+      "submitFailed": "Something went wrong while submitting your request. Please try again."
+    },
+    "success": {
+      "title": "Request Submitted",
+      "message": "Your reimbursement request <strong>{{reference}}</strong> has been submitted for approval.",
+      "summaryTitle": "Request Summary",
+      "status": "Status",
+      "statusValue": "Pending review",
+      "submitAnother": "Submit Another Request"
+    }
   }
 }
