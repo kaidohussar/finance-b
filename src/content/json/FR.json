@@ -40,7 +40,8 @@
       "title": "Passer à Pro",
       "asdasda": ""
     },
-    "calculator": "Calculateur"
+    "calculator": "Calculatrice",
+    "reimbursements": "Remboursements"
   },
   "stats": {
     "activeUsers": "Utilisateurs Actifs",
@@ -552,5 +553,46 @@
     "subtasks": "<strong>{{completed}}</strong> sur <strong>{{total}}</strong> sous-tâches effectuées",
     "taskCompleted": "<strong>{{userName}}</strong> a terminé <em>{{taskName}}</em>",
     "title": "Tâches"
+  },
+  "reimbursement": {
+    "title": "Remboursements",
+    "subtitle": "Soumettez une demande de remboursement de frais pour approbation.",
+    "form": {
+      "title": "Nouvelle demande de remboursement",
+      "description": "Description",
+      "descriptionPlaceholder": "ex. Taxi de l'aéroport au bureau du client",
+      "amount": "Montant (USD)",
+      "amountPlaceholder": "0.00",
+      "category": "Catégorie",
+      "categoryPlaceholder": "Sélectionnez une catégorie",
+      "expenseDate": "Date de la dépense",
+      "notes": "Notes complémentaires",
+      "notesPlaceholder": "Toute information utile pour l'approbateur (facultatif)",
+      "submit": "Soumettre la demande",
+      "submitting": "Envoi en cours..."
+    },
+    "errors": {
+      "descriptionRequired": "Veuillez décrire la dépense",
+      "amountRequired": "Veuillez saisir un montant",
+      "amountInvalid": "Le montant doit être un nombre supérieur à zéro",
+      "categoryRequired": "Veuillez sélectionner une catégorie",
+      "dateRequired": "Veuillez sélectionner la date de la dépense",
+      "submitFailed": "Une erreur est survenue lors de l'envoi de la demande. Veuillez réessayer."
+    },
+    "success": {
+      "title": "Demande soumise",
+      "message": "Votre demande de remboursement <strong>{{reference}}</strong> a été soumise pour approbation.",
+      "summaryTitle": "Résumé de la demande",
+      "status": "Statut",
+      "statusValue": "En attente de révision",
+      "submitAnother": "Soumettre une autre demande"
+    },
+    "categories": {
+      "travel": "Voyages",
+      "meals": "Repas et divertissements",
+      "equipment": "Équipement",
+      "software": "Logiciels et abonnements",
+      "other": "Autre"
+    }
   }
 }

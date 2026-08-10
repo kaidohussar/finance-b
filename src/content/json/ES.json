@@ -40,7 +40,8 @@
       "title": "Actualizar a Pro",
       "asdasda": ""
     },
-    "calculator": "Calculadora"
+    "calculator": "Calculadora",
+    "reimbursements": "Reembolsos"
   },
   "stats": {
     "activeUsers": "Usuarios Activos",
@@ -540,5 +541,46 @@
     "subtasks": "<strong>{{completed}}</strong> de <strong>{{total}}</strong> subtareas completadas",
     "taskCompleted": "<strong>{{userName}}</strong> completó <em>{{taskName}}</em>",
     "title": "Tareas"
+  },
+  "reimbursement": {
+    "title": "Reembolsos",
+    "subtitle": "Envíe una solicitud de reembolso de gastos para su aprobación.",
+    "form": {
+      "title": "Nueva solicitud de reembolso",
+      "description": "Descripción",
+      "descriptionPlaceholder": "p. ej., Taxi desde el aeropuerto a la oficina del cliente",
+      "amount": "Importe (USD)",
+      "amountPlaceholder": "0.00",
+      "category": "Categoría",
+      "categoryPlaceholder": "Seleccione una categoría",
+      "expenseDate": "Fecha del gasto",
+      "notes": "Notas adicionales",
+      "notesPlaceholder": "Cualquier información útil para el aprobador (opcional)",
+      "submit": "Enviar solicitud",
+      "submitting": "Enviando..."
+    },
+    "errors": {
+      "descriptionRequired": "Describa el gasto",
+      "amountRequired": "Introduzca un importe",
+      "amountInvalid": "El importe debe ser un número superior a cero",
+      "categoryRequired": "Seleccione una categoría",
+      "dateRequired": "Seleccione la fecha del gasto",
+      "submitFailed": "Se ha producido un error al enviar la solicitud. Inténtelo de nuevo."
+    },
+    "success": {
+      "title": "Solicitud enviada",
+      "message": "Su solicitud de reembolso <strong>{{reference}}</strong> ha sido enviada para su aprobación.",
+      "summaryTitle": "Resumen de la solicitud",
+      "status": "Estado",
+      "statusValue": "Pendiente de revisión",
+      "submitAnother": "Enviar otra solicitud"
+    },
+    "categories": {
+      "travel": "Viajes",
+      "meals": "Comidas y entretenimiento",
+      "equipment": "Equipamiento",
+      "software": "Software y suscripciones",
+      "other": "Otros"
+    }
   }
 }
