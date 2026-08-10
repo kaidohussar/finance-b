@@ -40,7 +40,8 @@
       "title": "Uuenda Pro-ks",
       "asdasda": "fgfdgdfgdg"
     },
-    "calculator": "Kalkulaator"
+    "calculator": "Kalkulaator",
+    "reimbursements": "Hüvitised"
   },
   "stats": {
     "activeUsers": "Aktiivsed kasutajad",
@@ -458,5 +459,46 @@
     "roleChanged": "<strong>{{userName}}</strong> on nüüd <em>{{role}}</em>",
     "teamSize": "Teie meeskonnas on <strong>{{count}}</strong> liiget <em>{{departments}} osakonnas</em>",
     "title": "Meeskonna haldus"
+  },
+  "reimbursement": {
+    "title": "Hüvitised",
+    "subtitle": "Esitage kulude hüvitamise taotlus kinnitamiseks.",
+    "form": {
+      "title": "Uus hüvitamise taotlus",
+      "description": "Kirjeldus",
+      "descriptionPlaceholder": "nt takso lennujaamast kliendi kontorisse",
+      "amount": "Summa (USD)",
+      "amountPlaceholder": "0.00",
+      "category": "Kategooria",
+      "categoryPlaceholder": "Valige kategooria",
+      "expenseDate": "Kulu kuupäev",
+      "notes": "Lisamärkused",
+      "notesPlaceholder": "Mida kinnitaja peaks teadma (valikuline)",
+      "submit": "Esita taotlus",
+      "submitting": "Esitamine..."
+    },
+    "errors": {
+      "descriptionRequired": "Palun lisage kulu kirjeldus",
+      "amountRequired": "Palun sisestage summa",
+      "amountInvalid": "Summa peab olema nullist suurem number",
+      "categoryRequired": "Palun valige kategooria",
+      "dateRequired": "Palun valige kulu kuupäev",
+      "submitFailed": "Taotluse esitamisel tekkis viga. Palun proovige uuesti."
+    },
+    "success": {
+      "title": "Taotlus esitatud",
+      "message": "Teie hüvitamise taotlus <strong>{{reference}}</strong> on kinnitamiseks esitatud.",
+      "summaryTitle": "Taotluse kokkuvõte",
+      "status": "Staatus",
+      "statusValue": "Ülevaatamisel",
+      "submitAnother": "Esita uus taotlus"
+    },
+    "categories": {
+      "travel": "Reisikulud",
+      "meals": "Söök ja meelelahutus",
+      "equipment": "Inventar",
+      "software": "Tarkvara ja tellimused",
+      "other": "Muud kulud"
+    }
   }
 }
