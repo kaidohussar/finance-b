@@ -40,7 +40,8 @@
       "title": "Uuenda Pro-ks",
       "asdasda": "fgfdgdfgdg"
     },
-    "calculator": "Kalkulaator"
+    "calculator": "Kalkulaator",
+    "reimbursements": "Hüvitised"
   },
   "stats": {
     "activeUsers": "Aktiivsed kasutajad",
@@ -458,5 +459,46 @@
     "roleChanged": "<strong>{{userName}}</strong> on nüüd <em>{{role}}</em>",
     "teamSize": "Teie meeskonnas on <strong>{{count}}</strong> liiget <em>{{departments}} osakonnas</em>",
     "title": "Meeskonna haldus"
+  },
+  "reimbursement": {
+    "title": "Hüvitised",
+    "subtitle": "Esitage kulude hüvitamise taotlus kinnitamiseks.",
+    "form": {
+      "title": "Uus hüvitistaotlus",
+      "description": "Kirjeldus",
+      "descriptionPlaceholder": "nt takso lennujaamast kliendi kontorisse",
+      "amount": "Summa (USD)",
+      "amountPlaceholder": "0.00",
+      "category": "Kategooria",
+      "categoryPlaceholder": "Valige kategooria",
+      "expenseDate": "Kulu kuupäev",
+      "notes": "Lisamärkused",
+      "notesPlaceholder": "Info kinnitajale (valikuline)",
+      "submit": "Esita taotlus",
+      "submitting": "Saatmine..."
+    },
+    "errors": {
+      "descriptionRequired": "Palun lisage kulu kirjeldus",
+      "amountRequired": "Palun sisestage summa",
+      "amountInvalid": "Summa peab olema nullist suurem number",
+      "categoryRequired": "Palun valige kategooria",
+      "dateRequired": "Palun valige kulu kuupäev",
+      "submitFailed": "Taotluse saatmisel tekkis viga. Palun proovige uuesti."
+    },
+    "success": {
+      "title": "Taotlus esitatud",
+      "message": "Teie hüvitistaotlus <strong>{{reference}}</strong> on esitatud kinnitamiseks.",
+      "summaryTitle": "Taotluse kokkuvõte",
+      "status": "Olek",
+      "statusValue": "Ootab läbivaatamist",
+      "submitAnother": "Esita uus taotlus"
+    },
+    "categories": {
+      "travel": "Reisid",
+      "meals": "Toitlustus ja meelelahutus",
+      "equipment": "Varustus",
+      "software": "Tarkvara ja tellimused",
+      "other": "Muu"
+    }
   }
 }
