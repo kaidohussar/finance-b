@@ -199,7 +199,28 @@
     "signOut": "Sign Out",
     "subtitle": "Sign in to your account to continue",
     "title": "Welcome Back",
-    "forgotPassword": "Forgot password?"
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up"
+  },
+  "signup": {
+    "title": "Create Account",
+    "subtitle": "Sign up to get started with FinanceB",
+    "usernameLabel": "Username",
+    "usernamePlaceholder": "Choose a username",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Choose a password",
+    "confirmPasswordLabel": "Confirm password",
+    "confirmPasswordPlaceholder": "Repeat your password",
+    "signUp": "Sign Up",
+    "signingUp": "Creating account...",
+    "haveAccount": "Already have an account?",
+    "signIn": "Sign in",
+    "errorGeneric": "Sign up failed",
+    "errorUsernameTooShort": "Username must be at least 3 characters",
+    "errorUsernameTaken": "This username is already taken",
+    "errorPasswordTooShort": "Password must be at least 6 characters",
+    "errorPasswordMismatch": "Passwords do not match"
   },
   "landing": {
     "nav": {

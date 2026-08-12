@@ -210,6 +210,23 @@ const routes: Record<string, Handler> = {
     return ok({ user: { email: email.toLowerCase() } });
   },
   'POST /api/auth/forgot-password': () => ok({ success: true }),
+  'POST /api/auth/signup': (body) => {
+    const { username, password } = (body ?? {}) as {
+      username?: string;
+      password?: string;
+    };
+    const name = (username ?? '').trim();
+    if (name.length < 3) {
+      return { status: 400, body: { error: 'signup.errorUsernameTooShort' } };
+    }
+    if (['admin', 'test'].includes(name.toLowerCase())) {
+      return { status: 409, body: { error: 'signup.errorUsernameTaken' } };
+    }
+    if (!password || password.length < 6) {
+      return { status: 400, body: { error: 'signup.errorPasswordTooShort' } };
+    }
+    return created({ user: { username: name } });
+  },
 };
 
 /** Dispatch a request to the matching handler. */

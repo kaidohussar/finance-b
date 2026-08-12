@@ -188,7 +188,28 @@
     "signingIn": "Sisselogimine...",
     "signOut": "Logi välja",
     "subtitle": "Jätkamiseks logi oma kontole sisse",
-    "title": "Tere tulemast tagasi"
+    "title": "Tere tulemast tagasi",
+    "noAccount": "Kas sul pole kontot?",
+    "signUp": "Registreeru"
+  },
+  "signup": {
+    "title": "Loo konto",
+    "subtitle": "Registreeru, et alustada FinanceB kasutamist",
+    "usernameLabel": "Kasutajanimi",
+    "usernamePlaceholder": "Vali kasutajanimi",
+    "passwordLabel": "Parool",
+    "passwordPlaceholder": "Vali parool",
+    "confirmPasswordLabel": "Kinnita parool",
+    "confirmPasswordPlaceholder": "Korda parooli",
+    "signUp": "Registreeru",
+    "signingUp": "Konto loomine...",
+    "haveAccount": "Kas sul on juba konto?",
+    "signIn": "Logi sisse",
+    "errorGeneric": "Registreerumine ebaõnnestus",
+    "errorUsernameTooShort": "Kasutajanimi peab olema vähemalt 3 tähemärki",
+    "errorUsernameTaken": "See kasutajanimi on juba võetud",
+    "errorPasswordTooShort": "Parool peab olema vähemalt 6 tähemärki",
+    "errorPasswordMismatch": "Paroolid ei kattu"
   },
   "notifications": {
     "digest": "Päevane kokkuvõte",

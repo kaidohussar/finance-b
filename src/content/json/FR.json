@@ -177,7 +177,28 @@
     "signOut": "Déconnexion",
     "subtitle": "Connectez-vous à votre compte pour continuer",
     "title": "Bon retour",
-    "forgotPassword": "Mot de passe oublié ?"
+    "forgotPassword": "Mot de passe oublié ?",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "signUp": "Inscrivez-vous"
+  },
+  "signup": {
+    "title": "Créer un compte",
+    "subtitle": "Inscrivez-vous pour commencer avec FinanceB",
+    "usernameLabel": "Nom d'utilisateur",
+    "usernamePlaceholder": "Choisissez un nom d'utilisateur",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "Choisissez un mot de passe",
+    "confirmPasswordLabel": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Répétez votre mot de passe",
+    "signUp": "S'inscrire",
+    "signingUp": "Création du compte...",
+    "haveAccount": "Vous avez déjà un compte ?",
+    "signIn": "Connectez-vous",
+    "errorGeneric": "Échec de l'inscription",
+    "errorUsernameTooShort": "Le nom d'utilisateur doit contenir au moins 3 caractères",
+    "errorUsernameTaken": "Ce nom d'utilisateur est déjà pris",
+    "errorPasswordTooShort": "Le mot de passe doit contenir au moins 6 caractères",
+    "errorPasswordMismatch": "Les mots de passe ne correspondent pas"
   },
   "landing": {
     "nav": {

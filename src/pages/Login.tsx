@@ -81,6 +81,10 @@ const Login: React.FC = () => {
         <div className="login-hint">
           <Trans i18nKey="login.hint" components={{ code: <code /> }} />
         </div>
+
+        <div className="login-hint">
+          {t('login.noAccount')} <Link to="/signup">{t('login.signUp')}</Link>
+        </div>
       </div>
     </div>
   );

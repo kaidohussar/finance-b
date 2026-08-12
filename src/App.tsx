@@ -18,6 +18,7 @@ import Projects from './pages/Projects';
 import Tasks from './pages/Tasks';
 import Team from './pages/Team';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import Landing from './pages/Landing';
 import ForgotPassword from './pages/ForgotPassword';
 import { useAuth } from './hooks/useAuth';
@@ -32,6 +33,7 @@ function App() {
         <Routes>
           <Route path="/landing" element={<Landing />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           {isAuthenticated ? (
             <Route path="/" element={<Layout />}>

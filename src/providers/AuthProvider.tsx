@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import type { ReactNode } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import type { User } from '../types/auth';
-import { loginRequest, ApiError } from '../utils/api';
+import { loginRequest, signupRequest, ApiError } from '../utils/api';
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -27,13 +27,26 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   };
 
+  const signup = async (username: string, password: string) => {
+    try {
+      const { user } = await signupRequest(username, password);
+      const newUser: User = { username: user.username };
+      setUser(newUser);
+      localStorage.setItem('auth_user', JSON.stringify(newUser));
+      return { success: true };
+    } catch (err) {
+      const code = err instanceof ApiError ? err.message : 'signup.errorGeneric';
+      return { success: false, error: code };
+    }
+  };
+
   const logout = () => {
     setUser(null);
     localStorage.removeItem('auth_user');
   };
 
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated: !!user, login, logout }}>
+    <AuthContext.Provider value={{ user, isAuthenticated: !!user, login, signup, logout }}>
       {children}
     </AuthContext.Provider>
   );

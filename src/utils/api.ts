@@ -193,5 +193,7 @@ export const updateNotificationSettings = (input: Partial<NotificationSettings>)
 /* Auth ------------------------------------------------------------ */
 export const loginRequest = (email: string, password: string) =>
   request<{ user: { email: string } }>('/api/auth/login', 'POST', { email, password });
+export const signupRequest = (username: string, password: string) =>
+  request<{ user: { username: string } }>('/api/auth/signup', 'POST', { username, password });
 export const requestPasswordReset = (email: string) =>
   request<{ success: boolean }>('/api/auth/forgot-password', 'POST', { email });
