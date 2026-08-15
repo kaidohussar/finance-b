@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FileText, AlertCircle, Loader2 } from 'lucide-react';
+import { FileText, AlertCircle, CheckCircle2, Loader2 } from 'lucide-react';
 import StatsCards from './StatsCards';
 import Chart from './Chart';
 import RecentActivity from './RecentActivity';
@@ -13,11 +13,13 @@ const MainContent: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [reportLoading, setReportLoading] = useState(false);
-  const [toast, setToast] = useState<string | null>(null);
+  const [toast, setToast] = useState<{ msg: string; type: 'success' | 'error' } | null>(
+    null
+  );
   const toastTimerRef = useRef<number | undefined>(undefined);
 
-  const showToast = (msg: string) => {
-    setToast(msg);
+  const showToast = (msg: string, type: 'success' | 'error') => {
+    setToast({ msg, type });
     window.clearTimeout(toastTimerRef.current);
     toastTimerRef.current = window.setTimeout(() => setToast(null), 3000);
   };
@@ -26,9 +28,18 @@ const MainContent: React.FC = () => {
     setReportLoading(true);
     try {
       await generateReport();
-      showToast(t('pages.dashboard.reportReady', 'Report generated'));
+      showToast(
+        t(
+          'pages.dashboard.reportEmailed',
+          'Report generation started — we’ll email it to you when it’s ready'
+        ),
+        'success'
+      );
     } catch {
-      showToast(t('pages.dashboard.reportFailed', 'Failed to generate report'));
+      showToast(
+        t('pages.dashboard.reportFailed', 'Failed to generate report'),
+        'error'
+      );
     } finally {
       setReportLoading(false);
     }
@@ -93,9 +104,12 @@ const MainContent: React.FC = () => {
       </div>
 
       {toast && (
-        <div className="error-toast" role="alert">
-          <AlertCircle size={16} />
-          <span>{toast}</span>
+        <div
+          className={`error-toast ${toast.type === 'success' ? 'success-toast' : ''}`}
+          role={toast.type === 'success' ? 'status' : 'alert'}
+        >
+          {toast.type === 'success' ? <CheckCircle2 size={16} /> : <AlertCircle size={16} />}
+          <span>{toast.msg}</span>
         </div>
       )}
     </main>

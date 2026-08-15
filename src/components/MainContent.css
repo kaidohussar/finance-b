@@ -78,6 +78,10 @@
   animation: errorToastSlideIn 0.2s ease-out;
 }
 
+.error-toast.success-toast {
+  background: #16a34a;
+}
+
 @keyframes errorToastSlideIn {
   from {
     opacity: 0;
