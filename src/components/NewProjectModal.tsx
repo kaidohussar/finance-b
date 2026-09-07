@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { X } from 'lucide-react';
+import { validateProjectDetails } from '../utils/api';
 import './NewProjectModal.css';
 
 export interface NewProjectData {
@@ -30,6 +31,7 @@ const NewProjectModal: React.FC<Props> = ({ onClose, onCreate, submitting }) => 
   const [collaborators, setCollaborators] = useState<string>('');
 
   const [errors, setErrors] = useState<{ [k: string]: string }>({});
+  const [checking, setChecking] = useState(false);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -54,8 +56,22 @@ const NewProjectModal: React.FC<Props> = ({ onClose, onCreate, submitting }) => 
     return Object.keys(next).length === 0;
   };
 
-  const handleNext = () => {
-    if (validateStep1()) setStep(2);
+  const handleNext = async () => {
+    if (!validateStep1()) return;
+    setChecking(true);
+    try {
+      await validateProjectDetails({
+        name: name.trim(),
+        description: description.trim(),
+        status,
+      });
+      setErrors({});
+      setStep(2);
+    } catch {
+      setErrors({ step: t('projects.modal.errors.validationFailed') });
+    } finally {
+      setChecking(false);
+    }
   };
 
   const handleBack = () => {
@@ -175,6 +191,8 @@ const NewProjectModal: React.FC<Props> = ({ onClose, onCreate, submitting }) => 
                   <div className="form-error">{errors.status}</div>
                 )}
               </div>
+
+              {errors.step && <div className="form-error">{errors.step}</div>}
             </>
           )}
 
@@ -261,8 +279,11 @@ const NewProjectModal: React.FC<Props> = ({ onClose, onCreate, submitting }) => 
                 className="btn btn-primary"
                 type="button"
                 onClick={handleNext}
+                disabled={checking}
               >
-                {t('projects.modal.next')}
+                {checking
+                  ? t('projects.modal.checking')
+                  : t('projects.modal.next')}
               </button>
             ) : (
               <button

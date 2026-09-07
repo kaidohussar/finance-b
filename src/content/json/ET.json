@@ -430,6 +430,7 @@
       "cancel": "Tühista",
       "back": "Tagasi",
       "next": "Edasi",
+      "checking": "Kontrollin…",
       "createProject": "Loo projekt",
       "optional": "valikuline",
       "successToast": "Projekt \"{{name}}\" loodud",
@@ -453,7 +454,8 @@
       "errors": {
         "nameRequired": "Projekti nimi on kohustuslik",
         "statusRequired": "Palun vali staatus",
-        "deadlineRequired": "Tähtaeg on kohustuslik"
+        "deadlineRequired": "Tähtaeg on kohustuslik",
+        "validationFailed": "Projekti andmete kontrollimine ebaõnnestus. Palun proovi uuesti."
       }
     }
   },

@@ -523,6 +523,7 @@
       "cancel": "Cancelar",
       "back": "Atrás",
       "next": "Siguiente",
+      "checking": "Comprobando…",
       "createProject": "Crear proyecto",
       "optional": "opcional",
       "successToast": "Proyecto \"{{name}}\" creado",
@@ -546,7 +547,8 @@
       "errors": {
         "nameRequired": "El nombre del proyecto es obligatorio",
         "statusRequired": "Por favor elige un estado",
-        "deadlineRequired": "La fecha límite es obligatoria"
+        "deadlineRequired": "La fecha límite es obligatoria",
+        "validationFailed": "No se pudieron validar los detalles del proyecto. Inténtalo de nuevo."
       }
     }
   },

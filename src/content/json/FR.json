@@ -535,6 +535,7 @@
       "cancel": "Annuler",
       "back": "Retour",
       "next": "Suivant",
+      "checking": "Vérification…",
       "createProject": "Créer le projet",
       "optional": "facultatif",
       "successToast": "Projet « {{name}} » créé",
@@ -558,7 +559,8 @@
       "errors": {
         "nameRequired": "Le nom du projet est requis",
         "statusRequired": "Veuillez choisir un statut",
-        "deadlineRequired": "La date limite est requise"
+        "deadlineRequired": "La date limite est requise",
+        "validationFailed": "Impossible de valider les détails du projet. Veuillez réessayer."
       }
     }
   },

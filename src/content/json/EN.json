@@ -625,6 +625,7 @@
       "cancel": "Cancel",
       "back": "Back",
       "next": "Next",
+      "checking": "Checking…",
       "createProject": "Create project",
       "optional": "optional",
       "successToast": "Project \"{{name}}\" created",
@@ -648,7 +649,8 @@
       "errors": {
         "nameRequired": "Project name is required",
         "statusRequired": "Please choose a status",
-        "deadlineRequired": "Deadline is required"
+        "deadlineRequired": "Deadline is required",
+        "validationFailed": "Couldn't validate project details. Please try again."
       }
     }
   },

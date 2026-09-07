@@ -28,6 +28,10 @@ const db = {
 
 type Handler = (body: unknown) => MockResponse;
 
+// Fails on the first attempt and succeeds on every one after, to demonstrate
+// both the error and the retry path when moving between new-project modal steps.
+let validateProjectDetailsAttempts = 0;
+
 const ok = (body: unknown): MockResponse => ({ status: 200, body });
 const created = (body: unknown): MockResponse => ({ status: 201, body });
 
@@ -48,6 +52,12 @@ const routes: Record<string, Handler> = {
   /* Projects ------------------------------------------------------ */
   'GET /api/projects': () =>
     ok({ projects: db.projects, recentUpdates: db.projectUpdates }),
+  'POST /api/projects/validate-details': () => {
+    validateProjectDetailsAttempts += 1;
+    return validateProjectDetailsAttempts === 1
+      ? { status: 500, body: { error: 'Failed to validate project details' } }
+      : ok({ valid: true });
+  },
   'POST /api/projects': (body) => {
     const input = (body ?? {}) as Partial<data.Project>;
     const project: data.Project = {

@@ -127,6 +127,11 @@ export const generateReport = () => request<Report>('/api/reports/generate', 'PO
 
 /* Projects -------------------------------------------------------- */
 export const getProjects = () => request<ProjectsData>('/api/projects');
+export const validateProjectDetails = (input: {
+  name: string;
+  description: string;
+  status: string;
+}) => request<{ valid: boolean }>('/api/projects/validate-details', 'POST', input);
 export const createProject = (input: {
   name: string;
   description: string;
